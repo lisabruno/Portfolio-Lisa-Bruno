@@ -1,0 +1,2498 @@
+/* ================================================
+   PORTFOLIO DE LISA BRUNO - FEUILLE DE STYLES
+   ================================================
+   Architecture:
+   1. Variables & Reset
+   2. Styles globaux (body, typo, animations)
+   3. Barre de navigation (topbar)
+   4. Boutons (btn)
+   5. Section Héro (hero)
+   6. Grille domaines (domains)
+   7. Cartes (cards)
+   8. Section À Propos (about)
+   9. Section Projets (projects & project-cards)
+   10. Section Contact (contact & réseaux)
+   11. Footer
+   12. Media queries (responsive)
+   ================================================ */
+
+/* ====== 1. VARIABLES PRINCIPALES & RESET ====== */
+/* Définition des couleurs, typographies, rayons */
+:root {
+	--bg: #ffffff;
+	--bg-2: #fafbff;
+	--accent: #7aa0ff;
+	--accent-2: #9b7bff;
+	--text: #1a1f3e;
+	--muted: #6b7280;
+	--card: #f3f4f9;
+	--stroke: rgba(15, 20, 38, 0.15);
+	--shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+	--radius: 14px;
+	--font-display: 'Space Grotesk', 'DM Sans', system-ui, -apple-system, sans-serif;
+	--font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+body.theme-dark {
+    --bg: #0a0f2a;
+    --bg-2: #1a1f3e;
+    --text: #f5f7ff;
+    --muted: #b8c5d6;
+    --card: #2d4a8f;
+    --stroke: rgba(122, 160, 255, 0.3);
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --hero-bg: radial-gradient(circle at 20% 20%, rgba(20, 30, 70, 0.6), transparent 35%), 
+               radial-gradient(circle at 85% 30%, rgba(35, 27, 75, 0.7), transparent 38%), 
+               radial-gradient(circle at 60% 80%, rgba(15, 25, 60, 0.8), transparent 42%);
+    
+    background: radial-gradient(circle at 20% 20%, rgba(122, 160, 255, 0.12), transparent 32%),
+                radial-gradient(circle at 80% 30%, rgba(155, 123, 255, 0.14), transparent 36%),
+                linear-gradient(135deg, #0a0f2a, #1a1f3e) !important;
+    color: #f5f7ff !important;
+}
+
+/* Reset box model - Applique border-box à tous les éléments */
+* {
+	box-sizing: border-box;
+}
+
+/* ====== 2. STYLES GLOBAUX ====== */
+/* Fond avec dégradé radial et linéaire + typo par défaut */
+body {
+	margin: 0;
+	font-family: var(--font-body);
+	color: var(--text);
+	background: radial-gradient(circle at 20% 20%, rgba(122, 160, 255, 0.2), transparent 32%),
+				radial-gradient(circle at 80% 30%, rgba(155, 123, 255, 0.22), transparent 36%),
+				linear-gradient(135deg, var(--bg), var(--bg-2));
+	min-height: 100vh;
+	overflow-x: hidden; /* évite la barre de défilement horizontale liée aux effets */
+	position: relative;
+	transition: all 0.6s ease;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	inset: -6%;
+	background: radial-gradient(circle at 20% 20%, rgba(122, 160, 255, 0.18), transparent 42%),
+				radial-gradient(circle at 75% 80%, rgba(155, 123, 255, 0.2), transparent 40%),
+				linear-gradient(135deg, rgba(122, 160, 255, 0.16), rgba(155, 123, 255, 0.18));
+	mix-blend-mode: screen;
+	opacity: 0;
+	filter: blur(12px);
+	pointer-events: none;
+	z-index: 0;
+	transition: opacity 1.05s ease;
+}
+
+/* Transition fluide au changement de thème */
+body, body * {
+	transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Liens neutres (colorés via parent) */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ====== 3. BARRE DE NAVIGATION (TOPBAR) ====== */
+/* Barre fixe avec flou de fond (blur) et transparence */
+.topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 18px 48px;
+	backdrop-filter: blur(10px);
+	background: rgba(10, 30, 80, 0.55);
+	overflow: hidden;
+}
+
+/* Fond animé du topbar */
+.topbar::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--topbar-bg, radial-gradient(circle at 20% 20%, rgba(69, 63, 160, 0.1), transparent 35%), radial-gradient(circle at 85% 30%, rgba(135, 87, 189, 0.1), transparent 38%), radial-gradient(circle at 60% 80%, rgba(38, 61, 154, 0.2), transparent 42%));
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* Logo/nom de la marque */
+.brand {
+	font-family: var(--font-display);
+	font-weight: 700;
+	letter-spacing: 0.3px;
+	font-size: 18px;
+	position: relative;
+	z-index: 1;
+}
+
+/* Liens du menu principal avec underline au hover */
+.nav-links {
+	display: flex;
+	gap: 24px;
+	font-weight: 600;
+	font-size: 15px;
+	position: relative;
+	z-index: 1;
+}
+
+/* Loquet de bascule du thème (petit switch) */
+.theme-toggle {
+	width: 46px;
+	height: 26px;
+	border-radius: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	background: rgba(255, 255, 255, 0.15);
+	padding: 0;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+	box-shadow: 0 0 0 4px rgba(122, 160, 255, 0.18);
+}
+
+.theme-toggle-thumb {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #fff;
+	position: absolute;
+	left: 4px;
+	top: 3px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+	transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.theme-toggle.is-on .theme-toggle-thumb {
+	transform: translateX(18px);
+}
+
+body.theme-dark .theme-toggle {
+	border-color: rgba(122, 160, 255, 0.6);
+	background: rgba(122, 160, 255, 0.35);
+}
+
+body.theme-dark .theme-toggle-thumb {
+	background: #0b0f24;
+}
+
+.nav-links a {
+	position: relative;
+	padding: 6px 2px;
+}
+
+/* Underline animé sur les liens (scaleX de 0 à 1) */
+.nav-links a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	transform: scaleX(0);
+	transform-origin: left;
+	background: var(--accent);
+	transition: transform 0.2s ease;
+}
+
+.nav-links a:hover::after {
+	transform: scaleX(1);
+}
+
+/* Lien actif dans la nav (mis à jour par JS) */
+.nav-links a.active::after {
+	transform: scaleX(0); /* désactivé pour éviter la ligne persistante */
+}
+
+/* ====== 4. BOUTONS ====== */
+/* Boutons génériques avec effet ripple au hover */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 12px 18px;
+	border-radius: 12px;
+	border: 1px solid transparent;
+	font-weight: 700;
+	font-size: 14px;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	transform: translate(-50%, -50%);
+	transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+	width: 300px;
+	height: 300px;
+}
+
+.btn:active {
+	animation: click-pulse 0.4s ease-out;
+}
+
+/* ====== ÉTATS D'INTERACTION AU CLIC ====== */
+/* Classe ajoutée par JS lors du clic */
+.clicked {
+	animation: click-pulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Classe pour le glow au clic */
+.glow-click {
+	animation: glow-effect 0.6s ease-out;
+}
+
+/* Classe pour la brillance */
+.shine {
+	animation: shine-effect 0.6s ease-in-out;
+}
+
+/* Classe pour la secousse */
+.wobble {
+	animation: wobble 0.3s ease-in-out;
+}
+
+/* Bouton principal (dégradé) */
+.btn.primary {
+	background: linear-gradient(135deg, var(--accent), var(--accent-2));
+	color: #0b0f24;
+	box-shadow: var(--shadow);
+}
+
+/* Bouton secondaire (bordure légère) */
+.btn.secondary {
+	border-color: rgba(255, 255, 255, 0.2);
+	color: var(--text);
+	background: rgba(255, 255, 255, 0.04);
+}
+
+/* Bouton fantôme pour la topbar */
+.btn.ghost {
+	position: relative;
+	z-index: 2;
+	border-color: rgba(255, 255, 255, 0.3);
+	padding: 10px 16px;
+	color: var(--text);
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.btn:hover {
+	transform: translateY(-3px) scale(1.03);
+	box-shadow: 0 15px 40px rgba(122, 160, 255, 0.4);
+}
+
+.btn:active {
+	transform: translateY(-1px) scale(0.98);
+}
+
+/* Décalage pour laisser passer la topbar fixe */
+main {
+	padding-top: 96px;
+}
+
+/* ========== ANIMATIONS AVANCÉES ========== */
+
+/* Keyframes pour animations */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -200% center;
+	}
+	100% {
+		background-position: 200% center;
+	}
+}
+
+/* Révélation au scroll (pilotée par JS) */
+.js-reveal {
+	opacity: 0;
+	transform: translateY(14px);
+}
+.js-reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page compétence : liste de projets */
+.competence-page {
+	background: #f7f8fb;
+	color: #0f1426;
+	min-height: 100vh;
+}
+
+.comp-hero {
+	padding: 120px 48px 60px;
+	background: linear-gradient(135deg, #6a63ff 0%, #7aa0ff 50%, #f7f8fb 100%);
+	color: #fff;
+	text-align: center;
+}
+
+.comp-hero h1 {
+	margin: 0;
+	font-size: clamp(30px, 5vw, 42px);
+	letter-spacing: -0.3px;
+}
+
+.comp-hero p {
+	margin: 12px auto 0;
+	max-width: 760px;
+	color: rgba(255,255,255,0.9);
+}
+
+.project-listing {
+	max-width: 1100px;
+	margin: -40px auto 80px;
+	padding: 0 32px 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+}
+
+.project-item {
+	display: grid;
+	grid-template-columns: minmax(260px, 1fr) minmax(320px, 1.2fr);
+	gap: 22px;
+	background: #fff;
+	border-radius: 16px;
+	box-shadow: 0 16px 36px rgba(15, 20, 38, 0.08);
+	padding: 20px;
+}
+
+/* Styles spéciaux pour les titres de projets en lien */
+.project-title a {
+	display: inline-block;
+	position: relative;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	background: linear-gradient(135deg, #7aa0ff, #9b7bff);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: none;
+}
+
+.project-title a::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #7aa0ff, #9b7bff, #ff7ab3);
+	transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	border-radius: 2px;
+}
+
+.project-title a:hover {
+	transform: translateX(8px);
+	filter: drop-shadow(0 0 8px rgba(122, 160, 255, 0.6));
+}
+
+.project-title a:hover::after {
+	width: 100%;
+	animation: shine-line 1.5s ease-in-out infinite;
+}
+
+@keyframes shine-line {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.6;
+		box-shadow: 0 0 10px rgba(122, 160, 255, 0.8);
+	}
+}
+
+.project-media img {
+	width: 100%;
+	height: 100%;
+	max-height: 260px;
+	object-fit: cover;
+	border-radius: 12px;
+	box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+}
+
+.project-info h3 {
+	margin: 0 0 8px;
+	font-size: 20px;
+	color: var(--text);
+}
+
+.project-info p {
+	margin: 0 0 12px;
+	color: var(--muted);
+	line-height: 1.6;
+}
+
+.project-info ul {
+	margin: 0;
+	padding-left: 18px;
+	color: var(--text);
+	line-height: 1.5;
+	font-weight: 600;
+}
+
+.project-info li {
+	margin: 4px 0;
+}
+
+.project-link-inline {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 10px;
+	color: var(--accent);
+	font-weight: 700;
+}
+
+@media (max-width: 960px) {
+	.project-item {
+		grid-template-columns: 1fr;
+	}
+	.project-media img {
+		max-height: 220px;
+	}
+}
+
+@media (max-width: 640px) {
+	.comp-hero {
+		padding: 96px 20px 48px;
+	}
+	.project-listing {
+		margin: -24px auto 60px;
+		padding: 0 16px 24px;
+		gap: 26px;
+	}
+	.project-item {
+		padding: 16px;
+	}
+}
+
+/* ====== 5. SECTION HÉRO ====== */
+/* Wrapper pour le bandeau animé (hero + domaines) */
+.hero-wrapper {
+	position: relative;
+	overflow: visible;
+	width: 100%;
+}
+
+/* Fond animé qui couvre hero + domaines */
+.hero-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--hero-bg, radial-gradient(circle at 20% 20%, rgba(69, 63, 160, 0.432), transparent 35%), radial-gradient(circle at 85% 30%, rgba(135, 87, 189, 0.536), transparent 38%), radial-gradient(circle at 60% 80%, rgba(38, 61, 154, 0.87), transparent 42%));
+	filter: blur(2px);
+	z-index: 0;
+	pointer-events: none;
+	transition: background 3s ease-in-out;
+}
+
+/* Fond animé qui couvre hero + domaines */
+.hero-banner-bg {
+	display: none;
+}
+
+/* Section pleine largeur avec fond animé et contenu centré */
+.hero {
+	position: relative;
+	padding: 120px 48px 90px;
+	overflow: visible;
+	z-index: 1;
+}
+
+/* Lueur douce en overlay */
+.hero::before {
+	content: "";
+	position: absolute;
+	width: 120%;
+	height: 140%;
+	left: -10%;
+	top: -20%;
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.04), transparent 60%);
+	transform: rotate(-4deg);
+	z-index: 0;
+}
+
+/* Conteneur centré du hero */
+.hero-content {
+	position: relative;
+	z-index: 1;
+	max-width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	animation: fade-up 0.8s ease both;
+}
+
+/* Petit label au-dessus du titre */
+.eyebrow {
+	color: var(--muted);
+	font-weight: 600;
+	letter-spacing: 0.2px;
+	margin-bottom: 12px;
+}
+
+.hero h1 {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(44px, 6vw, 72px);
+	letter-spacing: -0.5px;
+}
+
+/* Paragraphe descriptif du hero */
+.lead {
+	margin: 18px auto 28px;
+	max-width: 760px;
+	color: var(--muted);
+	line-height: 1.6;
+	font-size: 17px;
+}
+
+/* Groupe de CTA */
+.hero-actions {
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+	flex-wrap: wrap;
+}
+
+.hero-actions .btn:nth-child(1) {
+	animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-actions .btn:nth-child(2) {
+	animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+/* ====== 6. SECTION DOMAINES DE COMPÉTENCE ====== */
+/* Grille de 5 domaines principaux (Animation, Communication, etc.) */
+.domains {
+	padding: 24px 48px 96px;
+	position: relative;
+	z-index: 1;
+}
+
+/* Grille responsive sans wrap pour afficher toutes les cartes en ligne */
+.domains-grid {
+	display: flex;
+	gap: 18px;
+	max-width: 1180px;
+	margin: 0 auto;
+	flex-wrap: nowrap;
+}
+
+/* Carte individuelle de domaine avec effet de shine */
+.card {
+	background: var(--card);
+	border: 1px solid var(--stroke);
+	border-radius: var(--radius);
+	padding: 22px;
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+	gap: 18px;
+	min-height: 160px;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	backdrop-filter: blur(6px);
+	animation: fade-up 0.7s ease both;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.card:active {
+	animation: click-pulse 0.4s ease-out;
+}
+
+/* Effet shine (lumière glissante) au survol */
+.card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(122, 160, 255, 0.2), transparent);
+	transition: left 0.6s ease;
+}
+
+.card:hover::before {
+	left: 100%;
+}
+
+.card:hover {
+	transform: translateY(-6px) scale(1.02);
+	border-color: var(--accent);
+	background: rgba(122, 160, 255, 0.08);
+	box-shadow: 0 20px 40px rgba(122, 160, 255, 0.35), 0 0 0 1px rgba(122, 160, 255, 0.2);
+}
+
+/* Lien qui remplit toute la carte */
+.card-link {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	text-decoration: none;
+	color: inherit;
+	width: 100%;
+	height: 100%;
+}
+
+/* Icône dans une pastille colorée avec animation */
+.card-icon {
+	width: 46px;
+	height: 46px;
+	border-radius: 12px;
+	display: grid;
+	place-items: center;
+	color: var(--accent);
+	background: rgba(122, 160, 255, 0.12);
+	transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+	transform: rotate(8deg) scale(1.15);
+	background: rgba(122, 160, 255, 0.25);
+	box-shadow: 0 0 20px rgba(122, 160, 255, 0.5);
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Titre de carte */
+.card h3 {
+	margin: 0;
+	font-size: 17px;
+	line-height: 1.4;
+}
+
+/* ====== 8. SECTION À PROPOS ====== */
+/* Section avec texte + image + piliers (points forts) */
+/* Bloc "Qui suis-je ?" en deux colonnes */
+.about {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 38px;
+	padding: 96px 48px 120px;
+	background: #f7f8fb;
+	color: #0f1426;
+}
+
+/* Panneau visuel (remplacer par photo en background) */
+
+.about-media {
+	background: url('../médias/Qui-suis-je/Lisa-bruno.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 22px;
+	min-height: 520px;
+	box-shadow: 0 24px 50px rgba(0, 0, 0, 0.15);
+	position: relative;
+	overflow: hidden;
+	animation: none;
+}
+
+/* Animation interactive au clic sur le panneau about */
+.about-media:active {
+	animation: wobble 0.5s ease-in-out;
+}
+
+/* Effets lumineux sur le panneau */
+.about-media::after {
+	content: none;
+}
+
+/* Colonne texte de la section about */
+.about-content {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+/* Petit kicker en capitales */
+.section-kicker {
+	text-transform: uppercase;
+	letter-spacing: 1.6px;
+	font-weight: 700;
+	font-size: 12px;
+	color: #5a6bff;
+	margin: 0;
+}
+
+/* Titre principal de la section about */
+.about h2 {
+	margin: 4px 0 8px;
+	font-size: clamp(32px, 4.2vw, 46px);
+	letter-spacing: -0.4px;
+}
+
+/* Paragraphes de la section about */
+.about p {
+	margin: 0;
+	grid-template-columns: 1fr 2fr;
+	line-height: 1.7;
+}
+
+/* Grille des piliers clés */
+.pillars {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 14px;
+	margin-top: 12px;
+}
+
+/* Carte pilier avec icône + texte */
+.pillar {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 12px;
+	align-items: start;
+	padding: 14px 12px;
+	border: 1px solid #dbe2ff;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 14px 30px rgba(15, 20, 38, 0.07);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.pillar:hover {
+	transform: translateX(10px);
+	border-color: var(--accent);
+	box-shadow: 0 16px 35px rgba(15, 20, 38, 0.12);
+}
+
+.pillar:hover .pillar-icon {
+	animation: pulse 1s ease-in-out infinite;
+	background: rgba(122, 160, 255, 0.15);
+}
+
+.pillar:active {
+	transform: translateX(10px);
+	border-color: #7aa0ff;
+	box-shadow: 0 16px 35px rgba(15, 20, 38, 0.12);
+}
+
+/* Pastille icône des piliers */
+.pillar-icon {
+	width: 36px;
+	height: 36px;
+	border-radius: 10px;
+	display: grid;
+	place-items: center;
+	background: rgba(122, 160, 255, 0.12);
+	color: var(--accent);
+	font-weight: 700;
+}
+
+/* Titre d'un pilier */
+.pillar h4 {
+	margin: 0 0 4px;
+	font-size: 16px;
+}
+
+/* Texte d'un pilier */
+.pillar p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+/* Boutons d'action de la section about */
+.about-actions {
+	display: flex;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+/* ====== 9. SECTION PROJETS PRINCIPAUX ====== */
+/* Grille de 8 cartes de projets avec détails (durée, outils, etc.) */
+.projects {
+	background: #fdfdff;
+	color: #0f1426;
+	padding: 90px 48px 96px;
+}
+
+/* En-tête de la section projets */
+.projects-header {
+	text-align: center;
+	margin: 0 auto 38px;
+	max-width: 720px;
+	animation: none !important;
+}
+
+.projects-header .section-kicker {
+	animation: none !important;
+}
+
+.projects-header h2 {
+	animation: none !important;
+}
+
+/* Désactive la révélation au scroll pour l'en-tête projets */
+.projects-header.is-visible {
+	animation: none !important;
+	opacity: 1;
+	transform: none;
+}
+
+.projects h2 {
+	margin: 6px 0 0;
+	font-size: clamp(28px, 4vw, 38px);
+	letter-spacing: -0.2px;
+}
+
+.highlight {
+	color: #6a63ff;
+}
+
+/* Grille responsive pour les cartes de projets */
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne (3 dessus / 3 dessous) */
+	gap: 16px;
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+/* Responsif : 2 colonnes sur tablette */
+@media (max-width: 992px) {
+	.projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Responsif : 1 colonne sur mobile */
+@media (max-width: 600px) {
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Carte individuelle de projet avec effet de survol */
+.project-card {
+	background: var(--card);
+	border: 1px solid var(--stroke);
+	border-radius: 16px;
+	padding: 22px;
+	box-shadow: 0 16px 36px rgba(15, 20, 38, 0.08);
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	animation: fade-up 0.7s ease both;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.project-card:active {
+	animation: click-pulse 0.4s ease-out;
+}
+
+.project-card::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(90deg, #7aa0ff, #9b7bff);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+	transform: translateY(-8px) scale(1.01);
+	box-shadow: 0 25px 50px rgba(15, 20, 38, 0.15);
+	border-color: var(--accent);
+}
+
+.project-card:hover::after {
+	transform: scaleX(1);
+}
+
+.project-card:hover .project-icon {
+	animation: pulse 1.2s ease-in-out infinite;
+}
+
+.project-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: 12px;
+	display: grid;
+	place-items: center;
+	background: rgba(122, 160, 255, 0.12);
+	color: var(--accent);
+	font-weight: 700;
+	transition: all 0.3s ease;
+}
+
+.project-card h3 {
+	margin: 0;
+	font-size: 18px;
+	animation: none !important;
+}
+
+/* Ajout d'animation subtile au titre au hover */
+.project-card:hover h3 {
+	animation: rotate-subtle 0.6s ease-in-out;
+}
+
+.project-card p {
+	margin: 0;
+	color: var(--muted);
+	line-height: 1.6;
+}
+
+.project-card ul {
+	margin: 4px 0;
+	padding-left: 18px;
+	color: #4a5270;
+	line-height: 1.5;
+}
+
+.project-card li {
+	margin: 4px 0;
+}
+
+.tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 8px 0 !important;
+	font-size: 14px;
+	color: #4a5270;
+	animation: fadeInUp 0.7s ease 0.4s both;
+	transition: all 0.3s ease;
+}
+
+/* Animation au hover des outils */
+.project-card:hover .tools {
+	transform: translateX(4px);
+	color: #7aa0ff;
+}
+
+.tool-icon {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	object-fit: contain;
+	filter: invert(0.3);
+	margin-right: 4px;
+	animation: rotate-subtle 0.6s ease-in-out infinite;
+	transition: all 0.3s ease;
+}
+
+/* Icône personnalisée Adobe Animate (data URI) */
+.tool-icon-aa {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%235f6472'/%3E%3Ctext x='11' y='32' font-family='Arial, sans-serif' font-size='22' font-weight='700' fill='white'%3EAn%3C/text%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: invert(0.3);
+}
+
+/* Icône dynamique au hover */
+.project-card:hover .tool-icon {
+	animation: pulse 0.8s ease-in-out infinite;
+	filter: invert(0.5) brightness(1.2);
+}
+
+.tools-secondary {
+	font-size: 12px;
+	color: #8a96b2;
+	margin: 4px 0 !important;
+	animation: fadeInUp 0.7s ease 0.5s both;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Animation au hover de la durée */
+.project-card:hover .tools-secondary {
+	transform: translateX(4px);
+	color: #5a6bff;
+	font-weight: 600;
+}
+
+.project-link {
+	margin-top: auto;
+	color: #4e6ef2;
+	font-weight: 700;
+	text-decoration: underline;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+}
+
+.project-link::after {
+	content: ' →';
+	transition: transform 0.3s ease;
+	display: inline-block;
+}
+
+.project-link:hover {
+	color: #7aa0ff;
+	transform: translateX(4px);
+}
+
+.project-link:hover::after {
+	transform: translateX(5px);
+}
+
+/* ====== 10. SECTION CONTACT & RÉSEAUX SOCIAUX ====== */
+/* Grille de contact + carte réseaux sociaux */
+.contact {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 28px;
+	padding: 90px 48px 60px;
+	background: #ffffff;
+	color: #0f1426;
+}
+
+.contact-text {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.contact-text h2 {
+	margin: 0;
+	font-size: clamp(26px, 3.6vw, 34px);
+}
+
+.contact-text p {
+	margin: 0;
+	color: #3f4866;
+	line-height: 1.7;
+}
+
+.contact-buttons {
+	display: flex;
+	gap: 12px;
+	margin-top: 8px;
+	width: auto;
+}
+
+.contact-buttons .btn {
+	padding: 14px 22px;
+}
+
+.social-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 14px;
+}
+
+.social-card {
+	background: linear-gradient(160deg, #9b7bff 0%, #7aa0ff 80%);
+	color: #fff;
+	border-radius: 16px;
+	padding: 16px 14px;
+	display: grid;
+	row-gap: 8px;
+	text-align: center;
+	box-shadow: 0 14px 30px rgba(13, 18, 38, 0.15);
+	animation: fade-up 0.7s ease both;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transform-style: preserve-3d;
+	cursor: pointer;
+}
+
+.social-card:active {
+	animation: click-pulse 0.4s ease-out;
+}
+
+.social-card:hover {
+	transform: translateY(-8px) rotateX(3deg);
+	box-shadow: 0 25px 50px rgba(13, 18, 38, 0.25);
+	filter: brightness(1.1);
+}
+
+.social-card:hover .social-icon {
+	animation: pulse 1s ease-in-out infinite;
+	transform: scale(1.15);
+}
+
+.social-title {
+	font-weight: 700;
+}
+
+.social-icon {
+	font-size: 22px;
+	color: #fff;
+	opacity: 0.92;
+	transition: all 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+	color: #fff;
+	opacity: 1;
+}
+
+.social-handle {
+	font-size: 14px;
+	opacity: 0.9;
+}
+
+/* Hover : textes plus voyants sur les réseaux */
+.social-card:hover .social-title,
+.social-card:hover .social-handle {
+	color: #324577; /* bleu foncé adouci pour contraste */
+	opacity: 1;
+}
+
+body.theme-dark .social-card:hover .social-title,
+body.theme-dark .social-card:hover .social-handle {
+	color: #e9edff;
+}
+
+/* Sections en mode sombre */
+body.theme-dark .about {
+	background: #0d1228;
+	color: #f5f7ff;
+}
+
+body.theme-dark .projects {
+	background: #0a0f2a;
+	color: #f5f7ff;
+}
+
+body.theme-dark .contact {
+	background: #0d1228;
+	color: #f5f7ff;
+}
+
+body.theme-dark .pillar {
+	background: #1a1f3e;
+	border-color: rgba(122, 160, 255, 0.3);
+	color: #f5f7ff;
+}
+
+body.theme-dark .section-kicker {
+	color: #7aa0ff;
+}
+
+body.theme-dark .contact-text p {
+	color: #b8c5d6;
+}
+
+body.theme-dark .pillar p {
+	color: #b8c5d6;
+}
+
+body.theme-dark .pillar h4 {
+	color: #f5f7ff;
+}
+
+body.theme-dark .project-card ul {
+	color: #b8c5d6;
+}
+
+body.theme-dark .tools {
+	color: #b8c5d6;
+}
+
+body.theme-dark .tools-secondary {
+	color: #9ba8c0;
+}
+
+body.theme-dark .project-card:hover .tools {
+	color: #7aa0ff;
+}
+
+body.theme-dark .project-card:hover .tools-secondary {
+	color: #7aa0ff;
+}
+
+body.theme-dark .tool-icon {
+	filter: invert(0.8) brightness(1.1);
+}
+
+body.theme-dark .tool-icon-aa {
+	filter: invert(0.8) brightness(1.1);
+}
+
+body.theme-dark .project-card:hover .tool-icon {
+	filter: invert(0.9) brightness(1.3);
+}
+
+/* ====== 11. PIED DE PAGE (FOOTER) ====== */
+/* 4 colonnes avec liens (Confidentialité, Pages, Types, Contact) */
+.footer {
+	background: #2e3370;
+	color: #f5f7ff;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	gap: 14px;
+	padding: 26px 32px 32px;
+	animation: fade-up 0.9s ease both;
+}
+
+.footer-col {
+	animation: fade-up 0.7s ease both;
+}
+
+.footer-col:nth-child(1) { animation-delay: 0.2s; }
+.footer-col:nth-child(2) { animation-delay: 0.3s; }
+.footer-col:nth-child(3) { animation-delay: 0.4s; }
+.footer-col:nth-child(4) { animation-delay: 0.5s; }
+
+.footer h4 {
+	margin: 0 0 10px;
+	font-size: 14px;
+	transition: color 0.2s ease;
+}
+
+.footer a {
+	color: #dfe3ff;
+	display: block;
+	margin: 3px 0;
+	font-size: 13px;
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer a:hover {
+	color: #b8bfff;
+	transform: translateX(4px);
+}
+
+/* Animations globales */
+@keyframes fade-up {
+	0% { opacity: 0; transform: translateY(14px); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slow-float {
+	0% { transform: translateY(0) scale(1); }
+	100% { transform: translateY(-14px) scale(1.02); }
+}
+
+@keyframes float-soft {
+	0% { transform: translateY(0) translateX(0); }
+	50% { transform: translateY(-10px) translateX(6px); }
+	100% { transform: translateY(0) translateX(0); }
+}
+
+/* ====== NOUVELLES ANIMATIONS INTERACTIVES ====== */
+/* Animation d'onde au clic (ripple) */
+@keyframes ripple {
+	0% {
+		width: 0;
+		height: 0;
+		opacity: 0.8;
+	}
+	100% {
+		width: 300px;
+		height: 300px;
+		opacity: 0;
+	}
+}
+
+/* Animation de pulsation au clic */
+@keyframes click-pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.08);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Animation de brillance */
+@keyframes shine-effect {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}
+}
+
+/* Animation de secousse subtile */
+@keyframes wobble {
+	0%, 100% {
+		transform: rotateZ(0deg);
+	}
+	15% {
+		transform: rotateZ(-0.5deg);
+	}
+	30% {
+		transform: rotateZ(0.5deg);
+	}
+	45% {
+		transform: rotateZ(-0.5deg);
+	}
+	60% {
+		transform: rotateZ(0.5deg);
+	}
+	75% {
+		transform: rotateZ(-0.5deg);
+	}
+}
+
+/* Animation de bounce pour les éléments importants */
+@keyframes bounce-in {
+	0% {
+		opacity: 0;
+		transform: translateY(20px) scale(0.95);
+	}
+	50% {
+		transform: translateY(-5px) scale(1.02);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+/* Animation glow au clic */
+@keyframes glow-effect {
+	0% {
+		box-shadow: 0 0 0 0 rgba(122, 160, 255, 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 20px rgba(122, 160, 255, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(122, 160, 255, 0);
+	}
+}
+
+/* Animation de couleur pour les titres */
+@keyframes color-shift {
+	0%, 100% {
+		color: #0f1426;
+	}
+	50% {
+		color: #7aa0ff;
+	}
+}
+
+/* Animation de rotation subtile */
+@keyframes rotate-subtle {
+	0%, 100% {
+		transform: rotateZ(0deg);
+	}
+	25% {
+		transform: rotateZ(1deg);
+	}
+	75% {
+		transform: rotateZ(-1deg);
+	}
+}
+
+/* Stagger léger pour les grilles */
+.card:nth-child(2) { animation-delay: 0.08s; }
+.card:nth-child(3) { animation-delay: 0.12s; }
+.card:nth-child(4) { animation-delay: 0.16s; }
+.card:nth-child(5) { animation-delay: 0.2s; }
+.card:nth-child(6) { animation-delay: 0.24s; }
+
+.project-card:nth-child(2) { animation-delay: 0.08s; }
+.project-card:nth-child(3) { animation-delay: 0.12s; }
+.project-card:nth-child(4) { animation-delay: 0.16s; }
+.project-card:nth-child(5) { animation-delay: 0.2s; }
+.project-card:nth-child(6) { animation-delay: 0.24s; }
+
+.social-card:nth-child(2) { animation-delay: 0.08s; }
+.social-card:nth-child(3) { animation-delay: 0.12s; }
+.social-card:nth-child(4) { animation-delay: 0.16s; }
+
+/* ====== 12. ANIMATIONS & RESPONSIVE ====== */
+/* Réduction des animations si préférences utilisateur (accessibilité) */
+@media (prefers-reduced-motion: reduce) {
+	* { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* ========== STYLES POUR PAGES ARTICLE ========== */
+
+/* Container principal article */
+.article-page {
+	background: #f7f8fb;
+	color: #0f1426;
+	padding: 120px 48px 60px;
+}
+
+.article-container {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: 48px;
+}
+
+/* Contenu principal */
+.article-main {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 38px 42px;
+	box-shadow: 0 16px 36px rgba(15, 20, 38, 0.08);
+	animation: fade-up 0.8s ease both;
+}
+
+.article-tag {
+	display: inline-block;
+	background: #ffffff;
+	color: #7a8ba8;
+	padding: 6px 14px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 700;
+	margin-bottom: 18px;
+	animation: fade-up 0.6s ease 0.2s both;
+}
+
+.article-title {
+	margin: 0 0 16px;
+	font-size: clamp(26px, 3.8vw, 38px);
+	line-height: 1.3;
+	font-family: var(--font-display);
+	animation: fade-up 0.7s ease 0.3s both;
+}
+
+.article-meta {
+	display: flex;
+	gap: 18px;
+	margin-bottom: 28px;
+	padding-bottom: 22px;
+	border-bottom: 1px solid #e6e8f5;
+	color: #5a6b8a;
+	font-size: 14px;
+}
+
+.article-content {
+	line-height: 1.8;
+	color: #2a3548;
+	animation: fade-up 0.8s ease 0.4s both;
+}
+
+.article-content p {
+	margin: 0 0 18px;
+}
+
+.article-content h2 {
+	margin: 32px 0 14px;
+	font-size: 26px;
+	color: #0f1426;
+}
+
+.article-content h3 {
+	margin: 24px 0 12px;
+	font-size: 20px;
+	color: #1a2537;
+}
+
+.article-content ul, .article-content ol {
+	margin: 16px 0;
+	padding-left: 28px;
+}
+
+.article-content li {
+	margin: 8px 0;
+}
+
+/* Vidéo embarquée */
+.article-video {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	margin: 28px 0;
+	border-radius: 12px;
+	background: #000;
+	box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-video:hover {
+	transform: scale(1.01);
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.article-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+/* Navigation entre articles */
+.article-nav {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 42px;
+	padding-top: 28px;
+	border-top: 1px solid #e6e8f5;
+}
+
+.article-nav a {
+	padding: 10px 18px;
+	border-radius: 10px;
+	background: #f4f6ff;
+	color: #4e6ef2;
+	font-weight: 600;
+	transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-nav a:hover {
+	background: #e8ebff;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(78, 110, 242, 0.15);
+}
+
+/* Sidebar */
+.article-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.sidebar-section {
+	background: #ffffff;
+	border-radius: 14px;
+	padding: 24px;
+	box-shadow: 0 12px 28px rgba(15, 20, 38, 0.06);
+	animation: fade-up 0.7s ease both;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar-section:nth-child(1) { 
+	animation-delay: 0.5s;
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+}
+.sidebar-section:nth-child(2) { animation-delay: 0.6s; }
+
+.sidebar-section:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 36px rgba(15, 20, 38, 0.1);
+}
+
+.sidebar-section h3 {
+	margin: 0 0 18px;
+	font-size: 18px;
+	color: #0f1426;
+	flex-shrink: 0;
+}
+
+/* Posts récents */
+.recent-posts {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.recent-post-item {
+	padding-bottom: 14px;
+	border-bottom: 1px solid #f0f2f8;
+	transition: transform 0.2s ease;
+}
+
+.recent-post-item:hover {
+	transform: translateX(4px);
+}
+
+.recent-post-item:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.recent-post-item h4 {
+	margin: 0 0 6px;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+.recent-post-item a {
+	color: #2a3548;
+	transition: color 0.2s ease;
+}
+
+.recent-post-item a:hover {
+	color: #4e6ef2;
+}
+
+body.theme-dark .recent-post-item {
+	border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .sidebar-section h3 {
+	color: #e4e7f7;
+}
+
+.recent-post-item time {
+	font-size: 13px;
+	color: #7a8ba8;
+}
+
+/* Liste catégories */
+.category-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.category-list li a {
+	display: block;
+	padding: 9px 14px;
+	border-radius: 8px;
+	background: #f7f9ff;
+	color: #3a4a68;
+	font-size: 14px;
+	transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.category-list li a:hover {
+	background: #e8ebff;
+	color: #4e6ef2;
+	transform: translateX(4px);
+}
+
+body.theme-dark .category-list li a {
+	background: rgba(122, 160, 255, 0.15);
+	color: #9bb7ff;
+}
+
+body.theme-dark .category-list li a:hover {
+	background: rgba(122, 160, 255, 0.25);
+	color: #c5d9ff;
+}
+
+/* Responsif : tablettes */
+@media (max-width: 960px) {
+	.topbar {
+		padding: 14px 22px;
+	}
+	.nav-links {
+		display: none;
+	}
+	.hero {
+		padding: 110px 24px 72px;
+	}
+	.domains {
+		padding: 18px 24px 78px;
+	}
+	.domains-grid {
+		flex-wrap: wrap;
+	}
+	.card {
+		flex: 1 1 calc(50% - 9px);
+		min-width: 200px;
+	}
+	.about {
+		grid-template-columns: 1fr;
+		padding: 78px 24px 96px;
+	}
+	.about-media {
+		min-height: 380px;
+	}
+	.projects {
+		padding: 72px 24px 84px;
+	}
+	.projects-grid {
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	}
+	.contact {
+		padding: 72px 24px 54px;
+		grid-template-columns: 1fr;
+	}
+	.social-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.footer {
+		padding: 38px 24px 44px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Responsif : mobile */
+@media (max-width: 640px) {
+	.topbar {
+		gap: 12px;
+	}
+	.brand {
+		font-size: 16px;
+	}
+	.btn.ghost {
+		padding: 8px 12px;
+		font-size: 13px;
+	}
+	.hero-actions {
+		flex-direction: column;
+	}
+	.domains-grid {
+		flex-wrap: wrap;
+	}
+	.card {
+		min-height: 0;
+		flex: 1 1 calc(50% - 9px);
+		min-width: 140px;
+	}
+	.pillars {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.about-actions {
+		flex-direction: column;
+	}
+	.social-grid {
+		grid-template-columns: 1fr;
+	}
+	.projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.footer {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.footer .footer-col:last-child {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.contact-text .btn {
+		width: 100%;
+	}
+	/* Article responsive mobile */
+	.article-container {
+		grid-template-columns: 1fr;
+		padding: 0;
+	}
+	.article-page {
+		padding: 100px 16px 40px;
+	}
+	.article-main {
+		padding: 24px 18px;
+	}
+	.article-nav {
+		flex-direction: column;
+	}
+}
+
+/* ========== ANIMATIONS ADDITIONNELLES ========== */
+
+/* Animation de glow sur les éléments focalisés */
+*:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+	border-radius: 8px;
+}
+
+/* Animation de chargement pour les images */
+img {
+	animation: fadeInUp 0.6s ease both;
+}
+
+/* Smooth scroll global */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Animations pour les listes */
+ul li, ol li {
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+ul li:hover, ol li:hover {
+	transform: translateX(4px);
+	color: var(--accent);
+}
+
+/* Animation de typing pour les titres (optionnelle) */
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+/* Hover effect pour les liens */
+a:not(.btn):not(.nav-links a) {
+	position: relative;
+	transition: color 0.2s ease;
+}
+
+a:not(.btn):not(.nav-links a):hover {
+	color: var(--accent);
+}
+
+/* Animation de bounce pour attirer l'attention */
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-10px);
+	}
+	60% {
+		transform: translateY(-5px);
+	}
+}
+
+/* Classe utilitaire pour animation bounce */
+.animate-bounce {
+	animation: bounce 2s ease-in-out infinite;
+}
+
+/* Animation de rotation */
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Effet de loading sur les boutons */
+.btn.loading::after {
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: rotate 0.8s linear infinite;
+}
+
+/* Animation pour les tooltips */
+[data-tooltip] {
+	position: relative;
+	cursor: help;
+}
+
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-8px);
+	padding: 8px 12px;
+	background: rgba(0, 0, 0, 0.9);
+	color: white;
+	border-radius: 8px;
+	font-size: 13px;
+	white-space: nowrap;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[data-tooltip]:hover::after {
+	opacity: 1;
+	transform: translateX(-50%) translateY(-4px);
+}
+
+/* ====== ANIMATIONS CONTINUES ====== */
+
+/* Animation permanente des icônes de cartes */
+.card-icon {
+	animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Animation permanente des icônes de projets */
+.project-icon {
+	animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Animation permanente des icônes de piliers */
+.pillar-icon {
+	animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* Animation permanente des icônes sociales */
+.social-icon {
+	animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Animation permanente sur les boutons de contact */
+.contact-buttons .btn {
+	animation: scale-pulse 2.5s ease-in-out infinite;
+}
+
+.contact-buttons .btn:nth-child(1) { animation-delay: 0s; }
+.contact-buttons .btn:nth-child(2) { animation-delay: 0.3s; }
+
+/* Animation flottante pour les icônes de projet */
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+/* Animation de pulsation lumineuse */
+@keyframes pulse-glow {
+	0%, 100% {
+		transform: scale(1);
+		filter: drop-shadow(0 0 0px var(--accent));
+	}
+	50% {
+		transform: scale(1.05);
+		filter: drop-shadow(0 0 5px var(--accent));
+	}
+}
+
+/* Animation de rotation subtile */
+@keyframes rotate-subtle {
+	0%, 100% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-3deg);
+	}
+	75% {
+		transform: rotate(3deg);
+	}
+}
+
+/* Animation de pulsation d'échelle */
+@keyframes scale-pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.02);
+	}
+}
+
+/* Animation de lévitation pour les cartes */
+@keyframes float-card {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-3px);
+	}
+}
+
+/* Animation de gradient */
+@keyframes gradient-shift {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Animation du fond hero rose → violet → bleu → violet → rose en boucle fluide */
+@keyframes hero-color-wave {
+	0% {
+		background: radial-gradient(circle at 20% 20%, rgba(255, 127, 180, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(255, 127, 180, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(255, 127, 180, 0.45), transparent 42%);
+	}
+	10% {
+		background: radial-gradient(circle at 20% 20%, rgba(212, 106, 213, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(212, 106, 213, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(212, 106, 213, 0.45), transparent 42%);
+	}
+	20% {
+		background: radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(168, 85, 247, 0.45), transparent 42%);
+	}
+	30% {
+		background: radial-gradient(circle at 20% 20%, rgba(113, 107, 246, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(113, 107, 246, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(113, 107, 246, 0.45), transparent 42%);
+	}
+	40% {
+		background: radial-gradient(circle at 20% 20%, rgba(58, 130, 246, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(58, 130, 246, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(58, 130, 246, 0.45), transparent 42%);
+	}
+	50% {
+		background: radial-gradient(circle at 20% 20%, rgba(113, 107, 246, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(113, 107, 246, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(113, 107, 246, 0.45), transparent 42%);
+	}
+	60% {
+		background: radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(168, 85, 247, 0.45), transparent 42%);
+	}
+	70% {
+		background: radial-gradient(circle at 20% 20%, rgba(212, 106, 213, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(212, 106, 213, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(212, 106, 213, 0.45), transparent 42%);
+	}
+	80% {
+		background: radial-gradient(circle at 20% 20%, rgba(255, 127, 180, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(255, 127, 180, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(255, 127, 180, 0.45), transparent 42%);
+	}
+	100% {
+		background: radial-gradient(circle at 20% 20%, rgba(255, 127, 180, 0.55), transparent 35%),
+					radial-gradient(circle at 85% 30%, rgba(255, 127, 180, 0.5), transparent 38%),
+					radial-gradient(circle at 60% 80%, rgba(255, 127, 180, 0.45), transparent 42%);
+	}
+}
+
+/* Animation permanente du logo */
+.brand {
+	animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Animation permanente sur les liens de navigation */
+.nav-links a {
+	animation: float 2s ease-in-out infinite;
+}
+
+.nav-links a:nth-child(1) { animation-delay: 0s; }
+.nav-links a:nth-child(2) { animation-delay: 0.2s; }
+.nav-links a:nth-child(3) { animation-delay: 0.4s; }
+
+/* Animation des boutons hero */
+.hero-actions .btn.primary {
+	animation: scale-pulse 2s ease-in-out infinite;
+}
+
+/* Animation des piliers */
+.pillar {
+	animation: float-card 3s ease-in-out infinite;
+}
+
+.pillar:nth-child(1) { animation-delay: 0s; }
+.pillar:nth-child(2) { animation-delay: 0.3s; }
+.pillar:nth-child(3) { animation-delay: 0.6s; }
+.pillar:nth-child(4) { animation-delay: 0.9s; }
+
+/* Animation des cartes sociales */
+.social-card {
+	animation: float-card 3.5s ease-in-out infinite;
+}
+
+.social-card:nth-child(1) { animation-delay: 0s; }
+.social-card:nth-child(2) { animation-delay: 0.25s; }
+.social-card:nth-child(3) { animation-delay: 0.5s; }
+.social-card:nth-child(4) { animation-delay: 0.75s; }
+
+/* Animation de brillance */
+@keyframes shine {
+	0% {
+		background-position: -200% center;
+	}
+	100% {
+		background-position: 200% center;
+	}
+}
+
+/* Animation permanente sur les cartes */
+.card {
+	animation: float-card 4s ease-in-out infinite;
+}
+
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.3s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.9s; }
+.card:nth-child(5) { animation-delay: 1.2s; }
+
+/* Animation permanente sur les cartes de projets */
+.project-card {
+	animation: float-card 3.5s ease-in-out infinite;
+}
+
+.project-card:nth-child(1) { animation-delay: 0s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.4s; }
+.project-card:nth-child(4) { animation-delay: 0.6s; }
+.project-card:nth-child(5) { animation-delay: 0.8s; }
+.project-card:nth-child(6) { animation-delay: 1s; }
+
+/* Effet de brillance sur les cartes au hover */
+.card::before,
+.project-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.1),
+		transparent
+	);
+	transition: left 0.5s;
+}
+
+.card:hover::before,
+.project-card:hover::before {
+	left: 100%;
+}
+
+/* Animation des boutons au hover */
+.btn {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	transform: translate(-50%, -50%);
+	transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn:hover::after {
+	width: 300px;
+	height: 300px;
+}
+
+/* Animation du logo au chargement */
+@keyframes logo-glow {
+	0%, 100% {
+		text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
+	}
+	50% {
+		text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+	}
+}
+
+.brand {
+	animation: logo-glow 3s ease-in-out infinite;
+}
+
+/* Animation des icônes sociales au hover */
+.social-icon {
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+	animation: bounce 0.6s ease;
+}
+
+/* Animation des liens de navigation */
+.nav-links a {
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+	transform: translateY(-2px);
+}
+
+/* Animation de fade in pour les éléments révélés */
+.js-reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Délais progressifs pour les révélations */
+.domains .card:nth-child(1) { transition-delay: 0.1s; }
+.domains .card:nth-child(2) { transition-delay: 0.2s; }
+
+/* ====== GALERIE PHOTO ====== */
+/* Grille responsive pour afficher les photos */
+.photo-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 16px;
+	margin: 30px 0;
+}
+
+.photo-gallery img {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
+}
+
+.photo-gallery img:hover {
+	transform: scale(1.05) translateY(-8px);
+	box-shadow: 0 16px 40px rgba(122, 160, 255, 0.3);
+	filter: brightness(1.1);
+}
+
+/* ====== CARROUSEL D'IMAGES ====== */
+/* Carrousel interactif avec boutons prev/next */
+.carousel {
+	margin: 40px 0;
+}
+
+.carousel h3 {
+	color: var(--accent);
+	font-size: 1.6rem;
+	margin-bottom: 20px;
+	text-align: center;
+	font-family: var(--font-display);
+}
+
+.carousel-container {
+	position: relative;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	border-radius: var(--radius);
+	overflow: hidden;
+	background: var(--card);
+	box-shadow: var(--shadow);
+}
+
+.carousel-images {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.carousel-image {
+	display: none;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.carousel-image.active {
+	display: block;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.carousel-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(122, 160, 255, 0.9);
+	color: white;
+	border: none;
+	font-size: 2rem;
+	padding: 16px 20px;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	z-index: 10;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+	background: rgba(122, 160, 255, 1);
+	transform: translateY(-50%) scale(1.1);
+	box-shadow: 0 6px 24px rgba(122, 160, 255, 0.5);
+}
+
+.carousel-btn.prev {
+	left: 20px;
+}
+
+.carousel-btn.next {
+	right: 20px;
+}
+
+@media (max-width: 768px) {
+	.photo-gallery {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 12px;
+	}
+	
+	.photo-gallery img {
+		height: 150px;
+	}
+	
+	.carousel-images {
+		height: 300px;
+	}
+	
+	.carousel-btn {
+		font-size: 1.5rem;
+		padding: 12px 16px;
+	}
+	
+	.carousel-btn.prev {
+		left: 10px;
+	}
+	
+	.carousel-btn.next {
+		right: 10px;
+	}
+}
+.domains .card:nth-child(3) { transition-delay: 0.3s; }
+.domains .card:nth-child(4) { transition-delay: 0.4s; }
+.domains .card:nth-child(5) { transition-delay: 0.5s; }
+
+.projects .project-card:nth-child(1) { transition-delay: 0.1s; }
+.projects .project-card:nth-child(2) { transition-delay: 0.2s; }
+.projects .project-card:nth-child(3) { transition-delay: 0.3s; }
+.projects .project-card:nth-child(4) { transition-delay: 0.4s; }
+.projects .project-card:nth-child(5) { transition-delay: 0.5s; }
+.projects .project-card:nth-child(6) { transition-delay: 0.6s; }
+
+/* Animation du background hero */
+.hero-bg {
+	animation: gradient-shift 15s ease infinite;
+	background-size: 200% 200%;
+}
+
+/* Effet de vague sur les piliers */
+.pillar {
+	transition: all 0.3s ease;
+}
+
+.pillar:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 24px rgba(122, 160, 255, 0.3);
+}
+
+/* Animation du footer au scroll */
+.footer .footer-col {
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeInUp 0.6s ease forwards;
+}
+
+.footer .footer-col:nth-child(1) { animation-delay: 0.1s; }
+.footer .footer-col:nth-child(2) { animation-delay: 0.2s; }
+.footer .footer-col:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

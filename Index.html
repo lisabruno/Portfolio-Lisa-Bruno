@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<!-- ======================================
+		 MÉTADONNÉES & RESSOURCES
+		 ====================================== -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Portfolio de Lisa Bruno - Étudiante en BUT MMI. Animation 2D/3D, Motion Design, Communication, Photographie, Montage Vidéo et Écriture.">
+	<meta name="theme-color" content="#7aa0ff">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Portfolio - Lisa Bruno">
+	<meta property="og:description" content="Découvrez les projets créatifs de Lisa Bruno : animation, design, vidéo et photographie.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://lisabruno-portfolio.com">
+	<meta property="og:image" content="https://lisabruno-portfolio.com/og-image.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Portfolio - Lisa Bruno">
+	<meta name="twitter:description" content="Animation 2D/3D • Motion Design • Communication • Photographie">
+	<title>Portfolio - Lisa Bruno | Animation & Motion Design</title>
+	
+	<!-- Préchargement des ressources critiques -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	
+	<!-- Feuille de styles principale -->
+	<link rel="stylesheet" href="styles/Style.css">
+	
+	<!-- Script d'animations et d'interactions (déféré pour ne pas bloquer) -->
+	<script src="Animations/Responsive.js" defer></script>
+	
+	<!-- Fichier d'optimisations supplémentaires -->
+	<script src="Animations/optimized.js" defer></script>
+	<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237aa0ff'>L</text></svg>">
+</head>
+<body>
+	<!-- ======================================
+		 NAVIGATION PRINCIPALE (FIXE)
+		 ====================================== -->
+	<header class="topbar">
+		<div class="brand">Portfolio de Lisa Bruno</div>
+		<nav class="nav-links">
+			<a href="#hero">Accueil</a>
+			<a href="projets.html">Projets</a>
+			<a href="#about">Qui suis-je ?</a>
+		</nav>
+		<div style="display: flex; gap: 10px; align-items: center;">
+			<button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Activer le mode sombre">
+				<span class="theme-toggle-thumb"></span>
+			</button>
+			<a class="btn ghost" href="Pages_Projets/cv.html">Mon CV</a>
+		</div>
+	</header>
+
+	<!-- Wrapper pour le bandeau animé (hero + domaines) - avant main pour couvrir depuis le début -->
+	<div class="hero-wrapper">
+		<div class="hero-banner-bg"></div>
+
+	<main>
+			
+			<!-- ======================================
+				 SECTION HÉRO (ACCUEIL)
+				 ====================================== -->
+			<!-- Section d'ouverture avec titre, sous-titre et appels à l'action -->
+			<section class="hero" id="hero">
+				<div class="hero-content">
+					<div class="eyebrow">Lisa Bruno — étudiante en 1ère année de BUT MMI</div>
+					<h1>Portfolio</h1>
+					<p class="lead">Créa, motion design, web, vidéo, photo et écriture. Je partage ici mes projets et montre mes compétences.</p>
+					<div class="hero-actions">
+						<a class="btn primary" href="#projects">Voir mes projets</a>
+						<a class="btn secondary" href="#about">Voir qui je suis</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- ======================================
+				 SECTION DOMAINES DE COMPÉTENCE
+				 (Grille de 5 domaines avec icônes)
+				 ====================================== -->
+			<!-- Grille des domaines de compétences -->
+			<section class="domains" id="projects">
+			<div class="domains-grid">
+				<article class="card">
+				<a href="animation.html" class="card-link">
+						<div class="card-icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="3" width="20" height="14" rx="2"/>
+								<path d="M8 21h8"/>
+								<path d="M12 17v4"/>
+								<path d="m10 8 6 4-6 4V8z"/>
+							</svg>
+						</div>
+						<h3>Motion 2D/3D - Animation 2D - Rigging 2D</h3>
+					</a>
+				</article>
+				<article class="card">
+				<a href="communication.html" class="card-link">
+						<div class="card-icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M3 11v3a1 1 0 0 0 1 1h2.5l3.5 3V8l-3.5 3H4a1 1 0 0 0-1 1z"/>
+								<path d="M13.5 8.5c1 1 1.5 2.5 1.5 4s-.5 3-1.5 4"/>
+								<path d="M17 6c2 2 3 4.5 3 7s-1 5-3 7"/>
+							</svg>
+						</div>
+						<h3>Communication</h3>
+					</a>
+				</article>
+				<article class="card">
+			<a href="realisation.html" style="text-decoration: none; color: inherit; display: contents;">
+					<div class="card-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M23 7l-7 5 7 5V7z"/>
+							<rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+						</svg>
+					</div>
+					<h3>Montage Vidéo - Réalisation</h3>
+				</a>
+				</article>
+				<article class="card">
+				<a href="Photo.html" style="text-decoration: none; color: inherit; display: contents;">
+						<div class="card-icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+								<circle cx="12" cy="13" r="4"/>
+							</svg>
+						</div>
+						<h3>Photographie - Retouche Photo</h3>
+					</a>
+				</article>
+				<article class="card">
+				<a href="Ecriture-art.html" style="text-decoration: none; color: inherit; display: contents;">
+						<div class="card-icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M12 19l7-7 3 3-7 7-3-3z"/>
+								<path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+								<path d="M2 2l7.586 7.586"/>
+								<circle cx="11" cy="11" r="2"/>
+							</svg>
+						</div>
+						<h3>Art - Écriture</h3>
+					</a>
+				</article>
+			</div>
+		</section>
+		</div> <!-- Fin du hero-wrapper -->
+
+		<!-- ======================================
+			 SECTION "QUI SUIS-JE?"
+			 (Présentation personnelle + piliers)
+			 ====================================== -->
+		<!-- Bloc présentation personnelle -->
+		<section class="about" id="about">
+			<div class="about-media" aria-hidden="true"></div>
+			<div class="about-content">
+				<p class="section-kicker">Ma présentation</p>
+				<h2>Qui suis-je ?</h2>
+				<p>Je m'appelle Lisa Bruno et j'ai actuellement 18 ans. Je suis étudiante en BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT Bordeaux Montaigne, j'y apprends divers domaines, 
+					tels que la création, la communication, le développement. L'année prochaine je me spécialiserai en création, notamment pour poursuivre mes études dans l'animation 2D/3D, le rigging 2D/3D 
+					et le motion design.</p>
+				<p>Depuis mon plus jeune âge, je dessine et crée des histoires. A 10ans, je découvre l'animation, le rigging ainsi que le montage vidéo et décide de m'y mettre, 
+					j'essaie d'abord sur mon téléphone, sur capcut et alight motion en passant par flipnote studio sur ma Nintendo DSi, ce passage a duré 2ans, avant de passer sur 
+					ordinateur et tablette graphique. Alors, je découvre le monde de l'animation 2D en image par image avec Krita, puis adobe animate et fait ma premiere animation 2D en image par image 
+					à mes 13ans : Telepatia - Animation meme que j'ai posté sur ma chaine Youtube 'Lisauteur'. Plus tard, je découvre Adobe Animate et After Effects, puis Blender.
+				<p> Depuis, je suis passionnée de motion 2D/3D - rigging 2D - Animation 2D et continue à animer des projets plus ou moins gros. En parallèle, je m'intéresse aussi à la photographie, la retouche photo, le montage vidéo et la communication digitale.</p>
+				<div class="pillars">
+					<div class="pillar">
+						<div class="pillar-icon">🎨</div>
+						<div>
+							<h4>Créa</h4>
+							<p>Design, animation 2D, motion design.</p>
+						</div>
+					</div>
+					<div class="pillar">
+						<div class="pillar-icon">📸</div>
+						<div>
+							<h4>Photographie</h4>
+							<p>Photographie Reflex, retouche photo</p>
+						</div>
+					</div>
+					<div class="pillar">
+						<div class="pillar-icon">🎓</div>
+						<div>
+							<h4>BUT MMI</h4>
+							<p>Métiers du multimédia et de l’internet</p>
+						</div>
+					</div>
+					<div class="pillar">
+						<div class="pillar-icon">📍</div>
+						<div>
+							<h4>Bordeaux</h4>
+							<p>Et ses environs</p>
+						</div>
+					</div>
+				</div>
+				<div class="about-actions">
+					<a class="btn primary" href="Pages_Projets/cv.html">Voir mon CV</a>
+					<a class="btn secondary" id="cv" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Me contacter</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- ======================================
+			SECTION PROJETS PRINCIPAUX
+			(Grille de 8 cartes avec détails projet)
+			====================================== -->
+		<!-- Section projets principaux -->
+		<section class="projects" id="realizations">
+			<div class="projects-header">
+				<p class="section-kicker">Projets</p>
+				<h2>Voici les plus gros <span class="highlight">Projets</span></h2>
+			</div>
+			<div class="projects-grid">
+				<article class="project-card">
+					<div class="project-icon">⭐</div>
+					<h3>Animation meme IDFC - BlackBear</h3>
+					<p>Création de modèle 2D avec Illustrator, Animations en rigging 2D avec Adobe Animate, Mise en scène avec Blender 3D.</p>
+					<ul>
+						<li>Design de personnages</li>
+						<li>Rigging de personnage 2D</li>
+						<li>Motion 3D</li>
+					</ul>
+					<p class="tools">Logiciels : <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobeillustrator.svg" alt="Illustrator" class="tool-icon"> Illustrator • <span class="tool-icon tool-icon-aa" aria-label="Adobe Animate"></span> Animate • <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/blender.svg" alt="Blender" class="tool-icon"> Blender</p>
+					<p class="tools-secondary">📅 décembre 2025 - févrirer 2026 • Durée : 3 mois</p>
+				<a href="Projets/Animation/article-idfc.html" class="project-link">Voir le projet</a>
+				</article>
+				<article class="project-card">
+					<div class="project-icon">💫</div>
+					<h3>Telepatia - Animation meme</h3>
+					<p>Première animation 2D finie en Image par Image.</p>
+					<ul>
+						<li>Animation 2D en Image par Image</li>
+						<li>Motion Design</li>
+					</ul>
+					<p class="tools"><span class="tool-icon tool-icon-aa" aria-label="Adobe Animate"></span> Adobe Animate </p>
+					<p class="tools-secondary">📅 2021 • Durée : 3 mois</p>
+				<a href="Projets/Animation/article-Telepatia.html" class="project-link">Voir le projet</a>
+				</article>
+				<article class="project-card">					<div class="project-icon">⚡</div>
+					<h3>Motion Design</h3>
+					<p>Vulgarisation d'une théorie info-com : l'endogamie numériquement assistée de Pascal Lardellier.</p>
+					<ul>
+						<li>Motion Design</li>
+						<li>Character Animation</li>
+					</ul>
+					<p class="tools"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobeaftereffects.svg" alt="After Effects" class="tool-icon"> After Effects • <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobeillustrator.svg" alt="Illustrator" class="tool-icon"> Illustrator</p>
+					<p class="tools-secondary">📅 novembre 2025 • Durée : 1 semaine</p>
+				<a href="Projets/Animation/article-MotionDesign.html" class="project-link">Voir le projet</a>
+				</article>
+				<article class="project-card">					<div class="project-icon">📷</div>
+					<h3>Reportage Photo de tatouages</h3>
+					<p>Reportage photo en équipe autour des tatouages, prise de vue et retouches.</p>
+					<ul>
+						<li>Photographie Reflex</li>
+						<li>Retouche Photo</li>
+					</ul>
+					<p class="tools"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobelightroom.svg" alt="Lightroom" class="tool-icon"> Lightroom • <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobephotoshop.svg" alt="Photoshop" class="tool-icon"> Photoshop</p>
+					<p class="tools-secondary">📅 2024 • Durée : 1 mois</p>
+					<a href="Projets/Photo/article-tatouage.html" class="project-link">Voir le projet</a>
+				</article>
+				<article class="project-card">
+					<div class="project-icon">🎬</div>
+					<h3>Un dernier message...</h3>
+					<p>Script, tournage et montage d’un projet réalisé en une journée sur le sujet : un message.</p>
+					<ul>
+						<li>Écriture d'un script</li>
+						<li>Réalisation</li>
+						<li>Montage Vidéo</li>
+					</ul>					<p class="tools">Logiciels : <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobepremierepro.svg" alt="Premiere Pro" class="tool-icon"> Premiere Pro </p>
+				<p class="tools-secondary">📅 2024 • Durée : 1 jour</p>					<a href="Projets/realisation/article-message.html" class="project-link">Voir le projet</a>
+				</article>
+				<article class="project-card">
+					<div class="project-icon">💬</div>
+					<h3>Communication de @la.fee.du.tri</h3>
+					<p>Création de posts et reels pour une coach en rangement : @la.fee.du.tri</p>
+					<ul>
+						<li>Création de posts et reels</li>
+						<li>Analyse Social Media</li>
+					</ul>					<p class="tools">Logiciels : <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg" alt="Figma" class="tool-icon"> Figma • <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/canva.svg" alt="Canva" class="tool-icon"> Canva </p>
+				<p class="tools-secondary">📅 2024 • Durée : 1 semaine</p>					<a href="Projets/Communication/article-la.fee.du.tri.html" class="project-link">Voir le projet</a>
+				</article>
+			</div>
+		</section>
+
+		<!-- ======================================
+			 SECTION CONTACT & RÉSEAUX SOCIAUX
+			 (CTA + liens vers réseaux)
+			 ====================================== -->
+		<!-- Section contact + réseaux -->
+		<section class="contact" id="contact">
+			<div class="contact-text">
+				<p class="section-kicker">Contact</p>
+				<h2>Je pense que je serai un bon élément pour vous</h2>
+				<p>En 1ère année de BUT MMI à Bordeaux, j’accumule des compétences en créa et tech. Pour collaborer ou en savoir plus, voici mes réseaux et mon mail.</p>
+				<div class="contact-buttons">
+					<a class="btn primary" href="Pages_Projets/cv.html">Mon CV</a>
+				<a class="btn primary" href="#about">Qui suis-je ?</a>
+				</div>
+			</div>
+			<div class="social-grid" aria-label="Réseaux sociaux">
+				<a class="social-card" href="https://www.tiktok.com/@lisauteur" target="_blank" rel="noopener noreferrer">
+					<span class="social-title">Tiktok</span>
+					<span class="social-icon">🎵</span>
+					<span class="social-handle">lisauteur</span>
+				</a>
+				<a class="social-card" href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">
+					<span class="social-title">Instagram</span>
+					<span class="social-icon">📸</span>
+					<span class="social-handle">lisauteur</span>
+				</a>
+				<a class="social-card" href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">
+					<span class="social-title">Youtube</span>
+					<span class="social-icon">▶️</span>
+					<span class="social-handle">lisauteur</span>
+				</a>
+				<a class="social-card" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">
+					<span class="social-title">Mail</span>
+					<span class="social-icon">📧</span>
+					<span class="social-handle">bordeaux.lisabruno@gmail.com</span>
+				</a>
+			</div>
+		</section>
+
+		<!-- ======================================
+			 PIED DE PAGE
+			 (Liens footer, infos légales)
+			 ====================================== -->
+		<!-- Pied de page -->
+		<footer class="footer">
+			<div class="footer-col">
+				<h4>Domaines</h4>
+				<a href="Projets/Animation/article-idfc.html">Motion 2D/3D · Rigging 2D</a>
+				<a href="Projets/Communication/article-la.fee.du.tri.html">Communication</a>
+				<a href="Projets/realisation/article-montageavenir.html">Montage vidéo · Réalisation</a>
+				<a href="Projets/Photo/article-tatouage.html">Photographie · Retouche</a>
+				<a href="Projets/Ecriture-Dessin/article-Dessins.html">Art · Écriture</a>
+			</div>
+			<div class="footer-col">
+				<h4>Pages</h4>
+				<a href="#realizations">Tous les projets</a>
+				<a href="#about">Qui suis-je ?</a>
+				<a href="Pages_Projets/cv.html">Mon CV</a>
+			</div>
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+				<a href="tel:+33631019449">Tél : 06.31.01.94.49</a>
+				<a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+			</div>
+		</footer>
+	</main>
+</body>
+</html>

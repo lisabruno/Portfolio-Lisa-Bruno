@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CV - Lisa Bruno</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/Style.css">
+	<script src="../Animations/Responsive.js" defer></script>
+	<style>
+		/* Styles spécifiques pour la page CV */
+		.cv-container {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 40px 48px 80px;
+		}
+
+		.cv-header {
+			text-align: center;
+			padding: 40px 0 60px;
+			border-bottom: 1px solid var(--stroke);
+			margin-bottom: 50px;
+		}
+
+		.cv-header h1 {
+			font-family: var(--font-display);
+			font-size: clamp(36px, 5vw, 56px);
+			margin: 0 0 16px 0;
+			letter-spacing: -0.5px;
+		}
+
+		.cv-header .subtitle {
+			font-size: 20px;
+			color: var(--accent);
+			font-weight: 600;
+			margin-bottom: 24px;
+		}
+
+		.cv-contact {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 24px;
+			margin-top: 24px;
+		}
+
+		.cv-contact-item {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			color: var(--muted);
+			font-size: 15px;
+		}
+
+		.cv-contact-item svg {
+			width: 18px;
+			height: 18px;
+			stroke: var(--accent);
+		}
+
+		.cv-contact-item a {
+			color: var(--accent);
+			transition: color 0.2s ease;
+		}
+
+		.cv-contact-item a:hover {
+			color: var(--accent-2);
+		}
+
+		.cv-main-grid {
+			display: grid;
+			grid-template-columns: 1fr 350px;
+			gap: 40px;
+			align-items: start;
+		}
+
+		.cv-left-column {
+			min-width: 0;
+		}
+
+		.cv-right-column {
+			position: sticky;
+			top: 120px;
+		}
+
+		.cv-section {
+			margin-bottom: 50px;
+		}
+
+		.cv-section-title {
+			font-family: var(--font-display);
+			font-size: 28px;
+			margin-bottom: 24px;
+			padding-bottom: 12px;
+			border-bottom: 2px solid var(--accent);
+			display: inline-block;
+		}
+
+		.cv-item {
+			background: var(--card);
+			border: 1px solid var(--stroke);
+			border-radius: var(--radius);
+			padding: 24px;
+			margin-bottom: 20px;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.cv-item:hover {
+			transform: translateY(-2px);
+			box-shadow: var(--shadow);
+		}
+
+		.cv-item-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 12px;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.cv-item-title {
+			font-weight: 700;
+			font-size: 18px;
+			color: var(--text);
+			margin: 0;
+		}
+
+		.cv-item-subtitle {
+			font-weight: 600;
+			color: var(--accent);
+			margin: 4px 0 0 0;
+			font-size: 15px;
+		}
+
+		.cv-item-date {
+			color: var(--muted);
+			font-size: 14px;
+			font-weight: 600;
+			white-space: nowrap;
+		}
+
+		.cv-item-description {
+			color: var(--muted);
+			line-height: 1.6;
+			margin: 8px 0 0 0;
+		}
+
+		.cv-item-description ul {
+			margin: 8px 0 0 0;
+			padding-left: 20px;
+		}
+
+		.cv-item-description li {
+			margin-bottom: 6px;
+		}
+
+		.skills-grid {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+		}
+
+			.skill-category {
+				background: var(--card);
+				border: 1px solid var(--stroke);
+				border-radius: var(--radius);
+				padding: 18px;
+				overflow: visible;
+			}
+
+		.skill-category h4 {
+			font-weight: 700;
+			color: var(--accent);
+			margin: 0 0 12px 0;
+			font-size: 16px;
+		}
+
+			.skill-tags {
+				display: flex;
+				gap: 8px;
+				flex: 1 1 auto;
+				min-width: 0;
+				flex-wrap: wrap;
+				overflow: visible;
+				white-space: normal;
+			}
+
+			.skill-tag {
+				display: inline-block;
+				white-space: normal;
+				overflow: visible;
+				text-overflow: clip;
+			}
+
+			.skill-row {
+				display: flex;
+				gap: 12px;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.skill-meta {
+				flex: 0 0 auto;
+				max-width: none;
+				margin-left: 12px;
+				text-align: right;
+				overflow: visible;
+				white-space: normal;
+			}
+
+			.skill-tags::-webkit-scrollbar { display: none; }
+
+			@media (max-width: 600px) {
+				.skill-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+				.skill-meta { white-space: normal; margin-left: 0; max-width: 100%; text-align: left; }
+				.skill-tags { overflow: visible; white-space: normal; flex-wrap: wrap; }
+			}
+
+		.skill-tag {
+			background: rgba(122, 160, 255, 0.15);
+			border: 1px solid rgba(122, 160, 255, 0.3);
+			padding: 6px 12px;
+			border-radius: 8px;
+			font-size: 13px;
+			font-weight: 600;
+			color: var(--text);
+		}
+
+			.skill-meta {
+				margin-top: 12px;
+				font-size: 13px;
+				color: var(--muted);
+			}
+
+			.skill-meta strong {
+				color: var(--accent);
+				font-weight:600;
+				margin-right:6px;
+			}
+
+		.cv-download {
+			text-align: center;
+			margin-top: 60px;
+			padding-top: 40px;
+			border-top: 1px solid var(--stroke);
+		}
+
+		@media (max-width: 968px) {
+			.cv-main-grid {
+				grid-template-columns: 1fr;
+				gap: 30px;
+			}
+
+			.cv-right-column {
+				position: static;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.cv-container {
+				padding: 24px 24px 60px;
+			}
+
+			.cv-header {
+				padding: 24px 0 40px;
+			}
+
+			.cv-contact {
+				flex-direction: column;
+				align-items: center;
+				gap: 16px;
+			}
+
+			.cv-item-header {
+				flex-direction: column;
+			}
+
+			.cv-item-date {
+				align-self: flex-start;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Barre de navigation fixe -->
+	<header class="topbar">
+		<div class="brand">Portfolio de Lisa Bruno</div>
+		<nav class="nav-links">
+			<a href="../Index.html#hero">Accueil</a>
+			<a href="../projets.html">Projets</a>
+			<a href="../Index.html#about">Qui suis-je ?</a>
+		</nav>
+		<div style="display: flex; gap: 10px; align-items: center;">
+			<button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Activer le mode sombre">
+				<span class="theme-toggle-thumb"></span>
+			</button>
+			<a class="btn ghost" href="cv.html">Mon CV</a>
+		</div>
+	</header>
+
+	<main>
+		<div class="cv-container">
+			<!-- En-tête du CV -->
+			<div class="cv-header">
+				<h1>Lisa Bruno</h1>
+				<p class="subtitle">Étudiante en 1ère année de BUT MMI</p>
+				<p style="color: var(--muted); margin: 12px 0;">Recherche de stage du 25 mai au 27 juin 2026 voire plus et d'une alternance</p>
+				
+				<div class="cv-contact">
+					<div class="cv-contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+						</svg>
+						<a href="tel:0631019449">06.31.01.94.49</a>
+					</div>
+					<div class="cv-contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+							<polyline points="22,6 12,13 2,6"/>
+						</svg>
+						<a href="mailto:bordeaux.lisabruno@gmail.com">bordeaux.lisabruno@gmail.com</a>
+					</div>
+					<div class="cv-contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<circle cx="12" cy="10" r="3"/>
+							<path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/>
+						</svg>
+						<span>Bordeaux</span>
+					</div>
+					<div class="cv-contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+							<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+						</svg>
+						<a href="https://lisa-bruno.com" target="_blank">lisa-bruno.com</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Grille principale avec 2 colonnes -->
+			<div class="cv-main-grid">
+				<!-- Colonne de gauche : Expériences et Formation -->
+				<div class="cv-left-column">
+					<!-- Expériences -->
+					<section class="cv-section">
+						<h2 class="cv-section-title">Expériences</h2>
+						
+						<div class="cv-item">
+							<div class="cv-item-header">
+								<div>
+									<h3 class="cv-item-title">Projet de Motion Design</h3>
+									<p class="cv-item-subtitle"> iuyfyjfytfvgku </p>
+								</div>
+								<span class="cv-item-date">BUT MMI</span>
+							</div>
+							<p class="cv-item-description">
+								<p>- Prise en main d’after effect : motion design</p>
+								<p>- Apprentissage de sound design</p>
+								<p>- Conception de designs avec Illustrator</p>
+							</p>
+						</div>
+
+						<div class="cv-item">
+							<div class="cv-item-header">
+								<div>
+									<h3 class="cv-item-title">Projet Photographie</h3>
+									<p class="cv-item-subtitle">Type de projet</p>
+								</div>
+								<span class="cv-item-date">Date</span>
+							</div>
+							<p class="cv-item-description">
+							<p>>- Réalisation de prises de vue : composition, lumière, cadrage</p>
+							<p>- Retouche et post-production sur Photoshop et Lightroom</p>
+							<p>- Développement du sens esthétique et de la narration visuelle</p>
+							</p>
+						</div>
+
+						<div class="cv-item">
+							<div class="cv-item-header">
+								<div>
+									<h3 class="cv-item-title">Projet de communication</h3>
+									<p class="cv-item-subtitle">Type de projet</p>
+								</div>
+								<span class="cv-item-date">Date</span>
+							</div>
+							<p class="cv-item-description">
+							<p>- stratégie de communication : réalisation de 4 posts : 3 carrousels, 1 reel en suivant une DA (direction artistique)</p>
+							<p>- Analyse des chiffres de compte sur les réseaux sociaux</p>
+							</p>
+						</div>
+
+						<div class="cv-item">
+							<div class="cv-item-header">
+								<div>
+									<h3 class="cv-item-title">Projet 4</h3>
+									<p class="cv-item-subtitle">Type de projet</p>
+								</div>
+								<span class="cv-item-date">Date</span>
+							</div>
+							<p class="cv-item-description">
+								Description du projet à compléter.
+							</p>
+						</div>
+					</section>
+
+					<!-- Formation -->
+					<section class="cv-section">
+						<h2 class="cv-section-title">Formation</h2>
+						
+						<div class="cv-item">
+							<div class="cv-item-header">
+								<div>
+									<h3 class="cv-item-title">BUT Métiers du Multimédia et de l'Internet (MMI)</h3>
+									<p class="cv-item-subtitle">IUT Bordeaux Montaigne</p>
+								</div>
+								<span class="cv-item-date">2024 - 2027</span>
+							</div>
+							<p class="cv-item-description">
+								Première année en cours - Formation pluridisciplinaire couvrant la création graphique, le développement web, 
+								la production audiovisuelle et la communication digitale.
+							</p>
+						</div>
+
+						<div class="cv-item">
+							<div class="cv-item-header">
+								<div>
+									<h3 class="cv-item-title">Baccalauréat Général</h3>
+									<p class="cv-item-subtitle">Spécialités : Mathématiques, LLCE Anglais et NSI (abandonnée en 1ère)</p>
+								</div>
+								<span class="cv-item-date">2024</span>
+							</div>
+							<p class="cv-item-description">
+								Mention Assez Bien
+							</p>
+						</div>
+					</section>
+				</div>
+
+				<!-- Colonne de droite : Compétences et Centres d'intérêt -->
+				<div class="cv-right-column">
+					<!-- Compétences -->
+					<section class="cv-section">
+						<h2 class="cv-section-title">Compétences</h2>
+						<div class="skills-grid">
+							<div class="skill-category">
+								<h4>Compétences techniques</h4>
+								<div class="skill-row">
+									<div class="skill-tags">
+									<span class="skill-tag">Motion Design</span>
+									<span class="skill-tag">Animation 2D - image par image</span>
+									<span class="skill-tag">Dessin</span>
+									<span class="skill-tag">Motion 2D/3D</span>
+									<span class="skill-tag">Communication Digitale</span>
+									<span class="skill-tag">Montage Vidéo</span>
+									<span class="skill-tag">Design</span>
+									<span class="skill-tag">Prise de vue</span>
+									<span class="skill-tag">Retouche photo</span>
+									<span class="skill-tag">Analyse social media</span>
+									<span class="skill-tag">Stratégie digitale</span>
+								</div>
+
+							</div>
+							</div>
+
+							<div class="skill-category">
+								<h4>Logiciels maîtrisés</h4>
+								<div class="skill-row">
+									<div class="skill-tags">
+									<span class="skill-tag">Photoshop</span>
+									<span class="skill-tag">Illustrator</span>
+									<span class="skill-tag">InDesign</span>
+									<span class="skill-tag">Figma</span>
+									<span class="skill-tag">Lightroom</span>
+									<span class="skill-tag">After Effects</span>
+									<span class="skill-tag">Premiere Pro</span>
+									<span class="skill-tag">Adobe Animate</span>
+									<span class="skill-tag">Blender (2D et 3D)</span>
+									<span class="skill-tag">Krita - Paint tool sai</span>
+								</div>
+
+							</div>
+							</div>
+
+							<div class="skill-category">
+								<h4>Langues</h4>
+								<div class="skill-row">
+									<div class="skill-tags">
+									<span class="skill-tag">Français (Natif)</span>
+									<span class="skill-tag">Anglais (B2)</span>
+								</div>
+								</div>
+
+								</div>
+						</div>
+					</section>
+
+					<!-- Centres d'intérêt -->
+					<section class="cv-section">
+						<h2 class="cv-section-title">Centres d'intérêt</h2>
+						
+						<div class="cv-item">
+							<div class="cv-item-description">
+								<ul>
+									<li><strong>Animation + Motion 2D/3D :</strong> Passionnée par l'Animation'</li>
+									<li><strong>Photographie :</strong> J'aime bien la photographie ainsi que la retouche photo</li>
+									<li><strong>Communication :</strong> J'aime la communication digitale, stratégie de contenu et créer des Directions artistiques</li>
+									<li><strong>Cinéma et réalisation :</strong> Narration audiovisuelle et écriture de scénarios</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<!-- Bouton de téléchargement -->
+			<div class="cv-download">
+				<a class="btn primary" href="Lisa Bruno - Etudiante en BUT MMI Recherche de stage du 25 mai au 27 juin Numéro de téléphone  06.31.01.94.49 Mail  bordeaux.lisabruno@gmail.com Portfolio  httpslisa-bruno.com Lieu  bordeaux COMPÉ (1).pdf" download>
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+						<polyline points="7 10 12 15 17 10"/>
+						<line x1="12" y1="15" x2="12" y2="3"/>
+					</svg>
+					Télécharger le CV en PDF
+				</a>
+				<p style="margin-top: 16px; color: var(--muted); font-size: 14px;">
+					<a href="Index.html" style="color: var(--accent);">← Retour au portfolio</a>
+				</p>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="footer-col">
+				<h4>Domaines</h4>
+				<a href="../Projets/Animation/article-idfc.html">Motion 2D/3D · Rigging 2D</a>
+				<a href="../Projets/Communication/article-la.fee.du.tri.html">Communication</a>
+				<a href="../Projets/realisation/article-montageavenir.html">Montage vidéo · Réalisation</a>
+				<a href="../Projets/Photo/article-tatouage.html">Photographie · Retouche</a>
+				<a href="../Projets/Ecriture-Dessin/article-Dessins.html">Art · Écriture</a>
+			</div>
+			<div class="footer-col">
+				<h4>Pages</h4>
+				<a href="../projets.html">Tous les projets</a>
+				<a href="../Index.html#about">Qui suis-je ?</a>
+				<a href="../Pages_Projets/cv.html">Mon CV</a>
+			</div>
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+				<a href="tel:+33631019449">Tél : 06.31.01.94.49</a>
+				<a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+			</div>
+		</footer>
+	</main>
+</body>
+</html>
