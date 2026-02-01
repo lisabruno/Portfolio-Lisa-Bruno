@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /médias/
-Disallow: /Animations/
+Disallow: /Projets/Animation/
 Disallow: /*.json$
 
 Sitemap: https://lisabruno-portfolio.com/sitemap.xml
