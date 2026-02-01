@@ -92,6 +92,34 @@
             z-index: 1;
         }
         
+        .project-image {
+            width: 250px;
+            height: 180px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(122, 160, 255, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        /* Recadrage spécifique pour l'image Lisauteur */
+        .project-item:nth-child(2) .project-image img {
+            object-fit: contain;
+            object-position: center;
+        }
+        
+        .project-item:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
         .project-details {
             flex: 1;
             position: relative;
@@ -227,6 +255,9 @@
                 <!-- La Fée du Tri -->
                 <article class="project-item">
                     <div class="project-emoji">🧹</div>
+                    <div class="project-image">
+                        <img src="../../médias/communication/fee.du.tri/Stresse et rangement/2.png" alt="La fée du tri">
+                    </div>
                     <div class="project-details">
                         <h3>Communication de @la.fee.du.tri</h3>
                         <p>Création de posts et reels pour une coach en rangement : @la.fee.du.tri. Stratégie et analyse social media.</p>
@@ -253,6 +284,9 @@
                 <!-- Lisauteur Instagram -->
                 <article class="project-item">
                     <div class="project-emoji">📱</div>
+                    <div class="project-image">
+                        <img src="../../médias/communication/Lisauteur - Post 1/logo-lisauteurpng.png" alt="Lisauteur Instagram">
+                    </div>
                     <div class="project-details">
                         <h3>Communication Instagram @lisauteur</h3>
                         <p>Gestion et création de contenu pour mon compte Instagram personnel dédié à mes créations artistiques et animations.</p>
@@ -276,14 +310,14 @@
         </section>
 
         <!-- Section Contact -->
-        <section class="contact" id="contact" style="margin-top: 60px;">
+        <section class="contact" id="contact">
             <div class="contact-text">
                 <p class="section-kicker">Contact</p>
-                <h2>Intéressé(e) par mon travail ?</h2>
-                <p>N'hésitez pas à me contacter pour toute collaboration, stage ou projet. Je suis toujours ouverte aux nouvelles opportunités !</p>
+                <h2>Je pense que je serai un bon élément pour vous</h2>
+                <p>Pour collaborer, me prendre en alternance, en stage ou en savoir plus, voici mes réseaux et mon mail.</p>
                 <div class="contact-buttons">
                     <a class="btn primary" href="../CV/cv.html">Mon CV</a>
-                    <a class="btn secondary" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Me contacter</a>
+                    <a class="btn primary" href="../../index.html#about">Qui suis-je ?</a>
                 </div>
             </div>
             <div class="social-grid" aria-label="Réseaux sociaux">
@@ -330,7 +364,7 @@
         <div class="footer-col">
             <h4>Contact</h4>
             <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
-            <a href="tel:+33631019449">Tél : 06.31.01.94.49</a>
+            <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
             <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
         </div>
     </footer>
