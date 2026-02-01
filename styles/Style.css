@@ -33,24 +33,6 @@
 	--font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
-body.theme-dark {
-    --bg: #0a0f2a;
-    --bg-2: #1a1f3e;
-    --text: #f5f7ff;
-    --muted: #b8c5d6;
-    --card: #2d4a8f;
-    --stroke: rgba(122, 160, 255, 0.3);
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    --hero-bg: radial-gradient(circle at 20% 20%, rgba(20, 30, 70, 0.6), transparent 35%), 
-               radial-gradient(circle at 85% 30%, rgba(35, 27, 75, 0.7), transparent 38%), 
-               radial-gradient(circle at 60% 80%, rgba(15, 25, 60, 0.8), transparent 42%);
-    
-    background: radial-gradient(circle at 20% 20%, rgba(122, 160, 255, 0.12), transparent 32%),
-                radial-gradient(circle at 80% 30%, rgba(155, 123, 255, 0.14), transparent 36%),
-                linear-gradient(135deg, #0a0f2a, #1a1f3e) !important;
-    color: #f5f7ff !important;
-}
-
 /* Reset box model - Applique border-box à tous les éléments */
 * {
 	box-sizing: border-box;
@@ -64,7 +46,8 @@ body {
 	color: var(--text);
 	background: radial-gradient(circle at 20% 20%, rgba(122, 160, 255, 0.2), transparent 32%),
 				radial-gradient(circle at 80% 30%, rgba(155, 123, 255, 0.22), transparent 36%),
-				linear-gradient(135deg, var(--bg), var(--bg-2));
+				linear-gradient(135deg, #6a63ff, #7aa0ff);
+	background-attachment: fixed;
 	min-height: 100vh;
 	overflow-x: hidden; /* évite la barre de défilement horizontale liée aux effets */
 	position: relative;
@@ -84,6 +67,29 @@ body::after {
 	pointer-events: none;
 	z-index: 0;
 	transition: opacity 1.05s ease;
+}
+
+/* Dark mode - MUST come after body selector to override it */
+body.theme-dark {
+    --bg: #0a0f2a;
+    --bg-2: #1a1f3e;
+    --text: #f5f7ff;
+    --muted: #b8c5d6;
+    --card: #2d4a8f;
+    --stroke: rgba(122, 160, 255, 0.3);
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --hero-bg: radial-gradient(circle at 20% 20%, rgba(20, 30, 70, 0.6), transparent 35%), 
+               radial-gradient(circle at 85% 30%, rgba(35, 27, 75, 0.7), transparent 38%), 
+               radial-gradient(circle at 60% 80%, rgba(15, 25, 60, 0.8), transparent 42%);
+    background-color: #0a0f2a !important;
+    color: #f5f7ff !important;
+}
+
+body.theme-dark::after {
+    background: radial-gradient(circle at 20% 20%, rgba(122, 160, 255, 0.1), transparent 42%),
+                radial-gradient(circle at 75% 80%, rgba(155, 123, 255, 0.12), transparent 40%),
+                linear-gradient(135deg, rgba(10, 15, 42, 0.8), rgba(26, 31, 62, 0.8));
+    opacity: 0.1 !important;
 }
 
 /* Transition fluide au changement de thème */

@@ -66,7 +66,7 @@ const setupResourceHints = () => {
 	// Preload des ressources critiques
 	const criticalResources = [
 		{ href: 'styles/Style.css', rel: 'preload', as: 'style' },
-		{ href: 'Animations/Responsive.js', rel: 'preload', as: 'script' },
+		{ href: 'script/Responsive.js', rel: 'preload', as: 'script' },
 	];
 	
 	criticalResources.forEach(resource => {
@@ -87,19 +87,10 @@ const deferNonCritical = (callback) => {
 	}
 };
 
-// Optimisation du changement de thème avec réduction des repaints
+// Optimisation du changement de thème
+// Désactivée ici pour éviter un double toggle (déjà géré dans Responsive.js)
 const optimizeThemeToggle = () => {
-	const body = document.body;
-	const toggleBtn = document.getElementById('theme-toggle');
-	
-	if (toggleBtn) {
-		toggleBtn.addEventListener('click', () => {
-			// Utiliser batch des mutations DOM
-			requestAnimationFrame(() => {
-				body.classList.toggle('theme-dark');
-			});
-		}, { passive: true });
-	}
+	return;
 };
 
 // Initialisation au chargement du DOM

@@ -29,10 +29,10 @@
 	<link rel="stylesheet" href="styles/Style.css">
 	
 	<!-- Script d'animations et d'interactions (déféré pour ne pas bloquer) -->
-	<script src="Animations/Responsive.js" defer></script>
+	<script src="script/Responsive.js" defer></script>
 	
 	<!-- Fichier d'optimisations supplémentaires -->
-	<script src="Animations/optimized.js" defer></script>
+	<script src="script/optimized.js" defer></script>
 	<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237aa0ff'>L</text></svg>">
 </head>
 <body>
@@ -43,22 +43,21 @@
 		<div class="brand">Portfolio de Lisa Bruno</div>
 		<nav class="nav-links">
 			<a href="#hero">Accueil</a>
-			<a href="projets.html">Projets</a>
+			<a href="Projets/projets.html">Projets</a>
 			<a href="#about">Qui suis-je ?</a>
 		</nav>
 		<div style="display: flex; gap: 10px; align-items: center;">
 			<button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Activer le mode sombre">
 				<span class="theme-toggle-thumb"></span>
 			</button>
-			<a class="btn ghost" href="Pages_Projets/cv.html">Mon CV</a>
+			<a class="btn ghost" href="Projets/CV/cv.html">Mon CV</a>
 		</div>
 	</header>
 
-	<!-- Wrapper pour le bandeau animé (hero + domaines) - avant main pour couvrir depuis le début -->
-	<div class="hero-wrapper">
-		<div class="hero-banner-bg"></div>
-
 	<main>
+		<!-- Wrapper pour le bandeau animé (hero + domaines) - avant main pour couvrir depuis le début -->
+		<div class="hero-wrapper">
+			<div class="hero-banner-bg"></div>
 			
 			<!-- ======================================
 				 SECTION HÉRO (ACCUEIL)
@@ -84,7 +83,7 @@
 			<section class="domains" id="projects">
 			<div class="domains-grid">
 				<article class="card">
-				<a href="animation.html" class="card-link">
+					<a href="Projets/Animation/animation.html" class="card-link">
 						<div class="card-icon" aria-hidden="true">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 								<rect x="2" y="3" width="20" height="14" rx="2"/>
@@ -97,7 +96,7 @@
 					</a>
 				</article>
 				<article class="card">
-				<a href="communication.html" class="card-link">
+				<a href="Projets/Communication/communication.html" class="card-link">
 						<div class="card-icon" aria-hidden="true">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M3 11v3a1 1 0 0 0 1 1h2.5l3.5 3V8l-3.5 3H4a1 1 0 0 0-1 1z"/>
@@ -109,7 +108,7 @@
 					</a>
 				</article>
 				<article class="card">
-			<a href="realisation.html" style="text-decoration: none; color: inherit; display: contents;">
+			<a href="Projets/realisation/realisation.html" style="text-decoration: none; color: inherit; display: contents;">
 					<div class="card-icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 							<path d="M23 7l-7 5 7 5V7z"/>
@@ -120,7 +119,7 @@
 				</a>
 				</article>
 				<article class="card">
-				<a href="Photo.html" style="text-decoration: none; color: inherit; display: contents;">
+				<a href="Projets/Photo/Photo.html" style="text-decoration: none; color: inherit; display: contents;">
 						<div class="card-icon" aria-hidden="true">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
@@ -131,7 +130,7 @@
 					</a>
 				</article>
 				<article class="card">
-				<a href="Ecriture-art.html" style="text-decoration: none; color: inherit; display: contents;">
+				<a href="Projets/Ecriture-Dessin/Ecriture-art.html" style="text-decoration: none; color: inherit; display: contents;">
 						<div class="card-icon" aria-hidden="true">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M12 19l7-7 3 3-7 7-3-3z"/>
@@ -196,7 +195,7 @@
 					</div>
 				</div>
 				<div class="about-actions">
-					<a class="btn primary" href="Pages_Projets/cv.html">Voir mon CV</a>
+					<a class="btn primary" href="Projets/CV/cv.html">Voir mon CV</a>
 					<a class="btn secondary" id="cv" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Me contacter</a>
 				</div>
 			</div>
@@ -295,7 +294,7 @@
 				<h2>Je pense que je serai un bon élément pour vous</h2>
 				<p>En 1ère année de BUT MMI à Bordeaux, j’accumule des compétences en créa et tech. Pour collaborer ou en savoir plus, voici mes réseaux et mon mail.</p>
 				<div class="contact-buttons">
-					<a class="btn primary" href="Pages_Projets/cv.html">Mon CV</a>
+					<a class="btn primary" href="Projets/CV/cv.html">Mon CV</a>
 				<a class="btn primary" href="#about">Qui suis-je ?</a>
 				</div>
 			</div>
@@ -341,7 +340,7 @@
 				<h4>Pages</h4>
 				<a href="#realizations">Tous les projets</a>
 				<a href="#about">Qui suis-je ?</a>
-				<a href="Pages_Projets/cv.html">Mon CV</a>
+				<a href="Projets/CV/cv.html">Mon CV</a>
 			</div>
 			<div class="footer-col">
 				<h4>Contact</h4>
