@@ -23,7 +23,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 	
 	<!-- Feuille de styles principale -->
 	<link rel="stylesheet" href="styles/Style.css">
@@ -68,9 +68,8 @@
 					<div class="eyebrow">Lisa Bruno — étudiante en 1ère année de BUT MMI</div>
 					<h1>Portfolio</h1>
 					<p class="lead">Créa, motion design, web, vidéo, photo et écriture. Je partage ici mes projets et montre mes compétences.</p>
-					<div class="hero-actions">
-						<a class="btn primary" href="#projects">Voir mes projets</a>
-						<a class="btn secondary" href="#about">Voir qui je suis</a>
+					<div class="hero-actions">					<a class="btn primary" href="Projets/CV/cv.html">📄 Voir mon CV</a>						<a class="btn primary" href="Projets/projets.html">Voir mes projets</a>
+					<a class="btn primary" href="#about">Voir qui je suis</a>
 					</div>
 				</div>
 			</section>
@@ -152,7 +151,13 @@
 			 ====================================== -->
 		<!-- Bloc présentation personnelle -->
 		<section class="about" id="about">
+		<div class="about-left">
 			<div class="about-media" aria-hidden="true"></div>
+			<div class="about-actions">
+				<a class="btn primary" href="Projets/CV/cv.html">Voir mon CV</a>
+				<a class="btn primary" id="cv" href="#contact">Me contacter</a>
+			</div>
+		</div>
 			<div class="about-content">
 				<p class="section-kicker">Ma présentation</p>
 				<h2>Qui suis-je ?</h2>
@@ -165,41 +170,37 @@
 					à mes 13ans : Telepatia - Animation meme que j'ai posté sur ma chaine Youtube 'Lisauteur'. Plus tard, je découvre Adobe Animate et After Effects, puis Blender.
 				<p> Depuis, je suis passionnée de motion 2D/3D - rigging 2D - Animation 2D et continue à animer des projets plus ou moins gros. En parallèle, je m'intéresse aussi à la photographie, la retouche photo, le montage vidéo et la communication digitale.</p>
 				<div class="pillars">
-					<div class="pillar">
-						<div class="pillar-icon">🎨</div>
-						<div>
-							<h4>Créa</h4>
-							<p>Design, animation 2D, motion design.</p>
-						</div>
-					</div>
-					<div class="pillar">
-						<div class="pillar-icon">📸</div>
-						<div>
-							<h4>Photographie</h4>
-							<p>Photographie Reflex, retouche photo</p>
-						</div>
-					</div>
-					<div class="pillar">
-						<div class="pillar-icon">🎓</div>
-						<div>
-							<h4>BUT MMI</h4>
-							<p>Métiers du multimédia et de l’internet</p>
-						</div>
-					</div>
-					<div class="pillar">
-						<div class="pillar-icon">📍</div>
-						<div>
-							<h4>Bordeaux</h4>
-							<p>Et ses environs</p>
-						</div>
+				<div class="pillar">
+					<div class="pillar-icon">🎨</div>
+					<div>
+						<h4>Créa</h4>
+						<p>Design, animation 2D, motion design.</p>
 					</div>
 				</div>
-				<div class="about-actions">
-					<a class="btn primary" href="Projets/CV/cv.html">Voir mon CV</a>
-					<a class="btn secondary" id="cv" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Me contacter</a>
+				<div class="pillar">
+					<div class="pillar-icon">📸</div>
+					<div>
+						<h4>Photographie</h4>
+						<p>Photographie Reflex, retouche photo</p>
+					</div>
+				</div>
+				<div class="pillar">
+					<div class="pillar-icon">🎓</div>
+					<div>
+						<h4>BUT MMI</h4>
+						<p>Métiers du multimédia et de l'internet</p>
+					</div>
+				</div>
+				<div class="pillar">
+					<div class="pillar-icon">📍</div>
+					<div>
+						<h4>Bordeaux</h4>
+						<p>Et ses environs</p>
+					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
 		<!-- ======================================
 			SECTION PROJETS PRINCIPAUX
@@ -215,7 +216,7 @@
 				<article class="project-card">
 					<div class="project-icon">⭐</div>
 					<div class="project-image">
-						<img src="médias/communication/fee.du.tri/Black Friday/Black%20Friday.png" alt="Animation IDFC">
+						<img src="médias/Animation/idfc%20-%20animation%20meme.png" alt="Animation IDFC">
 					</div>
 					<h3>Animation meme IDFC - BlackBear</h3>
 					<p>Création de modèle 2D avec Illustrator, Animations en rigging 2D avec Adobe Animate, Mise en scène avec Blender 3D.</p>
@@ -231,7 +232,7 @@
 				<article class="project-card">
 					<div class="project-icon">💫</div>
 					<div class="project-image">
-						<img src="médias/communication/fee.du.tri/Black Friday/Black%20Friday.png" alt="Telepatia Animation">
+					<img src="médias/Animation/telepatia.png" alt="Telepatia Animation">
 					</div>
 					<h3>Telepatia - Animation meme</h3>
 					<p>Première animation 2D finie en Image par Image.</p>
@@ -243,9 +244,9 @@
 					<p class="tools-secondary">📅 2021 • Durée : 3 mois</p>
 				<a href="Projets/Animation/article-Telepatia.html" class="project-link">Voir le projet</a>
 				</article>
-				<article class="project-card">					<div class="project-icon">⚡</div>
-					<div class="project-image">
-						<img src="médias/communication/fee.du.tri/Black Friday/Black%20Friday.png" alt="Motion Design">
+			<article class="project-card">                    	<div class="project-icon">⚡</div>
+				<div class="project-image">
+					<img src="médias/Animation/motion%20theori%20info-com.png" alt="Motion Design">
 					</div>
 					<h3>Motion Design</h3>
 					<p>Vulgarisation d'une théorie info-com : l'endogamie numériquement assistée de Pascal Lardellier.</p>
@@ -257,9 +258,9 @@
 					<p class="tools-secondary">📅 novembre 2025 • Durée : 1 semaine</p>
 				<a href="Projets/Animation/article-MotionDesign.html" class="project-link">Voir le projet</a>
 				</article>
-				<article class="project-card">					<div class="project-icon">📷</div>
+			<article class="project-card">                    	<div class="project-icon">📷</div>
 					<div class="project-image">
-						<img src="médias/communication/fee.du.tri/Black Friday/Black%20Friday.png" alt="Reportage Tatouages">
+					<img src="médias/le reportage photooo/Copie de Sara_Légende.jpg" alt="Reportage Tatouages">
 					</div>
 					<h3>Reportage Photo de tatouages</h3>
 					<p>Reportage photo en équipe autour des tatouages, prise de vue et retouches.</p>
@@ -274,7 +275,7 @@
 				<article class="project-card">
 					<div class="project-icon">🎬</div>
 					<div class="project-image">
-						<img src="médias/communication/fee.du.tri/Black Friday/Black%20Friday.png" alt="Un dernier message">
+						<img src="médias/Réalisation%20-%20Montage%20vidéo/message.png" alt="Un dernier message">
 					</div>
 					<h3>Un dernier message...</h3>
 					<p>Script, tournage et montage d’un projet réalisé en une journée sur le sujet : un message.</p>
@@ -288,7 +289,7 @@
 				<article class="project-card">
 					<div class="project-icon">💬</div>
 					<div class="project-image">
-						<img src="médias/communication/fee.du.tri/Black Friday/Black%20Friday.png" alt="La fée du tri">
+						<img src="médias/communication/fee.du.tri/Black%20Friday/1.png" alt="La fée du tri">
 					</div>
 					<h3>Communication de @la.fee.du.tri</h3>
 					<p>Création de posts et reels pour une coach en rangement : @la.fee.du.tri</p>
@@ -319,22 +320,38 @@
 			<div class="social-grid" aria-label="Réseaux sociaux">
 				<a class="social-card" href="https://www.tiktok.com/@lisauteur" target="_blank" rel="noopener noreferrer">
 					<span class="social-title">Tiktok</span>
-					<span class="social-icon">🎵</span>
+				<span class="social-icon">
+					<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+						<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+					</svg>
+				</span>
 					<span class="social-handle">lisauteur</span>
 				</a>
 				<a class="social-card" href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">
 					<span class="social-title">Instagram</span>
-					<span class="social-icon">📸</span>
+				<span class="social-icon">
+					<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+						<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+					</svg>
+				</span>
 					<span class="social-handle">lisauteur</span>
 				</a>
 				<a class="social-card" href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">
 					<span class="social-title">Youtube</span>
-					<span class="social-icon">▶️</span>
+				<span class="social-icon">
+					<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+						<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+					</svg>
+				</span>
 					<span class="social-handle">lisauteur</span>
 				</a>
 				<a class="social-card" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">
 					<span class="social-title">Mail</span>
-					<span class="social-icon">📧</span>
+				<span class="social-icon">
+					<svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+						<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+					</svg>
+				</span>
 					<span class="social-handle">bordeaux.lisabruno@gmail.com</span>
 				</a>
 			</div>

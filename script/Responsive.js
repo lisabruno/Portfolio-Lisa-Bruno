@@ -52,17 +52,11 @@
 		// 7) Animations au clic sur les éléments importants
 		setupClickAnimations();
 
-		// 8) Animations continues sur les icônes
-		if (!reduceMotion) setupContinuousAnimations();
-
-		// 9) Effet de gradient animé sur le fond
-		if (!reduceMotion) setupAnimatedGradient();
-
-		// 10) Animation flottante sur les cartes
-		if (!reduceMotion) setupFloatingCards();
-
-		// 11) Gradient aléatoire sur le hero
-		if (!reduceMotion) setupRandomHeroBg();
+		// Animations continues désactivées pour améliorer les performances
+		// if (!reduceMotion) setupContinuousAnimations();
+		// if (!reduceMotion) setupAnimatedGradient();
+		// if (!reduceMotion) setupFloatingCards();
+		// if (!reduceMotion) setupRandomHeroBg();
 	}
 
 	// ====== 0. MODE SOMBRE/CLAIR ======
@@ -150,7 +144,7 @@
 
 		const elements = document.querySelectorAll(revealSelectors.join(','));
 		elements.forEach((el) => {
-			el.style.willChange = 'transform, opacity';
+			// Supprimé: will-change consomme trop de mémoire GPU
 			el.classList.add('js-reveal'); // marqueur pour style optionnel
 		});
 
@@ -159,6 +153,10 @@
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('is-visible');
+						// Nettoyer will-change après l'animation pour libérer la mémoire GPU
+						setTimeout(() => {
+							entry.target.style.willChange = 'auto';
+						}, 1000);
 						observer.unobserve(entry.target);
 					}
 				});
@@ -175,14 +173,20 @@
 		const bg = document.querySelector('.hero-bg');
 		if (!bg) return;
 		let rafId = null;
+		let lastScrollY = 0;
 
 		const onScroll = () => {
+			const currentScrollY = window.scrollY || 0;
+			// Seulement mettre à jour si le scroll a changé significativement
+			if (Math.abs(currentScrollY - lastScrollY) < 2) return;
+			
 			if (rafId) return;
 			rafId = requestAnimationFrame(() => {
-				const y = window.scrollY || 0;
+				const y = currentScrollY;
 				// Déplacement subtil (et limité) pour éviter la barre horizontale
 				const translate = Math.min(16, y * 0.04);
 				bg.style.transform = `translate3d(0, ${translate}px, 0)`;
+				lastScrollY = y;
 				rafId = null;
 			});
 		};
@@ -197,6 +201,7 @@
 
 		cards.forEach((card) => {
 			let rect = null;
+			let rafId = null;
 			const maxTilt = 6; // degrés max
 
 			const onEnter = () => {
@@ -206,20 +211,25 @@
 			};
 
 			const onMove = (e) => {
-				if (!rect) return;
-				const x = e.clientX - rect.left;
-				const y = e.clientY - rect.top;
-				const cx = rect.width / 2;
-				const cy = rect.height / 2;
-				const dx = (x - cx) / cx;
-				const dy = (y - cy) / cy;
-				const rx = (-dy * maxTilt).toFixed(2);
-				const ry = (dx * maxTilt).toFixed(2);
-				card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+				if (!rect || rafId) return; // Throttle avec requestAnimationFrame
+				rafId = requestAnimationFrame(() => {
+					const x = e.clientX - rect.left;
+					const y = e.clientY - rect.top;
+					const cx = rect.width / 2;
+					const cy = rect.height / 2;
+					const dx = (x - cx) / cx;
+					const dy = (y - cy) / cy;
+					const rx = (-dy * maxTilt).toFixed(2);
+					const ry = (dx * maxTilt).toFixed(2);
+					card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+					rafId = null;
+				});
 			};
 
 			const onLeave = () => {
 				card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg)';
+				card.style.willChange = 'auto'; // Nettoyer will-change
+				rafId = null;
 			};
 
 			card.addEventListener('mouseenter', onEnter);
