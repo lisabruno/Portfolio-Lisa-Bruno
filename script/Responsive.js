@@ -284,8 +284,8 @@
 	// ====== 7. ANIMATIONS AU CLIC ======
 	// Ajoute des effets visuels au clic sur les éléments importants
 	function setupClickAnimations() {
-		// Animations au clic sur les boutons
-		document.querySelectorAll('.btn, .project-link, .social-card').forEach((el) => {
+		// Animations au clic sur les boutons - DÉSACTIVÉ pour éviter le flou
+		document.querySelectorAll('.project-link, .social-card').forEach((el) => {
 			el.addEventListener('click', (e) => {
 				// Ajoute la classe de pulsation
 				el.classList.add('clicked');

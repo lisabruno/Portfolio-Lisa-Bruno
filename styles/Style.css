@@ -228,92 +228,44 @@ body.theme-dark .theme-toggle-thumb {
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
-	padding: 12px 18px;
+	padding: 12px 22px;
 	border-radius: 12px;
-	border: 1px solid transparent;
+	border: none;
 	font-weight: 700;
-	font-size: 14px;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	font-size: 15px;
+	transition: none;
 	text-decoration: none;
 	cursor: pointer;
-	position: relative;
-	overflow: hidden;
-}
-
-.btn::before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.3);
-	transform: translate(-50%, -50%);
-	transition: width 0.6s ease, height 0.6s ease;
-}
-
-.btn:hover::before {
-	width: 300px;
-	height: 300px;
-}
-
-.btn:active {
-	animation: click-pulse 0.4s ease-out;
-}
-
-/* ====== ÉTATS D'INTERACTION AU CLIC ====== */
-/* Classe ajoutée par JS lors du clic */
-.clicked {
-	animation: click-pulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Classe pour le glow au clic */
-.glow-click {
-	animation: glow-effect 0.6s ease-out;
-}
-
-/* Classe pour la brillance */
-.shine {
-	animation: shine-effect 0.6s ease-in-out;
-}
-
-/* Classe pour la secousse */
-.wobble {
-	animation: wobble 0.3s ease-in-out;
-}
-
-/* Bouton principal (dégradé) */
-.btn.primary {
-	background: #e6e6ff;
-	color: #0b0f24;
-	box-shadow: var(--shadow);
-}
-
-/* Bouton secondaire (bordure légère) */
-.btn.secondary {
-	border-color: rgba(255, 255, 255, 0.2);
-	color: var(--text);
-	background: rgba(255, 255, 255, 0.04);
-}
-
-/* Bouton fantôme pour la topbar */
-.btn.ghost {
-	position: relative;
-	z-index: 2;
-	border-color: rgba(255, 255, 255, 0.3);
-	padding: 10px 16px;
-	color: var(--text);
-	background: rgba(255, 255, 255, 0.06);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-shadow: 0 6px 20px rgba(128, 140, 246, 0.35);
+	background: #8f99ff;
+	color: #ffffff;
+	letter-spacing: 0.5px;
+	transform: none !important;
+	filter: none !important;
+	will-change: auto;
 }
 
 .btn:hover {
-	transform: translateY(-3px) scale(1.03);
-	box-shadow: 0 15px 40px rgba(122, 160, 255, 0.4);
+	box-shadow: 0 8px 28px rgba(122, 160, 255, 0.4);
+	background: #7b86f5;
 }
 
-.btn:active {
-	transform: translateY(-1px) scale(0.98);
+/* Bouton CV (ghost) : noir-bleu en mode clair */
+.btn.ghost {
+	background: #1b2345;
+	color: #eef2ff;
+	border: 1px solid #2d3a73;
+	box-shadow: 0 6px 18px rgba(27, 35, 69, 0.35);
+}
+
+/* Bouton CV (ghost) : blanc-bleu en mode sombre */
+body.theme-dark .btn.ghost {
+	background: #eef3ff;
+	color: #2b3b86;
+	border: 1px solid #c8d5ff;
+	box-shadow: 0 6px 18px rgba(200, 213, 255, 0.3);
 }
 
 /* Décalage pour laisser passer la topbar fixe */
@@ -425,7 +377,6 @@ main {
 	right: 0;
 	bottom: 0;
 	background: transparent;
-	filter: blur(2px);
 	z-index: 0;
 	pointer-events: none;
 	transition: background 3s ease-in-out;
@@ -495,13 +446,6 @@ main {
 	flex-wrap: wrap;
 }
 
-.hero-actions .btn:nth-child(1) {
-	animation: fadeInUp 0.8s ease 0.3s both;
-}
-
-.hero-actions .btn:nth-child(2) {
-	animation: fadeInUp 0.8s ease 0.5s both;
-}
 
 /* ====== 6. SECTION DOMAINES DE COMPÉTENCE ====== */
 /* Grille de 5 domaines principaux (Animation, Communication, etc.) */
@@ -532,7 +476,6 @@ main {
 	gap: 18px;
 	min-height: 160px;
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-	backdrop-filter: blur(6px);
 	animation: fade-up 0.7s ease both;
 	position: relative;
 	overflow: hidden;
@@ -590,10 +533,8 @@ main {
 }
 
 .card:hover .card-icon {
-	transform: rotate(8deg) scale(1.15);
 	background: rgba(122, 160, 255, 0.25);
 	box-shadow: 0 0 20px rgba(122, 160, 255, 0.5);
-	animation: pulse 1.5s ease-in-out infinite;
 }
 
 /* Titre de carte */
@@ -701,7 +642,6 @@ main {
 }
 
 .pillar:hover .pillar-icon {
-	animation: pulse 1s ease-in-out infinite;
 	background: rgba(122, 160, 255, 0.15);
 }
 
@@ -741,6 +681,12 @@ main {
 	display: flex;
 	gap: 12px;
 	margin-top: 12px;
+	width: 100%;
+}
+
+.about-actions .btn {
+	flex: 1;
+	width: 100%;
 }
 
 /* ====== 9. SECTION PROJETS PRINCIPAUX ====== */
@@ -1368,10 +1314,6 @@ body.theme-dark .project-card:hover .tool-icon {
 .project-card:nth-child(5) { animation-delay: 0.2s; }
 .project-card:nth-child(6) { animation-delay: 0.24s; }
 
-.social-card:nth-child(2) { animation-delay: 0.08s; }
-.social-card:nth-child(3) { animation-delay: 0.12s; }
-.social-card:nth-child(4) { animation-delay: 0.16s; }
-
 /* ====== 12. ANIMATIONS & RESPONSIVE ====== */
 /* Réduction des animations si préférences utilisateur (accessibilité) */
 @media (prefers-reduced-motion: reduce) {
@@ -1532,6 +1474,9 @@ a:not(.btn):not(.nav-links a):hover {
 
 /* Classe utilitaire pour animation pulse */
 .pulse-glow {
+	animation: pulse-glow 3s ease-in-out infinite;
+}
+
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);
@@ -1584,9 +1529,7 @@ a:not(.btn):not(.nav-links a):hover {
 /* ====== ANIMATIONS CONTINUES ====== */
 
 /* Animation permanente des icônes de cartes */
-.card-icon {
-	animation: pulse-glow 3s ease-in-out infinite;
-}
+/* DÉSACTIVÉE - pas d'animation */
 
 /* Animation permanente des icônes de projets */
 .project-icon {
@@ -1594,9 +1537,7 @@ a:not(.btn):not(.nav-links a):hover {
 }
 
 /* Animation permanente des icônes de piliers */
-.pillar-icon {
-	animation: pulse-glow 2.5s ease-in-out infinite;
-}
+/* DÉSACTIVÉE - pas d'animation */
 
 /* Animation permanente des icônes sociales */
 .social-icon {
@@ -1605,11 +1546,8 @@ a:not(.btn):not(.nav-links a):hover {
 
 /* Animation permanente sur les boutons de contact */
 .contact-buttons .btn {
-	animation: scale-pulse 2.5s ease-in-out infinite;
+	padding: 14px 22px;
 }
-
-.contact-buttons .btn:nth-child(1) { animation-delay: 0s; }
-.contact-buttons .btn:nth-child(2) { animation-delay: 0.3s; }
 
 /* Animation flottante pour les icônes de projet */
 @keyframes float {
@@ -1746,11 +1684,6 @@ a:not(.btn):not(.nav-links a):hover {
 .nav-links a:nth-child(1) { animation-delay: 0s; }
 .nav-links a:nth-child(2) { animation-delay: 0.2s; }
 .nav-links a:nth-child(3) { animation-delay: 0.4s; }
-
-/* Animation des boutons hero */
-.hero-actions .btn.primary {
-	animation: scale-pulse 2s ease-in-out infinite;
-}
 
 /* Animation des piliers */
 .pillar {
@@ -1939,10 +1872,3 @@ a:not(.btn):not(.nav-links a):hover {
 .footer .footer-col:nth-child(1) { animation-delay: 0.1s; }
 .footer .footer-col:nth-child(2) { animation-delay: 0.2s; }
 .footer .footer-col:nth-child(3) { animation-delay: 0.3s; }
-
-@keyframes fadeInUp {
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
