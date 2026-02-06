@@ -763,42 +763,16 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
-	animation: fade-up 0.7s ease both;
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.2s ease;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-}
-
-.project-card:active {
-	animation: click-pulse 0.4s ease-out;
-}
-
-.project-card::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 3px;
-	background: #808cf6;
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.3s ease;
+	text-decoration: none;
+	color: inherit;
 }
 
 .project-card:hover {
-	transform: translateY(-8px) scale(1.01);
-	box-shadow: 0 25px 50px rgba(15, 20, 38, 0.15);
-	border-color: var(--accent);
-}
-
-.project-card:hover::after {
-	transform: scaleX(1);
-}
-
-.project-card:hover .project-icon {
-	animation: pulse 1.2s ease-in-out infinite;
+	transform: translateY(-8px);
 }
 
 .project-icon {
@@ -810,18 +784,12 @@ main {
 	background: rgba(122, 160, 255, 0.12);
 	color: var(--accent);
 	font-weight: 700;
-	transition: all 0.3s ease;
 }
 
 .project-card h3 {
 	margin: 0;
 	font-size: 18px;
 	animation: none !important;
-}
-
-/* Ajout d'animation subtile au titre au hover */
-.project-card:hover h3 {
-	animation: rotate-subtle 0.6s ease-in-out;
 }
 
 .project-card p {
@@ -856,11 +824,6 @@ main {
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
-	transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-	transform: scale(1.05);
 }
 
 /* Exception pour le CV - garder le ratio */
@@ -876,14 +839,6 @@ main {
 	margin: 8px 0 !important;
 	font-size: 14px;
 	color: #4a5270;
-	animation: fadeInUp 0.7s ease 0.4s both;
-	transition: all 0.3s ease;
-}
-
-/* Animation au hover des outils */
-.project-card:hover .tools {
-	transform: translateX(4px);
-	color: #7aa0ff;
 }
 
 .tool-icon {
@@ -893,8 +848,6 @@ main {
 	object-fit: contain;
 	filter: invert(0.3);
 	margin-right: 4px;
-	animation: rotate-subtle 0.6s ease-in-out infinite;
-	transition: all 0.3s ease;
 }
 
 /* Icône personnalisée Adobe Animate (data URI) */
