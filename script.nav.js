@@ -281,7 +281,9 @@
       toggle.className = 'menu-toggle';
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Ouvrir le menu');
-      toggle.innerHTML = '<span>Menu</span>';
+      toggle.innerHTML =
+        '<span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>' +
+        '<span class="menu-toggle-label">Menu</span>';
 
       header.insertBefore(toggle, nav);
 

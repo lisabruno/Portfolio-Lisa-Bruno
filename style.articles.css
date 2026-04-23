@@ -847,3 +847,98 @@ header.article-topbar {
 .article-media-button {
 	margin: 0 0 0.35rem;
 }
+
+@media (max-width: 1024px) {
+	main {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+
+	.article-main {
+		padding-left: 0.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.article-meta {
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+	}
+
+	.article-main {
+		padding-left: 0;
+	}
+
+	.article-content {
+		font-size: 0.98rem;
+		line-height: 1.55;
+	}
+
+	.article-content h2 {
+		font-size: 1.35rem;
+	}
+
+	.article-content h3 {
+		font-size: 1.1rem;
+	}
+
+	.article-content ul {
+		margin-left: 1.15rem;
+	}
+
+	.article-project-button {
+		min-width: 0;
+		width: 100%;
+		height: auto;
+		min-height: 2.8rem;
+		padding: 0.45rem 0.75rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.article-page {
+		padding: 1rem 0.75rem;
+	}
+
+	.article-title {
+		font-size: 1.3rem;
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.article-tag {
+		font-size: 0.68rem;
+		letter-spacing: 0.06em;
+	}
+
+	.article-content p,
+	.article-content li {
+		font-size: 0.95rem;
+	}
+
+	.photo-gallery {
+		grid-template-columns: 1fr;
+	}
+
+	.carousel {
+		padding: 0.5rem;
+	}
+
+	.carousel-btn {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	.carousel-container {
+		gap: 0.3rem;
+	}
+
+	.carousel-images {
+		width: 100%;
+	}
+
+	.article-video iframe {
+		height: 100% !important;
+		width: 100% !important;
+	}
+}
