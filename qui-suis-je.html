@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qui suis-je - Lisa Bruno</title>
+  <link rel="stylesheet" href="style.variables.css">
+  <link rel="stylesheet" href="style.header.css">
+  <link rel="stylesheet" href="style.navigation.css">
+  <link rel="stylesheet" href="style.footer.css">
+  <link rel="stylesheet" href="style.decorative.css">
+  <link rel="stylesheet" href="style.index-tout.css">
+  <script src="script.nav.js" defer></script>
+  <style>
+    .about-page {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 2.2rem clamp(1rem, 3vw, 2.4rem) 3rem;
+    }
+
+    .about-intro {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .about-intro h1 {
+      font-family: var(--font-heading);
+      color: var(--heading);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-intro p {
+      color: #000000;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-card {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+
+    .about-card p {
+      margin-bottom: 0.9rem;
+      color: #000000;
+      line-height: 1.8;
+    }
+
+    .about-card img {
+      width: 100%;
+      border-radius: 0;
+      border: none;
+      object-fit: cover;
+    }
+
+    .about-actions {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    @media (max-width: 900px) {
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Actuellement en recherche d'alternance</div>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="projets.html">Projets</a>
+      <a href="qui-suis-je.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="CV/cv.html">CV</a>
+    </nav>
+  </header>
+
+  <main class="about-page">
+    <section class="about-intro">
+      <h1>Qui suis-je ?</h1>
+      <p>Je m'appelle Lisa Bruno et j'ai actuellement 18 ans.</p>
+    </section>
+
+    <section class="about-card">
+      <div>
+        <p>Je suis étudiante en BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT Bordeaux Montaigne, j'y apprends divers domaines, tels que la création, la communication, le développement. L'année prochaine je me spécialiserai en création, notamment pour poursuivre mes études dans l'animation 2D/3D, le rigging 2D/3D et le motion design.</p>
+        <p>Depuis mon plus jeune âge, je dessine et crée des histoires. À 10 ans, je découvre l'animation, le rigging ainsi que le montage vidéo et décide de m'y mettre, j'essaie d'abord sur mon téléphone, sur capcut et alight motion en passant par flipnote studio sur ma Nintendo DSi, ce passage a duré 2 ans, avant de passer sur ordinateur et tablette graphique. Alors, je découvre le monde de l'animation 2D en image par image avec Krita, puis Adobe Animate et fais ma première animation 2D en image par image à mes 13 ans : Telepatia - Animation meme que j'ai posté sur ma chaîne YouTube 'Lisauteur'. Plus tard, je découvre Adobe Animate et After Effects, puis Blender.</p>
+        <p>Depuis, je suis passionnée de motion 2D/3D - rigging 2D - animation 2D et continue à animer des projets plus ou moins gros. En parallèle, je m'intéresse aussi à la photographie, la retouche photo, le montage vidéo et la communication digitale.</p>
+
+        <div class="about-actions">
+          <a class="btn primary" href="projets.html">Voir mes projets</a>
+          <a class="btn ghost" href="contact.html">Me contacter</a>
+        </div>
+      </div>
+      <div>
+        <img src="Qui-suis-je/Lisa-bruno.jpg" alt="Photo de Lisa Bruno">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <h4>Domaines</h4>
+      <a href="3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/article-idfc.html">Motion 2D/3D · Rigging 2D</a>
+      <a href="Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html">Communication</a>
+      <a href="Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html">Audiovisuel</a>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="projets.html">Tous les projets</a>
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="CV/cv.html">Mon CV</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+      <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
+      <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
+
+

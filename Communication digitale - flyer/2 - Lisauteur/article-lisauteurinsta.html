@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Lisauteur - Portfolio de Lisa Bruno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.variables.css">
+    <link rel="stylesheet" href="../../style.header.css">
+    <link rel="stylesheet" href="../../style.navigation.css">
+    <link rel="stylesheet" href="../../style.footer.css">
+    <link rel="stylesheet" href="../../style.decorative.css">
+    <link rel="stylesheet" href="../../style.articles.css">
+    <script src="../../script.nav.js" defer></script>
+</head>
+<body>
+    <header class="article-topbar">
+        <div class="article-brand">Portfolio Lisa Bruno</div>
+        <nav class="article-nav" aria-label="Navigation principale">
+            <a href="../../index.html">Accueil</a>
+            <a href="../../projets.html">Tous les projets</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="article-page">
+            <div class="article-main">
+                <span class="article-tag">Communication</span>
+                <h1 class="article-title">Instagram Lisauteur - Mon Instagram professionnel</h1>
+
+                <div class="article-ornament">
+                    <span class="line"></span>
+                    <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"></polygon></svg>
+                    <span class="line"></span>
+                </div>
+
+                <div class="article-meta">
+                    <time datetime="2025-02">📅 Février 2025 - maintenant</time>
+                </div>
+
+                <div class="article-content">
+                    <p>Depuis que je crée, j'ai toujours eu envie de partager mon travail en ligne. Lisauteur est devenu mon espace pour montrer mes illustrations, mes animations et ma direction artistique.</p>
+
+                    <div class="article-video">
+                        <iframe src="https://www.youtube.com/embed/L03ygl0IXUo" title="Présentation vidéo Lisauteur" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <h2>Carrousel - Premier post</h2>
+                    <p>Voici le carrousel du premier post publié sur le compte Instagram Lisauteur.</p>
+
+                    <section class="carousel" aria-label="Carrousel premier post Lisauteur">
+                        <div class="carousel-container">
+                            <button class="carousel-btn prev" type="button" aria-label="Image précédente" onclick="moveCarousel('carousel-lisauteur-1', -1)">❮</button>
+
+                            <div class="carousel-images" id="carousel-lisauteur-1">
+                                <img src="premier post/1.jpg" alt="Premier post Lisauteur - image 1" class="carousel-image active">
+                                <img src="premier post/2.jpg" alt="Premier post Lisauteur - image 2" class="carousel-image">
+                                <img src="premier post/3.jpg" alt="Premier post Lisauteur - image 3" class="carousel-image">
+                                <img src="premier post/4.jpg" alt="Premier post Lisauteur - image 4" class="carousel-image">
+                                <img src="premier post/5.jpg" alt="Premier post Lisauteur - image 5" class="carousel-image">
+                            </div>
+
+                            <button class="carousel-btn next" type="button" aria-label="Image suivante" onclick="moveCarousel('carousel-lisauteur-1', 1)">❯</button>
+                        </div>
+                        <p class="carousel-counter" id="carousel-lisauteur-1-counter">1 / 5</p>
+                    </section>
+
+                    <h2>Ma motivation</h2>
+                    <p>Mon objectif est de construire un univers visuel cohérent et de partager régulièrement mes projets pour évoluer en communication digitale et en direction artistique.</p>
+                </div>
+
+                <nav class="article-nav-links">
+                    <a href="../1 - La.fee.du.tri/article-la.fee.du.tri.html" class="article-nav-prev">← Précédent</a>
+                    <a href="../../Photographie - retouches photo/1 - tatouages/article-tatouage.html" class="article-nav-next">Suivant →</a>
+                </nav>
+            </div>
+
+            <aside class="article-sidebar">
+                <div class="sidebar-section">
+                    <h3>Projets Communication</h3>
+                    <div class="recent-posts">
+                        <article class="recent-post-item">
+                            <h4><a href="../1 - La.fee.du.tri/article-la.fee.du.tri.html">📢 La Fée du Tri</a></h4>
+                        </article>
+                        <article class="recent-post-item">
+                            <h4><a href="article-lisauteurinsta.html">📢 Instagram Lisauteur</a></h4>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Autres domaines</h3>
+                    <ul class="category-list">
+                        <li><a href="../../3D - Animation 2D - Rigging 2D/TOUT animation.html">Animation 2D - Motion design</a></li>
+                        <li><a href="../../Photographie - retouches photo/TOUT photo.html">Audiovisuel</a></li>
+                        <li><a href="../../Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html">Audiovisuel</a></li>
+                        <li><a href="../../Design Web - Création de Site internet/TOUT web.html">Design Web</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </article>
+
+        <footer class="footer">
+            <div class="footer-col">
+                <h4>Domaines</h4>
+                <a href="../../3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/article-idfc.html">Motion 2D/3D · Rigging 2D</a>
+                <a href="../1 - La.fee.du.tri/article-la.fee.du.tri.html">Communication</a>
+                <a href="../../Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html">Audiovisuel</a>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <a href="../../projets.html">Tous les projets</a>
+                <a href="../../qui-suis-je.html">Qui suis-je ?</a>
+                <a href="../../CV/cv.html">Mon CV</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+                <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
+                <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function moveCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) {
+                return;
+            }
+
+            const images = carousel.querySelectorAll('.carousel-image');
+            if (!images.length) {
+                return;
+            }
+
+            let currentIndex = 0;
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = index;
+                }
+            });
+
+            images[currentIndex].classList.remove('active');
+
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            images[currentIndex].classList.add('active');
+
+            const counter = document.getElementById(carouselId + '-counter');
+            if (counter) {
+                counter.textContent = (currentIndex + 1) + ' / ' + images.length;
+            }
+        }
+    </script>
+    <script src="../../script.projects.js"></script>
+</body>
+</html>
+

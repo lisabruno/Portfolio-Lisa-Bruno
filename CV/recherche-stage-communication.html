@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche Stage Communication - Lisa Bruno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.variables.css">
+  <link rel="stylesheet" href="../style.header.css">
+  <link rel="stylesheet" href="../style.navigation.css">
+  <link rel="stylesheet" href="../style.footer.css">
+  <link rel="stylesheet" href="../style.decorative.css">
+  <link rel="stylesheet" href="../style.index-tout.css">
+  <script src="../script.nav.js" defer></script>
+  <style>
+    :root {
+      --cv-line: #a2b1ff;
+      --cv-line-soft: rgba(162, 177, 255, 0.35);
+      --cv-type-kicker: 0.9rem;
+      --cv-type-meta: 0.92rem;
+      --cv-type-body: 1.02rem;
+    }
+
+    .cv-page main {
+      max-width: none;
+      padding-top: 2.4rem;
+    }
+
+    .cv-shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.4rem;
+    }
+
+    .stage-sheet {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .stage-left {
+      position: relative;
+    }
+
+    .stage-photo {
+      border: 4px solid var(--cv-line);
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: #d8d8d8;
+      max-width: 240px;
+      margin: 0 auto 1rem;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .stage-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      image-rendering: auto;
+      -ms-interpolation-mode: bicubic;
+      opacity: 1;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .stage-photo:hover,
+    .stage-photo img:hover {
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .stage-name {
+      text-align: center;
+      font-family: "Space Grotesk", monospace;
+      color: var(--heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem;
+      line-height: 1;
+    }
+
+    .stage-tagline {
+      text-align: center;
+      font-family: "Space Grotesk", monospace;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    .stage-section {
+      border-top: 1px solid var(--cv-line);
+      padding: 0.8rem 0;
+      font-size: var(--cv-type-body);
+    }
+
+    .stage-section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .stage-section h3 {
+      font-family: "Space Grotesk", monospace;
+      font-size: var(--cv-type-kicker);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--heading);
+      margin: 0 0 0.4rem;
+      font-weight: 700;
+    }
+
+    .stage-section p {
+      margin: 0.3rem 0;
+      color: #000000;
+      line-height: 1.5;
+      font-family: "DM Sans", sans-serif;
+      font-size: var(--cv-type-body);
+    }
+
+    .stage-section a {
+      color: #000000;
+      text-decoration: underline;
+      font-weight: 400;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .stage-section a:hover {
+      font-weight: 700;
+    }
+
+    .cv-bullets a,
+    .cv-note a {
+      color: inherit;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    .cv-bullets a:hover,
+    .cv-note a:hover {
+      font-weight: 700;
+    }
+
+    .stage-right {
+      position: relative;
+    }
+
+    .stage-headline {
+      font-family: "Space Grotesk", monospace;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--heading);
+      margin: 0 0 0.5rem;
+      font-weight: 700;
+    }
+
+    .stage-subtitle {
+      font-family: "Space Grotesk", monospace;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin: 0 0 1.2rem;
+      font-weight: 600;
+    }
+
+    .stage-divider {
+      height: 2px;
+      background: var(--cv-line);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .stage-divider::before,
+    .stage-divider::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #0f172a;
+      border-radius: 999px;
+      top: -4px;
+    }
+
+    .stage-divider::before { left: -5px; }
+    .stage-divider::after { right: -5px; }
+
+    .timeline-body {
+      position: relative;
+      padding: 0 74px 0 0;
+      min-height: 100px;
+    }
+
+    .timeline-zigzag {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .timeline-zigzag path {
+      stroke: var(--cv-line);
+      stroke-width: 3px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 1;
+    }
+
+    .timeline-terminal-dot {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #000000;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cv-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cv-panel-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--heading);
+      font-family: "Space Grotesk", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: var(--cv-type-kicker);
+      margin-bottom: 1.25rem;
+      margin-top: 1.5rem;
+      font-weight: 700;
+    }
+
+    .cv-panel-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .cv-panel-title.has-star::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      background: var(--cv-line);
+      clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+    }
+
+    .cv-block {
+      position: relative;
+      border: none;
+      border-radius: 0;
+      padding: 0.95rem 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .cv-block::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background: var(--cv-line-soft);
+    }
+
+    .cv-block + .cv-block {
+      margin-top: 0.6rem;
+    }
+
+    .cv-block-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.4rem;
+    }
+
+    .cv-role {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.25;
+      font-family: "Space Grotesk", monospace;
+    }
+
+    .cv-org {
+      margin: 0.15rem 0 0;
+      color: var(--heading);
+      font-size: var(--cv-type-meta);
+      font-weight: 600;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .cv-date {
+      color: #000000;
+      font-size: var(--cv-type-meta);
+      font-weight: 700;
+      white-space: nowrap;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .cv-bullets {
+      margin: 0.4rem 0 0;
+      padding-left: 1.15rem;
+      color: #000000;
+      line-height: 1.55;
+      font-size: var(--cv-type-body);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .cv-bullets li {
+      margin-bottom: 0.2rem;
+    }
+
+    .cv-bullets li + li {
+      margin-top: 0.15rem;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.6rem;
+      align-items: center;
+    }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      border: none;
+      background: transparent;
+      color: #000000;
+      border-radius: 0;
+      padding: 0;
+      font-size: var(--cv-type-body);
+      font-weight: 600;
+      line-height: 1.5;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .skill-chip + .skill-chip::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      margin-right: 0.5rem;
+      background: var(--cv-line);
+      clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+    }
+
+    .cv-note {
+      color: #000000;
+      margin: 0;
+      font-size: var(--cv-type-body);
+      line-height: 1.5;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .stage-dots {
+      position: absolute;
+      right: var(--dot-right, -46px);
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: #000000;
+      top: 0.85rem;
+      z-index: 2;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 10px rgba(15, 23, 42, 0.35);
+      display: none;
+    }
+
+    @media (max-width: 940px) {
+      .stage-sheet {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .stage-photo {
+        max-width: 200px;
+        margin: 0 auto 1rem;
+      }
+
+      .timeline-zigzag {
+        display: none;
+      }
+
+      .stage-dots {
+        display: none;
+      }
+
+      .timeline-terminal-dot {
+        display: none;
+      }
+
+      .timeline-body {
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .cv-shell {
+        padding: 0 1rem 2.7rem;
+      }
+
+      .cv-block-head {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .cv-date {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body class="cv-page">
+  <header class="topbar">
+    <div class="brand">Actuellement en recherche d'alternance</div>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../qui-suis-je.html">À Propos</a>
+    </nav>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a class="btn ghost" href="cv.html">Mon CV</a>
+      <a class="btn ghost" href="recherche-stage-communication.html" aria-current="page">Recherche Stage</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="cv-shell">
+      <div class="stage-sheet">
+        <aside class="stage-left">
+          <div class="stage-photo">
+            <img src="../Qui-suis-je/Lisa-bruno-cv-zoom2.png" alt="Portrait de Lisa Bruno">
+          </div>
+          <p class="stage-name">Lisa Bruno</p>
+          <p class="stage-tagline">Étudiante en BUT MMI</p>
+          
+          <div class="stage-section">
+            <h3>Portfolio</h3>
+            <p><a href="https://lisa-bruno.com">https://lisa-bruno.com</a></p>
+          </div>
+
+          <div class="stage-section">
+            <h3>Contact</h3>
+            <p><strong>Tél :</strong> 06.31.01.94.49</p>
+            <p><strong>Mail :</strong> bordeaux.lisabruno@gmail.com</p>
+            <p><strong>Lieu :</strong> Bordeaux</p>
+          </div>
+
+          <div class="stage-section">
+            <h3>Langue</h3>
+            <p>Anglais B2 - Professionnel et Technique</p>
+          </div>
+
+          <div class="stage-section">
+            <h3>Certificats</h3>
+            <p>Permis B - avec véhicule</p>
+            <p>PSC1</p>
+          </div>
+
+          <div class="stage-section">
+            <h3>Centres d'intérêt</h3>
+            <p>✦ Peinture<br>✦ Écriture</p>
+          </div>
+        </aside>
+
+        <section class="stage-right">
+          <h1 class="stage-headline">Mon CV</h1>
+          <p class="stage-subtitle">à partir du 25 mai</p>
+          <div class="stage-divider"></div>
+
+          <div class="timeline-body">
+            <svg class="timeline-zigzag" aria-hidden="true">
+              <path id="cv-zigzag-path" d=""></path>
+            </svg>
+            <div class="timeline-terminal-dot timeline-terminal-start" aria-hidden="true"></div>
+            <div class="timeline-terminal-dot timeline-terminal-end" aria-hidden="true"></div>
+
+      <div class="cv-panel">
+          <h2 class="cv-panel-title has-star">Formation</h2>
+
+          <article class="cv-block">
+            <div class="cv-block-head">
+              <div>
+                <h3 class="cv-role">BUT Metiers du Multimedia et de l'Internet</h3>
+                <p class="cv-org"><a href="https://www.mmibordeaux.com/" target="_blank" rel="noopener noreferrer">IUT Bordeaux Montaigne</a></p>
+              </div>
+              <span class="cv-date">2024 - 2027</span>
+            </div>
+            <p class="cv-note">Formation pluridisciplinaire en création graphique, web, audiovisuel et communication digitale.</p>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <div class="cv-block-head">
+              <div>
+                <h3 class="cv-role">Baccalaureat General</h3>
+                <p class="cv-org">Specialites Mathematiques, LLCE Anglais, NSI</p>
+              </div>
+              <span class="cv-date">2024</span>
+            </div>
+            <p class="cv-note">Mention Assez Bien.</p>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <h2 class="cv-panel-title has-star">Projets</h2>
+
+          <article class="cv-block">
+            <div class="cv-block-head">
+              <div>
+                <h3 class="cv-role">Communication pour @la.fee.du.tri</h3>
+                <p class="cv-org">Projet académique</p>
+              </div>
+              <span class="cv-date">2025 - 2026</span>
+            </div>
+            <ul class="cv-bullets">
+              <li>Stratégie de communication et création de Direction Artistique.</li>
+              <li>Réalisation de 4 contenus (3 carrousels, 1 réel) pour Instagram.</li>
+              <li>Analyse de performances et optimisation des campagnes sociales.</li>
+            </ul>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <div class="cv-block-head">
+              <div>
+                <h3 class="cv-role">Motion Design - Endogamie</h3>
+                <p class="cv-org">Projet académique</p>
+              </div>
+              <span class="cv-date">2025 - 2026</span>
+            </div>
+            <ul class="cv-bullets">
+              <li>Motion Design complet avec After Effects et sound design.</li>
+              <li>Conception d'illustrations avec Adobe Illustrator.</li>
+              <li>Production vidéo de vulgarisation d'une théorie info-com.</li>
+            </ul>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <div class="cv-block-head">
+              <div>
+                <h3 class="cv-role">Émission TV - KeyFrame</h3>
+                <p class="cv-org">Projet académique</p>
+              </div>
+              <span class="cv-date">2025 - 2026</span>
+            </div>
+            <ul class="cv-bullets">
+              <li>Création d'une Direction Artistique cohérente pour une émission TV.</li>
+              <li>Production de motion designs avec After Effects.</li>
+              <li>Montage vidéo et réalisation avec caméras professionnelles.</li>
+            </ul>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <div class="cv-block-head">
+              <div>
+                <h3 class="cv-role">Site Web MADD Bordeaux</h3>
+                <p class="cv-org">Projet académique</p>
+              </div>
+              <span class="cv-date">2025 - 2026</span>
+            </div>
+            <ul class="cv-bullets">
+              <li>Design complet du site avec Figma et prototypage.</li>
+              <li>Développement front-end en HTML et CSS.</li>
+              <li>Déploiement et optimisation. <a href="https://site-madd2.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Voir ↗</a></li>
+            </ul>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <h2 class="cv-panel-title has-star">Compétences</h2>
+
+          <article class="cv-block">
+            <p class="cv-note" style="margin-bottom: 0.6rem;"><strong>Création et Direction Artistique</strong></p>
+            <div class="skill-cloud">
+              <span class="skill-chip">Direction artistique</span>
+              <span class="skill-chip">Motion Design</span>
+              <span class="skill-chip">Animation 2D/3D</span>
+              <span class="skill-chip">Motion 2D/3D</span>
+              <span class="skill-chip">Storyboard</span>
+              <span class="skill-chip">Identite visuelle</span>
+            </div>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <p class="cv-note" style="margin-bottom: 0.6rem;"><strong>Communication Digitale</strong></p>
+            <div class="skill-cloud">
+              <span class="skill-chip">Strategie digitale</span>
+              <span class="skill-chip">Social media</span>
+              <span class="skill-chip">Content creation</span>
+              <span class="skill-chip">Analyse de performances</span>
+            </div>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <p class="cv-note" style="margin-bottom: 0.6rem;"><strong>Logiciels et Outils</strong></p>
+            <div class="skill-cloud">
+              <span class="skill-chip">After Effects</span>
+              <span class="skill-chip">Premiere Pro</span>
+              <span class="skill-chip">Photoshop</span>
+              <span class="skill-chip">Illustrator</span>
+              <span class="skill-chip">InDesign</span>
+              <span class="skill-chip">Figma</span>
+              <span class="skill-chip">Lightroom</span>
+              <span class="skill-chip">Blender</span>
+            </div>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+          <article class="cv-block">
+            <p class="cv-note" style="margin-bottom: 0.6rem;"><strong>Developpement Web</strong></p>
+            <div class="skill-cloud">
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">PHP</span>
+              <span class="skill-chip">WordPress</span>
+            </div>
+            <div class="stage-dots" aria-hidden="true"></div>
+          </article>
+
+        </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <h4>Domaines</h4>
+      <a href="../3D - Animation 2D - Rigging 2D/TOUT animation.html">Motion 2D/3D · Rigging 2D</a>
+      <a href="../Communication digitale - flyer/TOUT communication.html">Communication</a>
+      <a href="../Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html">Audiovisuel</a>
+      <a href="../Design Web - Création de Site internet/TOUT web.html">Design web</a>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="../projets.html">Tous les projets</a>
+      <a href="../qui-suis-je.html">Qui suis-je ?</a>
+      <a href="cv.html">Mon CV</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+      <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
+      <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      function getSectionGroups(panel) {
+        var children = Array.prototype.slice.call(panel.children);
+        var groups = [];
+
+        for (var i = 0; i < children.length; i += 1) {
+          if (!children[i].classList.contains('cv-panel-title')) {
+            continue;
+          }
+
+          var blocks = [];
+          var j = i + 1;
+          while (j < children.length && !children[j].classList.contains('cv-panel-title')) {
+            if (children[j].classList.contains('cv-block')) {
+              blocks.push(children[j]);
+            }
+            j += 1;
+          }
+
+          if (blocks.length) {
+            groups.push({
+              title: children[i],
+              blocks: blocks
+            });
+          }
+        }
+
+        return groups;
+      }
+
+      function drawZigzagTimeline() {
+        var timelineBody = document.querySelector('.timeline-body');
+        var path = document.getElementById('cv-zigzag-path');
+        var panel = document.querySelector('.cv-panel');
+        var startDot = document.querySelector('.timeline-terminal-start');
+        var endDot = document.querySelector('.timeline-terminal-end');
+
+        if (!timelineBody || !path || !panel || !startDot || !endDot) {
+          return;
+        }
+
+        if (window.matchMedia('(max-width: 940px)').matches) {
+          path.setAttribute('d', '');
+          startDot.style.display = 'none';
+          endDot.style.display = 'none';
+          return;
+        }
+
+        var groups = getSectionGroups(panel);
+        if (groups.length < 3) {
+          path.setAttribute('d', '');
+          startDot.style.display = 'none';
+          endDot.style.display = 'none';
+          return;
+        }
+
+        var xLeft = -14;
+        var xRight = timelineBody.clientWidth - 28;
+        var radius = 14;
+
+        var firstTitle = groups[0].title;
+        var firstEndBlock = groups[0].blocks[groups[0].blocks.length - 1];
+        var secondEndBlock = groups[1].blocks[groups[1].blocks.length - 1];
+        var lastEndBlock = groups[2].blocks[groups[2].blocks.length - 1];
+
+        var yStart = firstTitle.offsetTop + firstTitle.offsetHeight + 6;
+        var yFirstEnd = firstEndBlock.offsetTop + firstEndBlock.offsetHeight - 10;
+        var ySecondEnd = secondEndBlock.offsetTop + secondEndBlock.offsetHeight - 10;
+        var yLastEnd = lastEndBlock.offsetTop + lastEndBlock.offsetHeight - 8;
+
+        var d = [
+          'M', xLeft, yStart,
+          'L', xLeft, yFirstEnd - radius,
+          'Q', xLeft, yFirstEnd, xLeft + radius, yFirstEnd,
+          'L', xRight - radius, yFirstEnd,
+          'Q', xRight, yFirstEnd, xRight, yFirstEnd + radius,
+          'L', xRight, ySecondEnd - radius,
+          'Q', xRight, ySecondEnd, xRight - radius, ySecondEnd,
+          'L', xLeft + radius, ySecondEnd,
+          'Q', xLeft, ySecondEnd, xLeft, ySecondEnd + radius,
+          'L', xLeft, yLastEnd
+        ].join(' ');
+
+        path.setAttribute('d', d);
+
+        startDot.style.display = 'block';
+        endDot.style.display = 'block';
+        startDot.style.left = xLeft + 'px';
+        startDot.style.top = yStart + 'px';
+        endDot.style.left = xLeft + 'px';
+        endDot.style.top = yLastEnd + 'px';
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', drawZigzagTimeline);
+      } else {
+        drawZigzagTimeline();
+      }
+
+      window.addEventListener('resize', drawZigzagTimeline);
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,162 @@
+{
+  "projects": [
+    {
+      "id": "anim-2d-3d",
+      "domaine": "Animation / Rigging 2D/Motion Design 2D et 3D",
+      "icon": "🎬",
+      "lien": "3D - Animation 2D - Rigging 2D/TOUT animation.html",
+      "image": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png",
+      "descriptionCourte": "Création de motion design 2D/3D et animation 2D en image par image ou en rigging.",
+      "description": "- Création de modèles 2D avec Adobe Illustrator<br/>- Animation de personnages/assets en rigging 2D avec Adobe Animate, After Effects, Moho Animation 14 et en image par image avec Krita ou Adobe Animate<br/>",
+      "date": "Domaine principal",
+      "projets": [
+        {
+          "titre": "Telepatia - animation meme",
+          "lien": "3D - Animation 2D - Rigging 2D/1 - Telepatia - animation meme/article-Telepatia.html",
+          "image": "3D - Animation 2D - Rigging 2D/1 - Telepatia - animation meme/telepatia.png",
+          "descriptionCourte": "Animation motion design sur 30 secondes de musique : Telepatia. ",
+          "description": "Animation 2d en image par image et motion design sur la musique : Telepatia.",
+          "date": "Décembre 2022 - Mars 2023"
+        },
+        {
+          "titre": "Voiture - motion 2D",
+          "lien": "3D - Animation 2D - Rigging 2D/2 - Voiture - motion 2D/article-voiture.html",
+          "image": "3D - Animation 2D - Rigging 2D/2 - Voiture - motion 2D/voiture.png",
+          "descriptionCourte": "Animation motion 2D sur une voiture qui avance dans une forêt sur mon roman : le Nouvel Âge qui est en cours d'écriture.",
+          "description": "Animation motion 2D sur une voiture qui avance dans une forêt sur mon roman : le Nouvel Âge qui est en cours d'écriture.",
+          "date": "octobre - novembre 2023"
+        },
+        {
+          "titre": "Endogamie numeriquement assiste",
+          "lien": "3D - Animation 2D - Rigging 2D/3 - endogamie numériquement assisté/article-MotionDesign.html",
+          "image": "3D - Animation 2D - Rigging 2D/3 - endogamie numériquement assisté/endogamie.png",
+          "descriptionCourte": "Vulgarisation en motion design d'une theorie info-com sur les algorithmes de rencontre.",
+          "description": "Scenarisation, design graphique, animation After Effects, sound design et montage final.",
+          "date": "Novembre 2025"
+        },
+        {
+          "titre": "IDFC - animation meme",
+          "lien": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/article-idfc.html",
+          "image": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png",
+          "descriptionCourte": "Animation en rigging 2D sous Adobe Animate.",
+          "description": "Creation de modele 2D avec Illustrator, animation en rigging 2D sous Adobe Animate, puis mise en scene avec Blender 3D.",
+          "date": "décembre 2025 - maintenant"
+        },
+        {
+          "titre": "ShowTime",
+          "lien": "3D - Animation 2D - Rigging 2D/5 -ShowTime/article-showtime.html",
+          "image": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png",
+          "descriptionCourte": "voici une émission completement faite par groupe de 13 traitant de l'animation 2D. J'ai pu y faire le motion design ainsi que la recherche d'idées tout en apprennant à filmer car j'y ai fait caméraman. L'émission n'est pas encore en ligne mais je vais pouvoir le mettre dans pas longtemps...",
+          "description": "voici une émission completement faite par groupe de 13 traitant de l'animation 2D. J'ai pu y faire le motion design ainsi que la recherche d'idées tout en apprennant à filmer car j'y ai fait caméraman. L'émission n'est pas encore en ligne mais je vais pouvoir le mettre dans pas longtemps...",
+          "date": "Mars 2026"
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "domaine": "Communication digitale - Creation de supports",
+      "icon": "📱",
+      "lien": "Communication digitale - flyer/TOUT communication.html",
+      "image": "Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png",
+      "descriptionCourte": "Création de contenus et supports print/digital pour la communication et animation de réseaux sociaux.",
+      "description": "- Création de visuels pour les réseaux sociaux (Instagram, Facebook, LinkedIn) avec Canva, Adobe Photoshop, Illustrator.<br/>- Conception de flyers, brochures et affiches avec Adobe InDesign et Illustrator<br/>- Gestion de campagnes publicitaires et analyse des performances<br/>- Illustrations avec Adobe Illustrator, Photoshop, Krita.<br/>",
+      "date": "Domaine principal",
+      "projets": [
+        {
+          "titre": "La.fee.du.tri",
+          "lien": "Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html",
+          "image": "Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png",
+          "descriptionCourte": "Refonte de la strategie visuelle et creation de contenus pour @la.fee.du.tri.",
+          "description": "Analyse des reseaux sociaux, direction artistique et creation de 3 carrousels.",
+          "date": "Octobre 2025"
+        },
+        {
+          "titre": "Lisauteur Instagram",
+          "lien": "Communication digitale - flyer/2 - Lisauteur/article-lisauteurinsta.html",
+          "image": "Communication digitale - flyer/2 - Lisauteur/lisauteur.png",
+          "descriptionCourte": "Creation et gestion de mon Instagram professionnel Lisauteur.",
+          "description": "Community management, charte graphique et planification de contenu.",
+          "date": "En continu"
+        }
+      ]
+    },
+    {
+      "id": "audiovisuel",
+      "domaine": "Audiovisuel - Montage vidéo - Photographie",
+      "icon": "🎬",
+      "lien": "Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html",
+      "image": "Montage vidéo - réalisation/1 - montage avenir/montageavenir.png",
+      "descriptionCourte": "Productions audiovisuelles : montage et réalisation vidéo, captation photo, et retouches pour sublimer chaque image.",
+      "description": "- Montage avec Adobe Premiere Pro et Cap Cut<br/>- Montage multicam et post-production After Effects<br/>- Prises de vues photo au reflex<br/>- Retouche photo avec Adobe Lightroom et Photoshop<br/>",
+      "date": "Domaine principal",
+      "projets": [
+        {
+          "titre": "Montage Avenir",
+          "lien": "Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html",
+          "image": "Montage vidéo - réalisation/1 - montage avenir/montageavenir.png",
+          "descriptionCourte": "Vidéo introspective sur mon rêve cinématographique.",
+          "description": "Storytelling visuel, voix-off, montage Cap Cut et direction iconographique.",
+          "date": "avril 2023"
+        },
+        {
+          "titre": "Un dernier message",
+          "lien": "Montage vidéo - réalisation/2 - un dernier message/article-message.html",
+          "image": "Montage vidéo - réalisation/2 - un dernier message/message.png",
+          "descriptionCourte": "Réalisation d'un court-metrage: Un dernier message.",
+          "description": "Court-metrage de fiction en equipe : tournage, direction d'acteurs et montage Premiere Pro.",
+          "date": "Novembre 2025"
+        },
+        {
+          "titre": "Tatouages",
+          "lien": "Photographie - retouches photo/1 - tatouages/article-tatouage.html",
+          "image": "Photographie - retouches photo/1 - tatouages/Copie de Sara_Légende.jpg",
+          "descriptionCourte": "Reportage photo: Tatouages.",
+          "description": "Serie photo en studio : eclairage, direction de modeles et retouche Photoshop.",
+          "date": "Octobre 2025"
+        },
+        {
+          "titre": "Lecture",
+          "lien": "Photographie - retouches photo/2 - Lecture/article-lecture.html",
+          "image": "Photographie - retouches photo/2 - Lecture/lecture.jpg",
+          "descriptionCourte": "Reportage photo: Lecture.",
+          "description": "Projet photo sur la lecture : composition, lumiere naturelle et retouche Lightroom.",
+          "date": "Mars 2026"
+        }
+      ]
+    },
+    {
+      "id": "design-web",
+      "domaine": "Design Web - Création de site internet",
+      "icon": "💻",
+      "lien": "Design Web - Création de Site internet/TOUT web.html",
+      "image": "Design Web - Création de Site internet/1- Mon premier site - MADD/madd.png",
+      "descriptionCourte": "Design, conception et développement de sites web designs et fonctionnels.",
+      "description": "- Maquettes et prototypes avec Figma<br/>- Développement HTML/CSS/JavaScript/ SQL/ PHP et bases de données<br/>- Utilisation de CMS comme WordPress<br/>- Optimisation performance et SEO<br/>",
+      "date": "Domaine principal",
+      "projets": [
+        {
+          "titre": "refonte fictive du Site du MADD",
+          "lien": "Design Web - Création de Site internet/1- Mon premier site - MADD/article-madd.html",
+          "image": "Design Web - Création de Site internet/1- Mon premier site - MADD/madd.png",
+          "descriptionCourte": "Refonte fictive du site du MADD pour moderniser l'experience utilisateur.",
+          "description": "UI/UX, architecture d'information, maquette Figma et developpement HTML/CSS.",
+          "date": "Décembre 2026"
+        },
+        {
+          "titre": "Bordeaux Gastro",
+          "lien": "Design Web - Création de Site internet/2 - Bordeaux gastro/article-bordeaux-gastro.html",
+          "image": "Design Web - Création de Site internet/2 - Bordeaux gastro/bordeaux.png",
+          "descriptionCourte": "Site fictif dynamique avec base de donnees : Bordeaux Sagastronomie.",
+          "description": "UI/UX, developpement HTML/CSS/JavaScript, integration SQL/PHP et architecture d'information.",
+          "date": "Janvier 2026"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "totalDomaines": 4,
+    "totalProjets": 13,
+    "lastUpdate": "2026-04-21",
+    "version": "1.3"
+  }
+}

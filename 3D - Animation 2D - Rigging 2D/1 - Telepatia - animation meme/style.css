@@ -1,0 +1,15 @@
+/* Master CSS for subdirectories - Imports all stylesheets with relative paths */
+
+/* Variables et fondations */
+@import url('../../style.variables.css');
+
+/* Structure et layout */
+@import url('../../style.header.css');
+@import url('../../style.navigation.css');
+@import url('../../style.footer.css');
+
+/* Éléments decoratifs */
+@import url('../../style.decorative.css');
+
+/* Pages articles (override des pages index/projets) */
+@import url('../../style.articles.css');

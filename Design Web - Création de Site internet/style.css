@@ -1,0 +1,8 @@
+/* Master CSS for Design Web - Création de Site internet subdirectory */
+@import url('../style.variables.css');
+@import url('../style.header.css');
+@import url('../style.navigation.css');
+@import url('../style.footer.css');
+@import url('../style.decorative.css');
+@import url('../style.index-tout.css');
+@import url('../style.articles.css');

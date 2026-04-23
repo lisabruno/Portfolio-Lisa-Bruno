@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TOUT Communication - Portfolio Lisa Bruno</title>
+	<link rel="stylesheet" href="../style.variables.css">
+	<link rel="stylesheet" href="../style.header.css">
+	<link rel="stylesheet" href="../style.navigation.css">
+	<link rel="stylesheet" href="../style.footer.css">
+	<link rel="stylesheet" href="../style.decorative.css">
+	<link rel="stylesheet" href="../style.index-tout.css">
+	<script src="../script.nav.js" defer></script>
+</head>
+<body>
+	<main class="tout-shell" data-domain-id="communication">
+		<header class="tout-topbar">
+			<div class="tout-brand">Portfolio Lisa Bruno</div>
+			<nav class="tout-nav" aria-label="Navigation principale">
+				<a href="../index.html">Accueil</a>
+				<a href="../projets.html">Tous les projets</a>
+			</nav>
+		</header>
+
+		<section class="tout-hero">
+			<h1>Communication digitale - Flyer</h1>
+			<div class="ornament" aria-hidden="true">
+				<span class="line"></span>
+				<svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"></polygon></svg>
+				<span class="line"></span>
+			</div>
+			
+		</section>
+
+		<section class="timeline-container tout-timeline-static" aria-label="Frise des projets communication">
+			<div class="timeline-desktop">
+				<svg class="zigzag-svg" id="zigzag-svg" viewBox="0 0 800 900" preserveAspectRatio="xMidYMin meet">
+					<defs>
+						<filter id="glow">
+							<feGaussianBlur stdDeviation="6" result="coloredBlur"></feGaussianBlur>
+							<feMerge>
+								<feMergeNode in="coloredBlur"></feMergeNode>
+								<feMergeNode in="SourceGraphic"></feMergeNode>
+							</feMerge>
+						</filter>
+					</defs>
+					<path id="zigzag-path" class="animated-path" stroke="#a2b1ff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" opacity="0.9"></path>
+					<g id="zigzag-points"></g>
+				</svg>
+				<div id="project-line-desktop"></div>
+			</div>
+			<div class="timeline-mobile">
+				<div class="vertical-line"></div>
+				<div id="project-line-mobile"></div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="footer-col">
+				<h4>Domaines</h4>
+				<a href="../3D - Animation 2D - Rigging 2D/TOUT animation.html">Motion 2D/3D · Rigging 2D</a>
+				<a href="../Communication digitale - flyer/TOUT communication.html">Communication</a>
+				<a href="../Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html">Audiovisuel</a>
+				<a href="../Design Web - Création de Site internet/TOUT web.html">Design web</a>
+			</div>
+			<div class="footer-col">
+				<h4>Pages</h4>
+				<a href="../projets.html">Tous les projets</a>
+				<a href="../qui-suis-je.html">Qui suis-je ?</a>
+				<a href="../CV/cv.html">Mon CV</a>
+			</div>
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+				<a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
+				<a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+			</div>
+		</footer>
+	</main>
+
+	<script src="../script.tout.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Lisa Bruno</title>
+  <link rel="stylesheet" href="style.variables.css">
+  <link rel="stylesheet" href="style.header.css">
+  <link rel="stylesheet" href="style.navigation.css">
+  <link rel="stylesheet" href="style.footer.css">
+  <link rel="stylesheet" href="style.decorative.css">
+  <link rel="stylesheet" href="style.index-tout.css">
+  <script src="script.nav.js" defer></script>
+  <style>
+    .contact-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 0.55rem 3rem;
+    }
+
+    .contact-page .all-projects-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-page .all-projects-header h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: var(--heading);
+      margin-bottom: 1rem;
+      line-height: 1.05;
+    }
+
+    .contact-page .all-projects-header .lead {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .contact-stack {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .contact-block {
+      text-align: center;
+    }
+
+    .contact-panel h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--heading);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-list a {
+      display: block;
+      text-decoration: none;
+      color: var(--heading);
+      margin-bottom: 0.4rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-actions {
+      margin-top: 1.1rem;
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .contact-page {
+        padding-inline: 1rem;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Actuellement en recherche d'alternance</div>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="projets.html">Projets</a>
+      <a href="qui-suis-je.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="CV/cv.html">CV</a>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <div class="all-projects-header">
+      <h1>Contact</h1>
+      <div class="line-ornament" aria-hidden="true">
+        <span class="line"></span>
+        <svg class="star" viewBox="0 0 24 24">
+          <polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"></polygon>
+        </svg>
+        <span class="line"></span>
+      </div>
+      <p class="lead">Pour un stage, une alternance ou une collaboration, vous pouvez me contacter via ces canaux :</p>
+    </div>
+
+    <section class="contact-stack" aria-label="Coordonnees de contact">
+      <article class="contact-block">
+        <h2>Coordonnées directes</h2>
+        <div class="contact-list">
+          <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+          <a href="tel:0631019449">Téléphone : 06 31 01 94 49</a>
+          <a href="CV/cv.html">Voir mon CV</a>
+        </div>
+      </article>
+
+      <article class="contact-block">
+        <h2>Réseaux</h2>
+        <div class="contact-list">
+          <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+          <a href="https://www.tiktok.com/@lisauteur" target="_blank" rel="noopener noreferrer">TikTok : lisauteur</a>
+          <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="projets.html">Voir mes projets</a>
+          <a class="btn ghost" href="qui-suis-je.html">Qui suis-je ?</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <h4>Domaines</h4>
+      <a href="3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/article-idfc.html">Motion 2D/3D · Rigging 2D</a>
+      <a href="Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html">Communication</a>
+      <a href="Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html">Audiovisuel</a>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="projets.html">Tous les projets</a>
+      <a href="qui-suis-je.html">Qui suis-je ?</a>
+      <a href="CV/cv.html">Mon CV</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
+      <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
+      <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
+
+

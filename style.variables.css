@@ -1,0 +1,79 @@
+﻿
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('Fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('Fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  
+  --bg: #f7f6f3;
+  --ink: #0f172a;
+  --heading: #35278e;
+  --accent: #b5bedf;
+  --accent-soft: rgba(181, 190, 223, 0.14);
+  --border: rgba(181, 190, 223, 0.32);
+  --text-muted: #64748b;
+  --line-color: #d8d0c4;
+  --card: #ffffff;
+
+  
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-article: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-system);
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+p {
+  font-size: 1.05rem;
+  color: #000000;
+}
+
+body.article-page {
+  font-family: var(--font-article);
+}
+
+.star-shape {
+  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ornament .line {
+  height: 1px;
+  background-color: var(--accent);
+}
+
+.ornament .star {
+  fill: var(--accent);
+  stroke: var(--accent);
+  flex-shrink: 0;
+}

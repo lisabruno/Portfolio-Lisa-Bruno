@@ -1,0 +1,206 @@
+﻿{
+    "articles":  [
+                     {
+                         "id":  "article-telepatia",
+                         "path":  "3D - Animation 2D - Rigging 2D/1 - Telepatia - animation meme/article-Telepatia.html",
+                         "title":  "Telepatia - animation meme",
+                         "tag":  "Animation 2D/3D",
+                         "date":  {
+                                      "iso":  "2023-03",
+                                      "label":  "📅 mars 2023"
+                                  },
+                         "nav":  {
+                                     "prev":  "../5 -ShowTime/article-showtime.html",
+                                     "next":  "../2 - Voiture - motion 2D/article-voiture.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication generale :\u003c/strong\u003e C\u0027est un projet d\u0027animation courte base sur le titre \"Telepatia\" de Kali Uchis, realise dans le style animation meme, assez populaire sur YouTube. L\u0027idee est de creer une animation qui met en scene un personnage original sur le rythme de la musique.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Maitrise du timing et du rythme, perfectionnement de l\u0027animation image par image et apprentissage du motion design pour les fonds.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eReperage d\u0027une reference motivante sur youtube\u003c/li\u003e\u003cli\u003eRecherche du design du personnage\u003c/li\u003e\u003cli\u003eStoryboarding avec la musique\u003c/li\u003e\u003cli\u003eAnimation 2D du personnage en image par image\u003c/li\u003e\u003cli\u003eMotion design du fond\u003c/li\u003e\u003cli\u003eExportation et mise en ligne\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://www.youtube.com/watch?v=WCd0FLveXEs\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la video\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-voiture",
+                         "path":  "3D - Animation 2D - Rigging 2D/2 - Voiture - motion 2D/article-voiture.html",
+                         "title":  "Animation Voiture du Nouvel Âge - motion design",
+                         "tag":  "Animation 2D/3D",
+                         "date":  {
+                                      "iso":  "2023-11",
+                                      "label":  "📅 novembre 2023"
+                                  },
+                         "nav":  {
+                                     "prev":  "../1 - Telepatia - animation meme/article-Telepatia.html",
+                                     "next":  "../3 - endogamie numériquement assisté/article-MotionDesign.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003eRealisation d\u0027une sequence de motion design basee sur un passage du roman que j\u0027ecris : \"Le Nouvel Age\". L\u0027objectif etait de travailler sur le motion design avec des assets graphiques faits sur Adobe Animate et Paint Tool SAI 2.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Maitrise du motion design, design d\u0027assets pour le motion, et gestion de la profondeur de champ.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eEcriture du passage\u003c/li\u003e\u003cli\u003eDesign des elements graphiques\u003c/li\u003e\u003cli\u003eAnimation des elements\u003c/li\u003e\u003cli\u003eExportation et mise en ligne\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://www.youtube.com/watch?v=GtzVs_ChCwQ\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la video\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-motiondesign",
+                         "path":  "3D - Animation 2D - Rigging 2D/3 - endogamie numériquement assisté/article-MotionDesign.html",
+                         "title":  "Motion design : l’endogamie numériquement assistée",
+                         "tag":  "Animation 2D/3D",
+                         "date":  {
+                                      "iso":  "2025-11",
+                                      "label":  "📅 Novembre 2025"
+                                  },
+                         "nav":  {
+                                     "prev":  "../2 - Voiture - motion 2D/article-voiture.html",
+                                     "next":  "../4 - IDFC - animation meme/article-idfc.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication générale :\u003c/strong\u003e Une vidéo de vulgarisation d’une théorie info-com expliquant comment les algorithmes de rencontre influencent nos choix. C’est un projet complet qui va de la recherche théorique à l’animation finale.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompétences acquises :\u003c/strong\u003e Scénarisation et vulgarisation, création de systèmes d\u0027animation complexes sur After Effects, sound design et gestion de projet de A à Z.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eVulgarisation de la théorie : écriture du script\u003c/li\u003e\u003cli\u003eRecherche et inspiration\u003c/li\u003e\u003cli\u003eCréation du storyboard\u003c/li\u003e\u003cli\u003eEnregistrement de la voix\u003c/li\u003e\u003cli\u003eDesign des éléments graphiques\u003c/li\u003e\u003cli\u003eAnimation des éléments sur After Effects\u003c/li\u003e\u003cli\u003eEnregistrement des bruitages\u003c/li\u003e\u003cli\u003eMontage des 2 parties\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://www.youtube.com/watch?v=xwYXEGbrFuU\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la vidéo\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-idfc",
+                         "path":  "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/article-idfc.html",
+                         "title":  "IDFC - animation meme",
+                         "tag":  "Animation 2D/3D",
+                         "date":  {
+                                      "iso":  "2026-04",
+                                      "label":  "📅 en cours"
+                                  },
+                         "nav":  {
+                                     "prev":  "../3 - endogamie numériquement assisté/article-MotionDesign.html",
+                                     "next":  "../5 -ShowTime/article-showtime.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication generale :\u003c/strong\u003e Un projet d\u0027animation 2D plus pousse techniquement, utilisant le rigging de personnage. L\u0027objectif etait de creer une animation esthetique et essayer le motion 3D ainsi que le rigging 2D sur des assets faits avec Adobe Illustrator.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Rigging de personnages 2D sur Adobe Animate, gestion de la compatibilite entre Illustrator, After Effects et Blender, motion design 3D.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche et inspiration\u003c/li\u003e\u003cli\u003eDesign des personnages (Illustrator)\u003c/li\u003e\u003cli\u003eStoryboarding\u003c/li\u003e\u003cli\u003eRigging 2D (Adobe Animate)\u003c/li\u003e\u003cli\u003eMontage et motion design 3D (After Effects et Blender)\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://youtu.be/ikd-Y6lT390\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la video\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-la.fee.du.tri",
+                         "path":  "Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html",
+                         "title":  "Communication pour @la.fee.du.tri",
+                         "tag":  "Communication",
+                         "date":  {
+                                      "iso":  "2025-10",
+                                      "label":  "📅 Octobre 2025"
+                                  },
+                         "nav":  {
+                                     "prev":  "../../3D - Animation 2D - Rigging 2D/5 -ShowTime/article-showtime.html",
+                                     "next":  "../2 - Lisauteur/article-lisauteurinsta.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication generale :\u003c/strong\u003e Refonte de la strategie visuelle et digitale pour une coach en organisation, incluant l\u0027analyse de ses reseaux et la creation de contenus adaptes.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Analyse social media, strategie de contenu (content strategy), direction artistique appliquee au marketing, creation de contenu de reseaux sociaux, utilisation de marronniers.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche de la coach et de ses reseaux sociaux\u003c/li\u003e\u003cli\u003eReception de ses chiffres des reseaux sociaux\u003c/li\u003e\u003cli\u003eAnalyse social media\u003c/li\u003e\u003cli\u003eCreation de contenu adapte avec une direction artistique commune\u003c/li\u003e\u003cli\u003ePhotos dans le dossier de La fee du tri avec les 3 carrousels\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://youtu.be/ikd-Y6lT390\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la video\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-lisauteurinsta",
+                         "path":  "Communication digitale - flyer/2 - Lisauteur/article-lisauteurinsta.html",
+                         "title":  "Instagram Lisauteur - Mon Instagram professionnel",
+                         "tag":  "Communication",
+                         "date":  {
+                                      "iso":  "2025-02",
+                                      "label":  "📅 En continu"
+                                  },
+                         "nav":  {
+                                     "prev":  "../1 - La.fee.du.tri/article-la.fee.du.tri.html",
+                                     "next":  "../../Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003eCreation et gestion d\u0027une vitrine professionnelle sur Instagram pour centraliser mes travaux creatifs. Le projet consiste a maintenir une direction artistique coherente pour presenter mon evolution technique en animation, montage et photographie.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Community management, definition d\u0027une charte graphique pour reseaux sociaux, planification de contenu (batching) et veille artistique.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eCreation d\u0027une charte graphique avec une direction artistique claire\u003c/li\u003e\u003cli\u003eCreation des visuels de mon compte Instagram\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://www.instagram.com/lisauteur/\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir mon Instagram\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-madd",
+                         "path":  "Design Web - Création de Site internet/1- Mon premier site - MADD/article-madd.html",
+                         "title":  "Site fictif du MADD",
+                         "tag":  "Design Web",
+                         "date":  {
+                                      "iso":  "2026-12",
+                                      "label":  "📅 Décembre 2026"
+                                  },
+                         "nav":  {
+                                     "prev":  "../../Photographie - retouches photo/2 - Lecture/article-lecture.html",
+                                     "next":  "../2 - Bordeaux gastro/article-bordeaux-gastro.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003eRefonte fictive du site du Musee des Arts Decoratifs et du Design. Le projet visait a moderniser l\u0027interface pour offrir une experience utilisateur elegante, facilitant l\u0027acces aux expositions et aux archives du musee.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Design d\u0027interface (UI) et d\u0027experience utilisateur (UX), architecture d\u0027information et developpement en CSS et HTML.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique et du theme\u003c/li\u003e\u003cli\u003eMaquettage sur Figma\u003c/li\u003e\u003cli\u003eDeveloppement en CSS et HTML\u003c/li\u003e\u003cli\u003eMise en ligne avec Vercel\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://site-madd2.vercel.app/index.html\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir le site\u003c/a\u003e\u003c/p\u003e",
+                         "projectLink":  "https://site-madd2.vercel.app/index.html"
+                     },
+                     {
+                         "id":  "article-bordeaux-gastro",
+                         "path":  "Design Web - Création de Site internet/2 - Bordeaux gastro/article-bordeaux-gastro.html",
+                         "title":  "Site fictif avec base de données : Bordeaux Sagastronomie",
+                         "tag":  "Design Web",
+                         "date":  {
+                                      "iso":  "2026-01",
+                                      "label":  "📅 Janvier 2026"
+                                  },
+                         "nav":  {
+                                     "prev":  "../1- Mon premier site - MADD/article-madd.html",
+                                     "next":  "../../3D - Animation 2D - Rigging 2D/1 - Telepatia - animation meme/article-Telepatia.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication generale :\u003c/strong\u003e Creation d\u0027un site web dynamique qui repertorie des restaurants a Bordeaux, avec une interface pensee pour les gourmets et une base de donnees fonctionnelle.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Design d\u0027interface (UI) et d\u0027experience utilisateur (UX), gestion de bases de donnees (SQL/PHP), architecture d\u0027information et developpement en CSS, JavaScript et HTML.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique et du theme\u003c/li\u003e\u003cli\u003eDeveloppement front-end et back-end avec base de donnees\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://blogart26.free.nf/?i=1\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir le site\u003c/a\u003e\u003c/p\u003e",
+                         "projectLink":  "https://blogart26-groupe10.great-site.net/?i=2"
+                     },
+                     {
+                         "id":  "article-montageavenir",
+                         "path":  "Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html",
+                         "title":  "Montage Avenir - Mon rêve cinématographique",
+                        "tag":  "Montage vidéo",
+                         "date":  {
+                                      "iso":  "2023-04",
+                                      "label":  "📅 avril 2023"
+                                  },
+                         "nav":  {
+                                     "prev":  "../../Communication digitale - flyer/2 - Lisauteur/article-lisauteurinsta.html",
+                                     "next":  "../2 - un dernier message/article-message.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication generale :\u003c/strong\u003e Il s\u0027agit d\u0027une video introspective. J\u0027ai utilise des videos libres de droits pour construire un recit visuel qui illustre ma passion pour le cinema et mes ambitions futures.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Narration visuelle (storytelling), montage de structures narratives complexes sur Cap Cut, traitement audio (voix-off) et recherche iconographique coherente.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eEcriture du script\u003c/li\u003e\u003cli\u003eRecherche et inspiration des videos libres de droits\u003c/li\u003e\u003cli\u003eEnregistrement de la voix\u003c/li\u003e\u003cli\u003eDesign des elements graphiques\u003c/li\u003e\u003cli\u003eMontage sur Cap Cut\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003ca href=\"https://www.youtube.com/watch?v=xwYXEGbrFuU\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la video\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-message",
+                         "path":  "Montage vidéo - réalisation/2 - un dernier message/article-message.html",
+                         "title":  "Un dernier message...",
+                        "tag":  "Montage vidéo",
+                         "date":  {
+                                      "iso":  "2025-11",
+                                      "label":  "📅 Novembre 2025"
+                                  },
+                         "nav":  {
+                                     "prev":  "../1 - montage avenir/article-montageavenir.html",
+                                     "next":  "../../Photographie - retouches photo/1 - tatouages/article-tatouage.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eExplication generale :\u003c/strong\u003e Un court-metrage de fiction realise en equipe. On suit une narration courte centree sur l\u0027emotion et la captation de l\u0027instant.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompetences acquises :\u003c/strong\u003e Direction d\u0027acteurs, gestion technique d\u0027un tournage (lumiere/cadre), travail d\u0027equipe et montage cinematographique avec Premiere Pro.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche et inspiration\u003c/li\u003e\u003cli\u003eEcriture du script\u003c/li\u003e\u003cli\u003eConception du storyboard\u003c/li\u003e\u003cli\u003eRealisation technique : tournage\u003c/li\u003e\u003cli\u003eMontage video\u003c/li\u003e\u003c/ul\u003e\u003cp\u003eCe projet m\u0027a permis de developper mes competences en montage video et en realisation, tout en travaillant en equipe.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://youtu.be/sd1ltEEocAM\" target=\"_blank\" rel=\"noopener noreferrer\"\u003eVoir la video\u003c/a\u003e\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-tatouage",
+                         "path":  "Photographie - retouches photo/1 - tatouages/article-tatouage.html",
+                         "title":  "Reportage photo de tatouages",
+                         "tag":  "Photographie",
+                         "date":  {
+                                      "iso":  "2025-10",
+                                      "label":  "📅 Octobre 2025"
+                                  },
+                         "nav":  {
+                                     "prev":  "../../Montage vidéo - réalisation/2 - un dernier message/article-message.html",
+                                     "next":  "../2 - Lecture/article-lecture.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003e\u003cstrong\u003eDescription :\u003c/strong\u003e Série photographique réalisée en studio sur le thème des tatouages. Le projet met en avant le rendu esthétique de l\u0027encre sur la peau à travers un travail spécifique sur les contrastes et les textures.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompétences acquises :\u003c/strong\u003e Gestion de l\u0027éclairage studio, direction de modèles, techniques de retouche avancée sous Photoshop.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique\u003c/li\u003e\u003cli\u003eRecherche de modèles\u003c/li\u003e\u003cli\u003ePrise de photographies dans un studio\u003c/li\u003e\u003cli\u003eRetouche photo\u003c/li\u003e\u003cli\u003ePhotomontage avec Photoshop\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cstrong\u003eLien de la vidéo :\u003c/strong\u003e Les photos du dossier reportage photo tatouage\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-lecture",
+                         "path":  "Photographie - retouches photo/2 - Lecture/article-lecture.html",
+                         "title":  "Photo sur la lecture",
+                         "tag":  "Photographie",
+                         "date":  {
+                                      "iso":  "2026-03",
+                                      "label":  "📅 mars 2026"
+                                  },
+                         "nav":  {
+                                     "prev":  "../1 - tatouages/article-tatouage.html",
+                                     "next":  "../../Design Web - Création de Site internet/1- Mon premier site - MADD/article-madd.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003eProjet photographique autour de la thématique de la lecture. L\u0027enjeu était de créer une atmosphère calme et immersive en jouant sur la lumière naturelle et la mise en scène d\u0027objets pour raconter une histoire sans paroles.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eCompétences acquises :\u003c/strong\u003e Composition d\u0027image, retouches photos sur Lightroom.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique et du thème\u003c/li\u003e\u003cli\u003eRecherche des éléments tels que les lieux et les objets\u003c/li\u003e\u003cli\u003ePrise de photographies\u003c/li\u003e\u003cli\u003eRetouches photo avec Lightroom\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cstrong\u003eLien de la vidéo :\u003c/strong\u003e Les photos du dossier photo lecture\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-showtime",
+                         "path":  "3D - Animation 2D - Rigging 2D/5 -ShowTime/article-showtime.html",
+                         "title":  "KeyFrame : Premier épisode sur l’animation 2D",
+                         "tag":  "Animation 2D/3D",
+                         "date":  {
+                                      "iso":  "2026-03",
+                                      "label":  "📅 mars 2026"
+                                  },
+                         "nav":  {
+                                     "prev":  "../4 - IDFC - animation meme/article-idfc.html",
+                                     "next":  "../../Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html"
+                                 },
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003evoici une émission completement faite par groupe de 13 traitant de l\u0027animation 2D. J\u0027ai pu y faire le motion design ainsi que la recherche d\u0027idées tout en apprennant à filmer car j\u0027y ai fait caméraman. L\u0027émission n\u0027est pas encore en ligne mais je vais pouvoir le mettre dans pas longtemps...\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique et du thème\u003c/li\u003e\u003cli\u003eBrainstorming et\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cstrong\u003eLien du site :\u003c/strong\u003e à venir\u003c/p\u003e"
+                     }
+                 ],
+    "meta":  {
+                 "totalArticles":  13,
+                 "generatedAt":  "2026-04-21",
+                 "version":  "1.2"
+             }
+}
