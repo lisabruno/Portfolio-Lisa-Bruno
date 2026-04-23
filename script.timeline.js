@@ -343,7 +343,7 @@
     try {
       var rootScript = getRootFromScript();
       var jsonUrl = new URL('articles-data.json', rootScript);
-      var response = await fetch(jsonUrl.href, { cache: 'no-store' });
+      var response = await fetch(jsonUrl.href, { cache: 'default' });
       if (!response.ok) {
         return {};
       }
@@ -442,7 +442,7 @@
     try {
       var rootScript = getRootFromScript();
       var jsonUrl = new URL('projects-data.json', rootScript);
-      var response = await fetch(jsonUrl.href, { cache: 'no-store' });
+      var response = await fetch(jsonUrl.href, { cache: 'default' });
       if (!response.ok) {
         throw new Error('HTTP ' + response.status);
       }

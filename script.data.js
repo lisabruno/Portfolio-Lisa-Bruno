@@ -149,7 +149,7 @@
             image +
             '" alt="' +
             title +
-            '">' +
+            '" loading="lazy" decoding="async">' +
             '</div>' +
             '<div class="project-details">' +
             '<h3>' +
@@ -190,7 +190,7 @@
   async function loadData() {
     var rootScript = getRootFromScript();
     var jsonUrl = new URL('projects-data.json', rootScript);
-    var response = await fetch(jsonUrl.href, { cache: 'no-store' });
+    var response = await fetch(jsonUrl.href, { cache: 'default' });
     if (!response.ok) {
       throw new Error('Impossible de charger projects-data.json (HTTP ' + response.status + ')');
     }

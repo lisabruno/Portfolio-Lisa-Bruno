@@ -252,6 +252,15 @@ main {
 	margin-top: 0.8rem;
 }
 
+.article-block,
+.article-video,
+.carousel,
+.photo-gallery,
+.project-gallery {
+	content-visibility: auto;
+	contain-intrinsic-size: 1px 700px;
+}
+
 .article-block-competences ul,
 .article-block-demarche ul,
 .article-block-demarche ol {
