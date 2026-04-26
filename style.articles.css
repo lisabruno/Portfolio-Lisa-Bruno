@@ -462,6 +462,52 @@ main {
 	font-weight: 600;
 }
 
+/* Styles pour les étapes du processus */
+.process-step {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin: 2rem 0;
+	padding: 1.5rem;
+	background-color: rgba(162, 177, 255, 0.08);
+	border-left: 5px solid var(--accent-lavender);
+	border-radius: 4px;
+	transition: all 0.3s ease;
+}
+
+.process-step:hover {
+	background-color: rgba(162, 177, 255, 0.12);
+	border-left-color: var(--primary-indigo);
+}
+
+.process-content h4 {
+	color: var(--primary-indigo);
+	font-size: 1.1rem;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+}
+
+.process-content p {
+	color: var(--text-dark);
+	font-size: 0.95rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.process-image {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	object-fit: contain;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+	display: block;
+}
+
+.process-image:hover {
+	transform: scale(1.02);
+}
+
 .article-nav-links {
 	display: flex;
 	justify-content: space-between;
