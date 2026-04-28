@@ -1,4 +1,4 @@
-﻿
+
 
 .brand {
   display: inline-flex;
@@ -19,7 +19,7 @@
   height: 2.8rem;
   border-radius: 0.8rem;
   background: transparent;
-  border: 2px solid #a2b1ff;
+  border: 2px solid #ffdb70;
   box-shadow: 0 10px 22px rgba(162, 177, 255, 0.2);
 }
 
@@ -137,7 +137,7 @@
   bottom: 0.65rem;
   width: 2px;
   border-radius: 999px;
-  background: var(--accent);
+  background: #ffdb70;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.24s ease;
@@ -150,12 +150,12 @@
   bottom: 0.28rem;
   width: var(--star-size);
   height: var(--star-size);
-  background: var(--accent);
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
   opacity: 0;
   transform: translateX(-50%) scale(0.7);
   transform-origin: center;
-  filter: drop-shadow(0 0 4px rgba(162, 177, 255, 0.55));
+  filter: drop-shadow(0 0 4px rgba(255, 219, 112, 0.55));
   transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
@@ -435,7 +435,7 @@ header.article-topbar {
     min-height: 2.3rem;
     padding: 0.42rem 0.72rem;
     border-radius: 0.72rem;
-    border: 1px solid rgba(162, 177, 255, 0.55);
+    border: 1px solid rgba(255, 219, 112, 0.55);
     background: rgba(255, 255, 255, 0.9);
   }
 

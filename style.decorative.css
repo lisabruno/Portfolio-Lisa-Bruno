@@ -1,4 +1,4 @@
-﻿
+
 
 .divider-horizontal {
   position: absolute;
@@ -20,8 +20,8 @@
   position: absolute;
   width: 22px;
   height: 22px;
-  background: var(--accent);
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 .star-centered.small {
@@ -79,8 +79,8 @@
 }
 
 .ornament .star {
-  fill: var(--accent);
-  stroke: var(--accent);
+  fill: #ffdb70;
+  stroke: #ffdb70;
   flex-shrink: 0;
 }
 
@@ -108,5 +108,5 @@
 
 .star-mobile {
   flex-shrink: 0;
-  fill: var(--accent);
+  fill: #ffdb70;
 }

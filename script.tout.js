@@ -412,7 +412,7 @@
         '<h3><a class="project-title-button" href="' + safeLink + '">' + safeTitle + '</a></h3>' +
         '<p class="project-date-small">' + dateText + '</p>' +
         '<p class="project-domain-small">' + domainText + '</p>' +
-        '<div class="ornament small"><div class="line ' + lineClass + '"></div><svg class="star" width="12" height="12" viewBox="0 0 24 24" fill="#a2b1ff" stroke="#a2b1ff"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"></polygon></svg><div class="line ' + lineClass + '"></div></div>' +
+        '<div class="ornament small"><div class="line ' + lineClass + '"></div><svg class="star" width="12" height="12" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line ' + lineClass + '"></div></div>' +
         '<p class="card-description">' + descriptionText + '</p>' +
         '</article>' +
         '<div class="card-image-vertical" style="top:' + (top - 60) + 'px; ' + imagePos + '"><div class="placeholder-vertical"></div></div>'
@@ -430,7 +430,7 @@
       var descriptionText = escapeHtml(articleDescription || project.description || project.descriptionCourte || '');
 
       return (
-        '<div class="mobile-item"><div class="mobile-content ' + sideClass + '"><div class="mobile-card"><h3><a class="project-title-button" href="' + safeLink + '">' + safeTitle + '</a></h3><p class="project-date-small">' + dateText + '</p><p class="project-domain-small">' + domainText + '</p><div class="ornament-mobile"><div class="line-mobile"></div><svg class="star-mobile" width="10" height="10" viewBox="0 0 24 24" fill="#a2b1ff"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"></polygon></svg><div class="line-mobile"></div></div><p>' + descriptionText + '</p></div></div><div class="mobile-dot ' + dotClass + '"></div><div class="mobile-content ' + (sideClass === 'left' ? 'right' : 'left') + '"></div></div>'
+        '<div class="mobile-item"><div class="mobile-content ' + sideClass + '"><div class="mobile-card"><h3><a class="project-title-button" href="' + safeLink + '">' + safeTitle + '</a></h3><p class="project-date-small">' + dateText + '</p><p class="project-domain-small">' + domainText + '</p><div class="ornament-mobile"><div class="line-mobile"></div><svg class="star-mobile" width="10" height="10" viewBox="0 0 24 24" fill="#ffdb70"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line-mobile"></div></div><p>' + descriptionText + '</p></div></div><div class="mobile-dot ' + dotClass + '"></div><div class="mobile-content ' + (sideClass === 'left' ? 'right' : 'left') + '"></div></div>'
       );
     }).join('');
 

@@ -1,4 +1,4 @@
-﻿
+
 
 @font-face {
   font-family: 'Amoresa';
@@ -71,7 +71,7 @@ html, body {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   border-bottom: 1px solid rgba(162, 177, 255, 0.45);
-  background: #a2b1ff;
+  background: #ffdb70;
   color: #35278e;
   overflow: hidden;
   white-space: nowrap;
@@ -85,7 +85,7 @@ html, body {
   letter-spacing: 0.02em;
   text-transform: lowercase;
   text-align: center;
-  color: #000000;
+  color: #020041;
 }
 
 .site-announcement-accent {
@@ -112,8 +112,8 @@ html, body {
   width: 100vw;
   height: 22px;
   background:
-    linear-gradient(#a2b1ff, #a2b1ff) left center / calc(50% - 18px) 1px no-repeat,
-    linear-gradient(#a2b1ff, #a2b1ff) right center / calc(50% - 18px) 1px no-repeat;
+    linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 18px) 1px no-repeat,
+    linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 18px) 1px no-repeat;
 }
 
 .topbar::after {
@@ -124,8 +124,8 @@ html, body {
   transform: translateX(-50%);
   width: 22px;
   height: 22px;
-  background: #a2b1ff;
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 .brand,
@@ -153,7 +153,7 @@ html, body {
   height: 2.8rem;
   border-radius: 0.8rem;
   background: transparent;
-  border: 2px solid #a2b1ff;
+  border: 2px solid #72a9ff;
   box-shadow: 0 4px 12px rgba(162, 177, 255, 0.14);
 }
 
@@ -263,7 +263,7 @@ html, body {
   bottom: 0.65rem;
   width: 2px;
   border-radius: 999px;
-  background: #a2b1ff;
+  background: #72a9ff;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.24s ease;
@@ -276,12 +276,12 @@ html, body {
   bottom: 0.28rem;
   width: var(--star-size);
   height: var(--star-size);
-  background: #a2b1ff;
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
   opacity: 0;
   transform: translateX(-50%) scale(0.7);
   transform-origin: center;
-  filter: drop-shadow(0 0 4px rgba(162, 177, 255, 0.55));
+  filter: drop-shadow(0 0 4px rgba(255, 219, 112, 0.55));
   transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
@@ -416,8 +416,8 @@ html, body {
     width: calc(100% - 1.2rem);
     height: 20px;
     background:
-      linear-gradient(#a2b1ff, #a2b1ff) left center / calc(50% - 15px) 1px no-repeat,
-      linear-gradient(#a2b1ff, #a2b1ff) right center / calc(50% - 15px) 1px no-repeat;
+      linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 15px) 1px no-repeat,
+      linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 15px) 1px no-repeat;
   }
 
   .nav-links.nav-menu::after {
@@ -428,8 +428,8 @@ html, body {
     transform: translateX(-50%);
     width: 18px;
     height: 18px;
-    background: #a2b1ff;
-    clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+    background: #72a9ff;
+    clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
   }
 }
 
@@ -462,8 +462,8 @@ header.article-topbar::before {
   width: 100vw;
   height: 22px;
   background:
-    linear-gradient(#a2b1ff, #a2b1ff) left center / calc(50% - 18px) 1px no-repeat,
-    linear-gradient(#a2b1ff, #a2b1ff) right center / calc(50% - 18px) 1px no-repeat;
+    linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 18px) 1px no-repeat,
+    linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 18px) 1px no-repeat;
 }
 
 header.article-topbar::after {
@@ -474,8 +474,8 @@ header.article-topbar::after {
   transform: translateX(-50%);
   width: 22px;
   height: 22px;
-  background: #a2b1ff;
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 .article-nav {
@@ -580,7 +580,7 @@ header.article-topbar::after {
   bottom: 0.65rem;
   width: 2px;
   border-radius: 999px;
-  background: #a2b1ff;
+  background: #72a9ff;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.24s ease;
@@ -593,12 +593,12 @@ header.article-topbar::after {
   bottom: 0.28rem;
   width: var(--star-size);
   height: var(--star-size);
-  background: #a2b1ff;
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
   opacity: 0;
   transform: translateX(-50%) scale(0.7);
   transform-origin: center;
-  filter: drop-shadow(0 0 4px rgba(162, 177, 255, 0.55));
+  filter: drop-shadow(0 0 4px rgba(255, 219, 112, 0.55));
   transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
@@ -722,8 +722,8 @@ header.article-topbar::after {
     width: calc(100% - 1.2rem);
     height: 20px;
     background:
-      linear-gradient(#a2b1ff, #a2b1ff) left center / calc(50% - 15px) 1px no-repeat,
-      linear-gradient(#a2b1ff, #a2b1ff) right center / calc(50% - 15px) 1px no-repeat;
+      linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 15px) 1px no-repeat,
+      linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 15px) 1px no-repeat;
   }
 
   .article-nav.nav-menu::after {
@@ -734,8 +734,8 @@ header.article-topbar::after {
     transform: translateX(-50%);
     width: 18px;
     height: 18px;
-    background: #a2b1ff;
-    clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+    background: #ffdb70;
+    clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
   }
 }
 

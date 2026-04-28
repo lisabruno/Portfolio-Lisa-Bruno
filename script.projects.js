@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 				return source;
 			}
 
-		const ornament = '<div class="article-ornament"><span class="line"></span><svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"></polygon></svg><span class="line"></span></div>';
+		const ornament = '<div class="article-ornament"><span class="line"></span><svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><span class="line"></span></div>';
 
 		let html = '';
 

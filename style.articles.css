@@ -1,11 +1,11 @@
-﻿
+
 
 :root {
 	--bg-cream: #f7f6f3;
 	--text-dark: #0f172a;
 	--text-muted: #64748b;
 	--primary-indigo: #35278e;
-	--accent-lavender: #a2b1ff;
+	--accent-lavender: #72a9ff;
 	--line-color: #d8d0c4;
 }
 
@@ -107,7 +107,7 @@ main {
 	width: 14px;
 	height: 14px;
 	border-radius: 50%;
-	background: #000000;
+	background: #020041;
 	border: 3px solid #ffffff;
 	box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.25), 0 4px 12px rgba(15, 23, 42, 0.25);
 	pointer-events: none;
@@ -195,7 +195,8 @@ main {
 .article-ornament .star {
 	width: 24px;
 	height: 24px;
-	fill: var(--accent-lavender);
+	fill: #ffdb70;
+	stroke: #ffdb70;
 	flex-shrink: 0;
 }
 
@@ -845,8 +846,8 @@ header.article-topbar {
 	height: 3.55rem;
 	padding: 0.46rem 1.2rem;
 	border-radius: 10px;
-	border: 1px solid #3a2e8d;
-	background: #3a2e8d;
+	border: 1px solid #012095;
+	background: #012095;
 	color: #ffffff;
 	text-decoration: none;
 	border-bottom: none;

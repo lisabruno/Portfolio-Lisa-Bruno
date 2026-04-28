@@ -1,10 +1,10 @@
-﻿
+
 
 :root {
   --bg: #f7f6f3;
   --ink: #0f172a;
   --heading: #35278e;
-  --accent: #a2b1ff;
+  --accent: #72a9ff;
   --text-muted: #64748b;
 }
 
@@ -28,8 +28,8 @@
   width: 100vw;
   height: 10px;
   background:
-    linear-gradient(#a2b1ff, #a2b1ff) left center / calc(50% - 9px) 1px no-repeat,
-    linear-gradient(#a2b1ff, #a2b1ff) right center / calc(50% - 9px) 1px no-repeat;
+    linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 9px) 1px no-repeat,
+    linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 9px) 1px no-repeat;
 }
 
 .footer::after {
@@ -40,8 +40,8 @@
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
-  background: #a2b1ff;
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 .footer:has(.footer-ornament)::before,
@@ -106,7 +106,7 @@
 }
 
 .copyright p {
-  color: #000000;
+  color: #020041;
 }
 
 @media (min-width: 768px) {
@@ -166,8 +166,8 @@ footer.article-footer::before {
   width: 100vw;
   height: 10px;
   background:
-    linear-gradient(#a2b1ff, #a2b1ff) left center / calc(50% - 9px) 1px no-repeat,
-    linear-gradient(#a2b1ff, #a2b1ff) right center / calc(50% - 9px) 1px no-repeat;
+    linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 9px) 1px no-repeat,
+    linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 9px) 1px no-repeat;
 }
 
 footer.article-footer::after {
@@ -178,8 +178,8 @@ footer.article-footer::after {
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
-  background: #a2b1ff;
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 footer.article-footer .footer-col h4,

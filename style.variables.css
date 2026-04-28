@@ -1,4 +1,4 @@
-﻿
+
 @font-face {
   font-family: 'Be Vietnam Pro';
   src: url('Fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf') format('truetype');
@@ -49,7 +49,7 @@ html, body {
 
 p {
   font-size: 1.05rem;
-  color: #000000;
+  color: #020041;
 }
 
 body.article-page {
@@ -57,7 +57,7 @@ body.article-page {
 }
 
 .star-shape {
-  clip-path: polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%);
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 .ornament {
@@ -73,8 +73,8 @@ body.article-page {
 }
 
 .ornament .star {
-  fill: var(--accent);
-  stroke: var(--accent);
+  fill: #ffdb70;
+  stroke: #ffdb70;
   flex-shrink: 0;
 }
 

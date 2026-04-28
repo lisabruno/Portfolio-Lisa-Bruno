@@ -573,7 +573,7 @@
       '</defs>' +
       '<path id="zigzag-path" d="' +
       pathParts.join(' ') +
-      '" stroke="#a2b1ff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" opacity="0.9" class="animated-path"/>' +
+      '" stroke="#72a9ff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" opacity="0.9" class="animated-path"/>' +
       circlesHtml +
       '</svg>' +
       desktopCardsHtml;
@@ -608,8 +608,8 @@
           domainHtml +
           '<div class="ornament-mobile">' +
           '<div class="line-mobile"></div>' +
-          '<svg class="star-mobile" width="10" height="10" viewBox="0 0 24 24" fill="#a2b1ff" stroke="#a2b1ff">' +
-          '<polygon points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10" />' +
+          '<svg class="star-mobile" width="10" height="10" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70">' +
+          '<polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" />' +
           '</svg>' +
           '<div class="line-mobile"></div>' +
           '</div>' +
