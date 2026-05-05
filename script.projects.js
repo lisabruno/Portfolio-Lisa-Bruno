@@ -632,7 +632,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 	setupAutoCarousels();
 
 	// Desactivation des line-dot (points noirs a gauche/droite)
-	/*
 	articleContents.forEach((content) => {
 		if (!content.querySelector('.line-dot')) {
 			content.insertAdjacentHTML(
@@ -644,7 +643,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 			);
 		}
 	});
-	*/
 
 	const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 

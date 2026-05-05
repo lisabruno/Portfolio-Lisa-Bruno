@@ -16,8 +16,8 @@
   <script src="../script.nav.js" defer></script>
   <style>
     :root {
-      --cv-line: #ffdb70;
-      --cv-line-soft: rgba(162, 177, 255, 0.35);
+      --cv-line: #72a9ff;
+      --cv-line-soft: rgba(114, 169, 255, 0.25);
       --cv-type-kicker: 0.9rem;
       --cv-type-meta: 0.92rem;
       --cv-type-body: 1.02rem;
@@ -25,19 +25,19 @@
 
     .cv-page main {
       max-width: none;
-      padding-top: 2.4rem;
+      padding-top: 0;
     }
 
     .cv-shell {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 0 1.5rem 3.4rem;
+      padding: 0 clamp(1rem, 5vw, 1.5rem) clamp(2rem, 7vw, 3.4rem);
     }
 
     .stage-sheet {
       display: grid;
       grid-template-columns: 280px 1fr;
-      gap: 2rem;
+      gap: clamp(1.5rem, 4vw, 2rem);
       align-items: start;
     }
 
@@ -45,13 +45,34 @@
       position: relative;
     }
 
+    .cv-mobile-intro {
+      display: none;
+      text-align: center;
+      margin: 0 0 1rem;
+    }
+
+    .cv-mobile-intro .stage-headline {
+      margin: 0;
+    }
+
+    .cv-mobile-intro .stage-subtitle {
+      margin: 0.4rem 0 0.85rem;
+    }
+
+    .cv-download-bottom {
+      width: 100%;
+      margin: clamp(3rem, 7vw, 5rem) 0 0;
+      display: flex;
+      justify-content: center;
+    }
+
     .stage-photo {
-      border: 4px solid var(--cv-line);
+      border: 4px solid #72a9ff;
       border-radius: 12px;
       overflow: hidden;
       aspect-ratio: 1/1;
       background: #d8d8d8;
-      max-width: 240px;
+      max-width: clamp(140px, 25vw, 240px);
       margin: 0 auto 1rem;
       transform: none !important;
       transition: none !important;
@@ -197,8 +218,8 @@
     }
 
     .stage-divider {
-      height: 2px;
-      background: #ffdb70;
+      height: 3px;
+      background: var(--cv-line);
       margin-bottom: 1.5rem;
       position: relative;
     }
@@ -207,11 +228,12 @@
     .stage-divider::after {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #0f172a;
-      border-radius: 999px;
-      top: -4px;
+      width: 16px;
+      height: 16px;
+      background: #ffdb70;
+      clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+      top: -8px;
+      box-shadow: 0 0 6px rgba(255,219,112,0.3);
     }
 
     .stage-divider::before { left: -5px; }
@@ -219,7 +241,7 @@
 
     .timeline-body {
       position: relative;
-      padding: 0 74px 0 0;
+      padding: 0 clamp(20px, 8vw, 74px) 0 clamp(16px, 5vw, 22px);
       min-height: 100px;
     }
 
@@ -239,18 +261,20 @@
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
-      opacity: 1;
+      opacity: 0.95;
     }
 
     .timeline-terminal-dot {
       position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 999px;
-      background: #020041;
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+      background: #ffdb70;
+      clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
       transform: translate(-50%, -50%);
       z-index: 2;
       pointer-events: none;
+      box-shadow: 0 0 8px rgba(255,219,112,0.4);
     }
 
     .cv-panel {
@@ -266,7 +290,7 @@
       font-family: "Space Grotesk", monospace;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      font-size: var(--cv-type-kicker);
+      font-size: clamp(0.75rem, 2vw, 0.9rem);
       margin-bottom: 1.25rem;
       margin-top: 1.5rem;
       font-weight: 700;
@@ -278,11 +302,12 @@
 
     .cv-panel-title.has-star::before {
       content: "";
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       flex-shrink: 0;
       background: #ffdb70;
       clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+      box-shadow: 0 0 4px rgba(255,219,112,0.35);
     }
 
     .cv-block {
@@ -405,11 +430,12 @@
 
     .skill-chip + .skill-chip::before {
       content: "";
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       margin-right: 0.5rem;
       background: #ffdb70;
       clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+      box-shadow: 0 0 3px rgba(255,219,112,0.3);
     }
 
     .cv-note {
@@ -434,14 +460,34 @@
       display: none;
     }
 
+    @media (max-width: 1024px) {
+      .cv-shell {
+        padding: 0 clamp(1rem, 4vw, 1.5rem) clamp(2rem, 6vw, 3rem);
+      }
+
+      .stage-sheet {
+        gap: clamp(1.2rem, 3vw, 1.8rem);
+      }
+    }
+
     @media (max-width: 940px) {
       .stage-sheet {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: clamp(1rem, 3vw, 1.5rem);
+      }
+
+      .cv-mobile-intro {
+        display: block;
+      }
+
+      .stage-right > .stage-headline,
+      .stage-right > .stage-subtitle,
+      .stage-right > .stage-divider {
+        display: none;
       }
 
       .stage-photo {
-        max-width: 200px;
+        max-width: clamp(120px, 20vw, 200px);
         margin: 0 auto 1rem;
       }
 
@@ -460,20 +506,88 @@
       .timeline-body {
         padding: 0;
       }
+
+      .cv-shell {
+        padding: 0 clamp(0.9rem, 3vw, 1.4rem) clamp(1.8rem, 5vw, 2.5rem);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cv-shell {
+        padding: 0 1rem 2.5rem;
+      }
+
+      .stage-name {
+        font-size: clamp(1.2rem, 5vw, 1.4rem);
+      }
+
+      .stage-headline {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+      }
+
+      .cv-panel-title {
+        font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+        margin-top: 1.2rem;
+        margin-bottom: 1rem;
+      }
     }
 
     @media (max-width: 680px) {
       .cv-shell {
-        padding: 0 1rem 2.7rem;
+        padding: 0 0.8rem 2rem;
       }
 
       .cv-block-head {
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.2rem;
       }
 
       .cv-date {
         white-space: normal;
+      }
+
+      .cv-role {
+        font-size: clamp(0.95rem, 3vw, 1.08rem);
+      }
+
+      .cv-bullets {
+        font-size: clamp(0.9rem, 2.5vw, 1.02rem);
+        padding-left: clamp(0.8rem, 3vw, 1.15rem);
+      }
+
+      .stage-section {
+        padding: 0.6rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cv-shell {
+        padding: 0 0.7rem 1.5rem;
+      }
+
+      .stage-sheet {
+        gap: clamp(0.8rem, 2vw, 1rem);
+      }
+
+      .stage-photo {
+        max-width: clamp(100px, 15vw, 140px);
+        border: 3px solid #72a9ff;
+      }
+
+      .cv-role {
+        font-size: 1rem;
+      }
+
+      .cv-bullets {
+        font-size: 0.9rem;
+      }
+
+      .stage-name {
+        font-size: 1.1rem;
+      }
+
+      .stage-tagline {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -495,6 +609,11 @@
     <div class="cv-shell">
       <div class="stage-sheet">
         <aside class="stage-left">
+          <div class="cv-mobile-intro">
+            <h1 class="stage-headline">Mon CV</h1>
+            <p class="stage-subtitle">Recherche d'une alternance d'une durée de 2ans à partir de septembre 2026</p>
+          </div>
+
           <div class="stage-photo">
             <img src="../Qui-suis-je/Lisa-bruno-cv-zoom2.png" alt="Portrait de Lisa Bruno">
           </div>
@@ -534,9 +653,6 @@
         <section class="stage-right">
           <h1 class="stage-headline">Mon CV</h1>
           <p class="stage-subtitle">Recherche d'une alternance d'une durée de 2ans à partir de septembre 2026</p>
-          <p class="cv-download">
-            <a class="cv-download-button" href="Lisa Bruno - BUT MMI - CV.pdf" download>Télécharger : Lisa Bruno - BUT MMI - CV.pdf</a>
-          </p>
           <div class="stage-divider"></div>
 
           <div class="timeline-body">
@@ -697,6 +813,10 @@
         </section>
       </div>
     </div>
+
+    <p class="cv-download cv-download-bottom">
+      <a class="cv-download-button" href="Lisa Bruno - BUT MMI - CV.pdf" download>Télécharger : Lisa Bruno - BUT MMI - CV.pdf</a>
+    </p>
   </main>
 
   <footer class="footer">
@@ -778,19 +898,19 @@
           return;
         }
 
-        var xLeft = -14;
-        var xRight = timelineBody.clientWidth - 28;
-        var radius = 14;
+        var xLeft = 8;
+        var xRight = Math.max(timelineBody.clientWidth - 24, xLeft + 40);
+        var radius = 16;
 
         var firstTitle = groups[0].title;
         var firstEndBlock = groups[0].blocks[groups[0].blocks.length - 1];
         var secondEndBlock = groups[1].blocks[groups[1].blocks.length - 1];
         var lastEndBlock = groups[2].blocks[groups[2].blocks.length - 1];
 
-        var yStart = firstTitle.offsetTop + firstTitle.offsetHeight + 6;
-        var yFirstEnd = firstEndBlock.offsetTop + firstEndBlock.offsetHeight - 10;
-        var ySecondEnd = secondEndBlock.offsetTop + secondEndBlock.offsetHeight - 10;
-        var yLastEnd = lastEndBlock.offsetTop + lastEndBlock.offsetHeight - 8;
+        var yStart = firstTitle.offsetTop + firstTitle.offsetHeight + 8;
+        var yFirstEnd = firstEndBlock.offsetTop + firstEndBlock.offsetHeight - 12;
+        var ySecondEnd = secondEndBlock.offsetTop + secondEndBlock.offsetHeight - 12;
+        var yLastEnd = lastEndBlock.offsetTop + lastEndBlock.offsetHeight - 6;
 
         var d = [
           'M', xLeft, yStart,

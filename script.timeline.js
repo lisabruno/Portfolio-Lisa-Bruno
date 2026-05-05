@@ -179,6 +179,19 @@
     return { bucket: 1, year: 0, month: 0 };
   }
 
+  function getStarPoints(cx, cy) {
+    return [
+      cx + ',' + (cy - 16),
+      cx + 4 + ',' + (cy - 5),
+      cx + 16 + ',' + cy,
+      cx + 4 + ',' + (cy + 5),
+      cx + ',' + (cy + 16),
+      (cx - 4) + ',' + (cy + 5),
+      (cx - 16) + ',' + cy,
+      (cx - 4) + ',' + (cy - 5)
+    ].join(' ');
+  }
+
   function normalizeProjects(projects) {
     var normalized = (projects || []).map(function (project, index) {
       var dateText = project.dateText || project.date || 'Date non renseignée';
@@ -469,12 +482,15 @@
       return;
     }
 
+    var svgWidth = 800;
+    var edgeInset = 24;
     var startY = 120;
     var stepY = 330;
-    var leftX = 6;
-    var rightX = 794;
+    var leftX = edgeInset;
+    var rightX = svgWidth - edgeInset;
     var cardTopOffset = 125;
     var timelineHeight = startY + (projects.length - 1) * stepY + 240;
+    var starDelayStep = 0.22;
 
     var points = projects.map(function (_, index) {
       return {
@@ -499,16 +515,15 @@
     var circlesHtml = points
       .map(function (point, index) {
         var pointClass = pointClasses[index % pointClasses.length];
+        var delay = (index * starDelayStep).toFixed(2);
         return (
-          '<circle cx="' +
-          point.x +
-          '" cy="' +
-          point.y +
-          '" r="12" class="connection-point ' +
+          '<polygon points="' +
+          getStarPoints(point.x, point.y) +
+          '" class="connection-point ' +
           pointClass +
           '" data-index="' +
           index +
-          '"/>'
+          '" style="--star-delay: -' + delay + 's;"/>'
         );
       })
       .join('');
@@ -559,7 +574,9 @@
 
     desktopContainer.style.minHeight = timelineHeight + 'px';
     desktopContainer.innerHTML =
-      '<svg class="zigzag-svg" viewBox="0 0 800 ' +
+      '<svg class="zigzag-svg" viewBox="0 0 ' +
+      svgWidth +
+      ' ' +
       timelineHeight +
       '" preserveAspectRatio="xMidYMid meet">' +
       '<defs>' +
@@ -590,6 +607,7 @@
         var mobileTitleHtml = safeHref
           ? '<a class="project-title-button project-title-button-compact" href="' + safeHref + '">' + safeTitle + '</a>'
           : safeTitle;
+        var delay = (index * starDelayStep).toFixed(2);
         var imageStyle = project.image
           ?
             ' style="background-image: url(\'' +
@@ -608,7 +626,7 @@
           domainHtml +
           '<div class="ornament-mobile">' +
           '<div class="line-mobile"></div>' +
-          '<svg class="star-mobile" width="10" height="10" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70">' +
+          '<svg class="star-mobile" width="14" height="14" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70" style="--star-delay: -' + delay + 's;">' +
           '<polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" />' +
           '</svg>' +
           '<div class="line-mobile"></div>' +
@@ -626,7 +644,7 @@
             '</div>' +
             '<div class="mobile-dot ' +
             dotClass +
-            '"></div>' +
+            '" style="--star-delay: -' + delay + 's;"></div>' +
             '<div class="mobile-content right"><div class="mobile-image"' +
             imageStyle +
             '></div></div>' +
@@ -641,7 +659,7 @@
           '></div></div>' +
           '<div class="mobile-dot ' +
           dotClass +
-          '"></div>' +
+          '" style="--star-delay: -' + delay + 's;"></div>' +
           '<div class="mobile-content right">' +
           cardHtml +
           '</div>' +

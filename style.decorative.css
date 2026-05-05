@@ -5,28 +5,31 @@
   width: 100vw;
   height: 22px;
   background: 
-    linear-gradient(var(--accent), var(--accent)) left center / calc(50% - 18px) 1px no-repeat,
-    linear-gradient(var(--accent), var(--accent)) right center / calc(50% - 18px) 1px no-repeat;
+    linear-gradient(var(--accent), var(--accent)) left center / calc(50% - 18px) 3px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) right center / calc(50% - 18px) 3px no-repeat;
 }
 
 .divider-horizontal.small {
   height: 16px;
   background: 
-    linear-gradient(var(--accent), var(--accent)) left center / calc(50% - 14px) 1px no-repeat,
-    linear-gradient(var(--accent), var(--accent)) right center / calc(50% - 14px) 1px no-repeat;
+    linear-gradient(var(--accent), var(--accent)) left center / calc(50% - 14px) 3px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) right center / calc(50% - 14px) 3px no-repeat;
 }
 
 .star-centered {
   position: absolute;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   background: #ffdb70;
   clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+  box-shadow: 0 0 6px rgba(255,219,112,0.35);
 }
 
 .star-centered.small {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  background: #ffdb70;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
 
 .vertical-line {
@@ -80,8 +83,12 @@
 
 .ornament .star {
   fill: #ffdb70;
-  stroke: #ffdb70;
+  stroke: #ffefb4;
+  stroke-width: 2px;
   flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 6px rgba(255,219,112,0.35));
 }
 
 .ornament.footer-ornament {
@@ -109,4 +116,8 @@
 .star-mobile {
   flex-shrink: 0;
   fill: #ffdb70;
+  stroke: #ffefb4;
+  stroke-width: 1.5px;
+  width: 16px;
+  height: 16px;
 }

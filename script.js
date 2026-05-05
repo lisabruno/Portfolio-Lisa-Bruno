@@ -190,44 +190,27 @@ function initZigzagAnimation() {
 // Animation des points de connexion
 function animateConnectionPoints(scrollPercent) {
   const points = document.querySelectorAll('.connection-point');
+  const totalPoints = points.length;
+  const availableRange = 0.9;
+  const spacing = availableRange / Math.max(totalPoints - 1, 1);
+  const revealDuration = Math.min(Math.max(spacing * 0.8, 0.05), 0.14);
   
   points.forEach((point) => {
     const dataIndex = parseInt(point.getAttribute('data-index'));
-    
-    // Points principaux (0-4)
-    if (dataIndex <= 4) {
-      const startProgress = dataIndex * 0.15;
-      const endProgress = startProgress + 0.08;
-      
-      if (scrollPercent >= startProgress && scrollPercent <= endProgress) {
-        const pointProgress = (scrollPercent - startProgress) / (endProgress - startProgress);
-        point.style.transform = `scale(${pointProgress})`;
-        point.style.opacity = pointProgress;
-      } else if (scrollPercent > endProgress) {
-        point.style.transform = 'scale(1)';
-        point.style.opacity = '1';
-      } else {
-        point.style.transform = 'scale(0)';
-        point.style.opacity = '0';
-      }
-    } 
-    // Points bas (5-7)
-    else {
-      const bottomIndex = dataIndex - 5;
-      const startProgress = 0.7 + bottomIndex * 0.08;
-      const endProgress = startProgress + 0.05;
-      
-      if (scrollPercent >= startProgress && scrollPercent <= endProgress) {
-        const pointProgress = (scrollPercent - startProgress) / (endProgress - startProgress);
-        point.style.transform = `scale(${pointProgress})`;
-        point.style.opacity = pointProgress;
-      } else if (scrollPercent > endProgress) {
-        point.style.transform = 'scale(1)';
-        point.style.opacity = '1';
-      } else {
-        point.style.transform = 'scale(0)';
-        point.style.opacity = '0';
-      }
+    const normalizedIndex = totalPoints > 1 ? dataIndex / (totalPoints - 1) : 0;
+    const startProgress = Math.min(normalizedIndex * availableRange, 0.92);
+    const endProgress = Math.min(startProgress + revealDuration, 1);
+
+    if (scrollPercent >= startProgress && scrollPercent <= endProgress) {
+      const pointProgress = (scrollPercent - startProgress) / (endProgress - startProgress);
+      point.style.transform = `scale(${pointProgress})`;
+      point.style.opacity = pointProgress;
+    } else if (scrollPercent > endProgress) {
+      point.style.transform = 'scale(1)';
+      point.style.opacity = '1';
+    } else {
+      point.style.transform = 'scale(0)';
+      point.style.opacity = '0';
     }
   });
 }

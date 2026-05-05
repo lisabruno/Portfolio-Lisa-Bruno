@@ -51,6 +51,19 @@
       .toLowerCase();
   }
 
+  function getStarPoints(cx, cy) {
+    return [
+      cx + ',' + (cy - 16),
+      cx + 4 + ',' + (cy - 5),
+      cx + 16 + ',' + cy,
+      cx + 4 + ',' + (cy + 5),
+      cx + ',' + (cy + 16),
+      (cx - 4) + ',' + (cy + 5),
+      (cx - 16) + ',' + cy,
+      (cx - 4) + ',' + (cy - 5)
+    ].join(' ');
+  }
+
   function getDomainLabel(domain, domainId) {
     var explicit = String(domain && domain.domaine ? domain.domaine : '').trim();
     if (explicit) {
@@ -244,7 +257,7 @@
   }
 
   function animateConnectionPoints(scrollPercent) {
-    var points = document.querySelectorAll('.connection-point');
+    var points = document.querySelectorAll('.connection-point-wrap');
 
     points.forEach(function (point) {
       var dataIndex = Number(point.getAttribute('data-index'));
@@ -253,13 +266,10 @@
 
       if (scrollPercent >= startProgress && scrollPercent <= endProgress) {
         var pointProgress = (scrollPercent - startProgress) / (endProgress - startProgress);
-        point.style.transform = 'scale(' + pointProgress + ')';
         point.style.opacity = String(pointProgress);
       } else if (scrollPercent > endProgress) {
-        point.style.transform = 'scale(1)';
         point.style.opacity = '1';
       } else {
-        point.style.transform = 'scale(0)';
         point.style.opacity = '0';
       }
     });
@@ -351,10 +361,13 @@
       return;
     }
 
-    var leftX = 6;
-    var rightX = 794;
-    var startY = 150;
+    var svgWidth = 800;
+    var edgeInset = 24;
+    var leftX = edgeInset;
+    var rightX = svgWidth - edgeInset;
+    var startY = 190;
     var stepY = 330;
+    var starYOffset = -55;
     var minHeight = startY + ((projects.length - 1) * stepY) + 260;
     var pointClasses = ['point-blue', 'point-purple', 'point-green', 'point-orange', 'point-indigo', 'point-pink', 'point-cyan', 'point-yellow'];
     var dotClasses = ['dot-blue', 'dot-purple', 'dot-green', 'dot-orange', 'dot-indigo', 'dot-pink', 'dot-cyan', 'dot-yellow'];
@@ -368,17 +381,20 @@
 
     var pathData = '';
     if (positions.length) {
-      pathData = 'M ' + positions[0].x + ' ' + positions[0].y;
+      var firstStarY = positions[0].y + starYOffset;
+      pathData = 'M ' + positions[0].x + ' ' + firstStarY;
       for (var i = 1; i < positions.length; i++) {
         var prev = positions[i - 1];
         var curr = positions[i];
-        var midY = (prev.y + curr.y) / 2;
-        pathData += ' L ' + prev.x + ' ' + midY + ' L ' + curr.x + ' ' + midY + ' L ' + curr.x + ' ' + curr.y;
+        var prevStarY = prev.y + starYOffset;
+        var currStarY = curr.y + starYOffset;
+        var midY = (prevStarY + currStarY) / 2;
+        pathData += ' L ' + prev.x + ' ' + midY + ' L ' + curr.x + ' ' + midY + ' L ' + curr.x + ' ' + currStarY;
       }
     }
 
     path.setAttribute('d', pathData);
-    svg.setAttribute('viewBox', '0 0 800 ' + minHeight);
+    svg.setAttribute('viewBox', '0 0 ' + svgWidth + ' ' + minHeight);
     svg.style.height = minHeight + 'px';
 
     var desktopContainer = document.querySelector('.timeline-desktop');
@@ -386,16 +402,23 @@
       desktopContainer.style.minHeight = minHeight + 'px';
     }
 
+    var starDelayStep = 0.22;
+
     points.innerHTML = projects.map(function (_, index) {
       var pos = positions[index];
       var pointClass = pointClasses[index % pointClasses.length];
-      return '<circle class="connection-point ' + pointClass + '" data-index="' + index + '" cx="' + pos.x + '" cy="' + (pos.y - 55) + '" r="12"></circle>';
+      var delay = (index * starDelayStep).toFixed(2);
+      return (
+        '<g class="connection-point-wrap" data-index="' + index + '" style="--star-delay: -' + delay + 's;">' +
+        '<polygon class="connection-point ' + pointClass + '" points="' + getStarPoints(pos.x, pos.y + starYOffset) + '" style="--star-delay: -' + delay + 's;"></polygon>' +
+        '</g>'
+      );
     }).join('');
 
     desktopTrack.innerHTML = projects.map(function (project, index) {
       var isLeft = index % 2 === 0;
       var y = positions[index].y;
-      var top = y - 150;
+      var top = y - 128;
       var offset = 236;
       var cardPos = isLeft ? 'left: ' + offset + 'px;' : 'right: ' + offset + 'px;';
       var imagePos = isLeft ? 'left: -118px;' : 'right: -118px;';
@@ -407,12 +430,13 @@
       var domainText = escapeHtml(getDomainLabel(domain, domain.id));
       var articleDescription = articleDescriptionsByPath[normalizePath(project.lien)] || '';
       var descriptionText = escapeHtml(articleDescription || project.description || project.descriptionCourte || '');
+      var delay = (index * starDelayStep).toFixed(2);
       return (
         '<article class="card-section" style="top:' + top + 'px; ' + cardPos + '">' +
         '<h3><a class="project-title-button" href="' + safeLink + '">' + safeTitle + '</a></h3>' +
         '<p class="project-date-small">' + dateText + '</p>' +
         '<p class="project-domain-small">' + domainText + '</p>' +
-        '<div class="ornament small"><div class="line ' + lineClass + '"></div><svg class="star" width="12" height="12" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line ' + lineClass + '"></div></div>' +
+        '<div class="ornament small"><div class="line ' + lineClass + '"></div><svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70" style="--star-delay: -' + delay + 's;"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line ' + lineClass + '"></div></div>' +
         '<p class="card-description">' + descriptionText + '</p>' +
         '</article>' +
         '<div class="card-image-vertical" style="top:' + (top - 60) + 'px; ' + imagePos + '"><div class="placeholder-vertical"></div></div>'
@@ -428,9 +452,10 @@
       var domainText = escapeHtml(getDomainLabel(domain, domain.id));
       var articleDescription = articleDescriptionsByPath[normalizePath(project.lien)] || '';
       var descriptionText = escapeHtml(articleDescription || project.description || project.descriptionCourte || '');
+      var delay = (index * starDelayStep).toFixed(2);
 
       return (
-        '<div class="mobile-item"><div class="mobile-content ' + sideClass + '"><div class="mobile-card"><h3><a class="project-title-button" href="' + safeLink + '">' + safeTitle + '</a></h3><p class="project-date-small">' + dateText + '</p><p class="project-domain-small">' + domainText + '</p><div class="ornament-mobile"><div class="line-mobile"></div><svg class="star-mobile" width="10" height="10" viewBox="0 0 24 24" fill="#ffdb70"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line-mobile"></div></div><p>' + descriptionText + '</p></div></div><div class="mobile-dot ' + dotClass + '"></div><div class="mobile-content ' + (sideClass === 'left' ? 'right' : 'left') + '"></div></div>'
+        '<div class="mobile-item"><div class="mobile-content ' + sideClass + '"><div class="mobile-card"><h3><a class="project-title-button" href="' + safeLink + '">' + safeTitle + '</a></h3><p class="project-date-small">' + dateText + '</p><p class="project-domain-small">' + domainText + '</p><div class="ornament-mobile"><div class="line-mobile"></div><svg class="star-mobile" width="14" height="14" viewBox="0 0 24 24" fill="#ffdb70" style="--star-delay: -' + delay + 's;"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line-mobile"></div></div><p>' + descriptionText + '</p></div></div><div class="mobile-dot ' + dotClass + '" style="--star-delay: -' + delay + 's;"></div><div class="mobile-content ' + (sideClass === 'left' ? 'right' : 'left') + '"></div></div>'
       );
     }).join('');
 

@@ -24,6 +24,25 @@
     return new URL('script.nav.js', window.location.href);
   }
 
+  function ensureSiteFavicon() {
+    var rootScript = getRootFromNavScript();
+    var faviconHref = new URL('logo.png', rootScript).href;
+    var head = document.head || document.getElementsByTagName('head')[0];
+    if (!head) {
+      return;
+    }
+
+    var existing = head.querySelector('link[rel="icon"], link[rel="shortcut icon"]');
+    if (!existing) {
+      existing = document.createElement('link');
+      existing.rel = 'icon';
+      existing.type = 'image/png';
+      head.appendChild(existing);
+    }
+
+    existing.href = faviconHref;
+  }
+
   function normalizeDomainLabel(label) {
     var value = String(label || '').trim();
     if (!value) {
@@ -70,6 +89,30 @@
     });
 
     return items;
+  }
+
+  function buildMobileDomainSectionHtml(domainLinks) {
+    var items = '';
+
+    domainLinks.forEach(function (item) {
+      if (!item || !item.href) {
+        return;
+      }
+
+      items +=
+        '<a class="mobile-domain-link" href="' +
+        escapeHtml(item.href) +
+        '"><span class="mobile-domain-link-label">' +
+        escapeHtml(item.label || 'Domaine') +
+        '</span></a>';
+    });
+
+    return (
+      '<div class="mobile-domain-title" aria-hidden="true"><span class="line"></span><span class="star">✦</span><span class="line"></span></div>' +
+      '<div class="mobile-domain-links">' +
+      items +
+      '</div>'
+    );
   }
 
   async function loadProjectsDomainLinks(basePrefix) {
@@ -133,27 +176,7 @@
   }
 
   function ensureAnnouncementBanner(header) {
-    if (!header || !header.parentNode) {
-      return;
-    }
-
-    var previous = header.previousElementSibling;
-    if (previous && previous.classList.contains('site-announcement')) {
-      return;
-    }
-
-    var banner = document.createElement('div');
-    banner.className = 'site-announcement';
-    banner.setAttribute('role', 'status');
-    banner.setAttribute('aria-label', 'Annonce');
-
-    var track = document.createElement('div');
-    track.className = 'site-announcement-track';
-    track.innerHTML =
-      'voici ma nouvelle <span class="site-announcement-accent">direction artistique</span> - refonte de mon <span class="site-announcement-accent">site</span> et de ma <span class="site-announcement-accent">communication</span> !';
-
-    banner.appendChild(track);
-    header.parentNode.insertBefore(banner, header);
+    return;
   }
 
   function normalizePrimaryNav(nav) {
@@ -173,7 +196,7 @@
     header.classList.add('topbar');
 
     header.innerHTML =
-      '<div class="brand">Portfolio de Lisa Bruno</div>' +
+      '<div class="brand"><span class="brand-mark" aria-hidden="true"><img src="' + basePrefix + 'logo.png" alt=""></span><span>Portfolio de Lisa Bruno</span></div>' +
       '<nav class="nav-links" aria-label="Navigation principale">' +
       '<a href="' + basePrefix + 'index.html">Accueil</a>' +
       '<a href="' + basePrefix + 'projets.html">Projets</a>' +
@@ -209,8 +232,7 @@
       '<a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>' +
       '<a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>' +
       '</div>' +
-      '</div>' +
-      '<div class="copyright"><p>© 2024 Mon Portfolio - Tous droits réservés</p></div>'
+      '</div>'
     );
   }
 
@@ -248,6 +270,8 @@
   }
 
   function initDropdownMenus() {
+    ensureSiteFavicon();
+
     var headers = document.querySelectorAll('.topbar, .tout-topbar, header.article-topbar');
     if (!headers.length) {
       return;
@@ -259,14 +283,21 @@
         return;
       }
 
-      ensureAnnouncementBanner(header);
-
       var basePrefix = getBasePrefix(nav);
       forceIndexHeader(header, basePrefix);
       nav = header.querySelector('.nav-links');
 
       normalizePrimaryNav(nav);
       nav.classList.add('nav-menu');
+
+      var mobileDomains = header.querySelector('.mobile-domain-group');
+      if (!mobileDomains) {
+        mobileDomains = document.createElement('section');
+        mobileDomains.className = 'mobile-domain-group';
+        mobileDomains.setAttribute('aria-label', 'Domaines');
+        mobileDomains.innerHTML = buildMobileDomainSectionHtml(fallbackDomainLinks(basePrefix));
+        nav.appendChild(mobileDomains);
+      }
 
       document.querySelectorAll('footer.footer, footer.article-footer').forEach(function (footer) {
         normalizeFooter(footer, basePrefix);
@@ -331,6 +362,7 @@
 
         loadProjectsDomainLinks(basePrefix).then(function (domainLinks) {
           submenu.innerHTML = buildProjectsSubmenuHtml(baseHref, domainLinks);
+          mobileDomains.innerHTML = buildMobileDomainSectionHtml(domainLinks);
 
           submenu.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {

@@ -1,7 +1,7 @@
 
 
 :root {
-  --bg: #f7f6f3;
+  --bg: #fff9f3;
   --ink: #0f172a;
   --heading: #35278e;
   --accent: #72a9ff;
@@ -11,7 +11,7 @@
 .footer {
   max-width: 1200px;
   margin: 0.6rem auto 0;
-  padding: 0.55rem 1rem 0.2rem;
+  padding: 1.15rem 1rem 1rem;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -28,8 +28,8 @@
   width: 100vw;
   height: 10px;
   background:
-    linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 9px) 1px no-repeat,
-    linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 9px) 1px no-repeat;
+    linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 9px) 3px no-repeat,
+    linear-gradient(#72a9ff, #72a9ff) right center / calc(50% - 9px) 3px no-repeat;
 }
 
 .footer::after {
@@ -38,10 +38,11 @@
   top: 0.1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
+  width: 18px;
+  height: 18px;
   background: #ffdb70;
   clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+  box-shadow: none;
 }
 
 .footer:has(.footer-ornament)::before,
@@ -118,7 +119,7 @@
 
 @media (max-width: 900px) {
   .footer {
-    padding: 0.5rem 0.85rem 0.22rem;
+    padding: 1rem 0.85rem 0.95rem;
     grid-template-columns: 1fr;
   }
 }
@@ -149,7 +150,7 @@
 footer.article-footer {
   max-width: 1200px;
   margin: 0.6rem auto 0;
-  padding: 0.55rem 1rem 0.2rem;
+  padding: 1.15rem 1rem 1rem;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -176,8 +177,8 @@ footer.article-footer::after {
   top: 0.1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
+  width: 24px;
+  height: 24px;
   background: #ffdb70;
   clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
 }
@@ -213,7 +214,7 @@ footer.article-footer .footer-column a:hover {
 @media (max-width: 768px) {
   footer.article-footer {
     grid-template-columns: 1fr;
-    padding: 0.5rem 0.85rem 0.22rem;
+    padding: 1rem 0.85rem 0.95rem;
   }
 
   footer.article-footer .footer-nav {

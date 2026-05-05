@@ -25,7 +25,7 @@
 
     .cv-page main {
       max-width: none;
-      padding-top: 2.4rem;
+      padding-top: 0;
     }
 
     .cv-shell {
@@ -198,7 +198,7 @@
 
     .timeline-body {
       position: relative;
-      padding: 0 74px 0 0;
+      padding: 0 74px 0 22px;
       min-height: 100px;
     }
 
@@ -730,8 +730,8 @@
           return;
         }
 
-        var xLeft = -14;
-        var xRight = timelineBody.clientWidth - 28;
+        var xLeft = 8;
+        var xRight = Math.max(timelineBody.clientWidth - 24, xLeft + 40);
         var radius = 14;
 
         var firstTitle = groups[0].title;
