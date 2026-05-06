@@ -1,5 +1,8 @@
 (function () {
   window.__portfolioNavManaged = true;
+  // memoization / cache to avoid repeated fetches and URL parsing
+  window.__portfolioProjectsCache = window.__portfolioProjectsCache || null;
+  var __rootScriptUrlCache = null;
 
   var PROJECTS_NAV_STORAGE_KEY = 'site-web-renouveau.projects-data';
 
@@ -14,14 +17,19 @@
   }
 
   function getRootFromNavScript() {
+    if (__rootScriptUrlCache) {
+      return __rootScriptUrlCache;
+    }
     var scripts = document.querySelectorAll('script[src]');
     for (var i = 0; i < scripts.length; i += 1) {
       var src = scripts[i].getAttribute('src') || '';
       if (src.indexOf('script.nav.js') !== -1) {
-        return new URL(src, window.location.href);
+        __rootScriptUrlCache = new URL(src, window.location.href);
+        return __rootScriptUrlCache;
       }
     }
-    return new URL('script.nav.js', window.location.href);
+    __rootScriptUrlCache = new URL('script.nav.js', window.location.href);
+    return __rootScriptUrlCache;
   }
 
   function ensureSiteFavicon() {
@@ -117,11 +125,27 @@
 
   async function loadProjectsDomainLinks(basePrefix) {
     try {
+      // reuse in-memory cache if available
+      if (window.__portfolioProjectsCache && window.__portfolioProjectsCache.projects) {
+        return window.__portfolioProjectsCache.projects
+          .map(function (domain) {
+            return {
+              href: basePrefix + String(domain.lien || '').replace(/^\.?\//, ''),
+              label: normalizeDomainLabel(domain.domaine)
+            };
+          })
+          .filter(function (item) {
+            return item.href;
+          });
+      }
+
       var rootScript = getRootFromNavScript();
       var jsonUrl = new URL('projects-data.json', rootScript);
       var response = await fetch(jsonUrl.href, { cache: 'no-store' });
       if (response.ok) {
         var data = await response.json();
+        // store globally to avoid later refetch
+        window.__portfolioProjectsCache = data;
         if (data && Array.isArray(data.projects)) {
           return data.projects
             .map(function (domain) {
@@ -173,10 +197,6 @@
     var href = ref.getAttribute('href') || '';
     var match = href.match(/^(.*?)(?:index|projets|cv\/cv)\.html/i);
     return match ? match[1] : '';
-  }
-
-  function ensureAnnouncementBanner(header) {
-    return;
   }
 
   function normalizePrimaryNav(nav) {

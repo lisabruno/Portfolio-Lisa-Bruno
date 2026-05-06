@@ -1,14 +1,24 @@
 // Timeline generation - shared between index.html and projets.html
 (function () {
+  // lightweight caches to avoid repeated network calls and DOM parsing
+  window.__portfolioProjectsCache = window.__portfolioProjectsCache || null;
+  window.__articleDescriptionsCache = window.__articleDescriptionsCache || null;
+  var __rootTimelineScriptCache = null;
+
   function getRootFromScript() {
+    if (__rootTimelineScriptCache) {
+      return __rootTimelineScriptCache;
+    }
     var scripts = document.querySelectorAll('script[src]');
     for (var i = 0; i < scripts.length; i++) {
       var src = scripts[i].getAttribute('src') || '';
       if (src.indexOf('script.timeline.js') !== -1) {
-        return new URL(src, window.location.href);
+        __rootTimelineScriptCache = new URL(src, window.location.href);
+        return __rootTimelineScriptCache;
       }
     }
-    return new URL('script.timeline.js', window.location.href);
+    __rootTimelineScriptCache = new URL('script.timeline.js', window.location.href);
+    return __rootTimelineScriptCache;
   }
 
   var desktopContainer = document.querySelector('.timeline-desktop');
@@ -356,6 +366,9 @@
 
   async function loadArticleDescriptionsByPath() {
     try {
+      if (window.__articleDescriptionsCache) {
+        return window.__articleDescriptionsCache;
+      }
       var rootScript = getRootFromScript();
       var jsonUrl = new URL('articles-data.json', rootScript);
       var response = await fetch(jsonUrl.href, { cache: 'default' });
@@ -378,6 +391,7 @@
         }
       });
 
+      window.__articleDescriptionsCache = map;
       return map;
     } catch (error) {
       return {};
@@ -560,14 +574,20 @@
 
   async function loadProjectsFromDataFile(flattenProjects, isCreationPage) {
     try {
-      var rootScript = getRootFromScript();
-      var jsonUrl = new URL('projects-data.json', rootScript);
-      var response = await fetch(jsonUrl.href, { cache: 'default' });
-      if (!response.ok) {
-        throw new Error('HTTP ' + response.status);
+      var data;
+      if (window.__portfolioProjectsCache) {
+        data = window.__portfolioProjectsCache;
+      } else {
+        var rootScript = getRootFromScript();
+        var jsonUrl = new URL('projects-data.json', rootScript);
+        var response = await fetch(jsonUrl.href, { cache: 'default' });
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        data = await response.json();
+        window.__portfolioProjectsCache = data;
       }
 
-      var data = await response.json();
       if (!data || !Array.isArray(data.projects) || !data.projects.length) {
         throw new Error('Invalid projects-data.json content');
       }
