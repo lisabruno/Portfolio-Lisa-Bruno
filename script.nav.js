@@ -196,7 +196,7 @@
     header.classList.add('topbar');
 
     header.innerHTML =
-      '<div class="brand"><span class="brand-mark" aria-hidden="true"><img src="' + basePrefix + 'logo.png" alt=""></span><span>Portfolio de Lisa Bruno</span></div>' +
+      '<div class="brand"><span class="brand-mark" aria-hidden="true"><img src="' + basePrefix + 'logo.png" alt=""></span><span>portfolio de Lisa Bruno, étudiante en 1ère année de BUT MMI</span></div>' +
       '<nav class="nav-links" aria-label="Navigation principale">' +
       '<a href="' + basePrefix + 'index.html">Accueil</a>' +
       '<a href="' + basePrefix + 'projets.html">Projets</a>' +

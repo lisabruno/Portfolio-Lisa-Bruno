@@ -3,6 +3,7 @@
     {
       "id": "anim-2d-3d",
       "domaine": "Animation / Rigging 2D/Motion Design 2D et 3D",
+      "parentCategory": "Création",
       "icon": "🎬",
       "lien": "3D - Animation 2D - Rigging 2D/TOUT animation.html",
       "image": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png",
@@ -55,6 +56,7 @@
     {
       "id": "communication",
       "domaine": "Communication digitale - Creation de supports",
+      "parentCategory": "Communication",
       "icon": "📱",
       "lien": "Communication digitale - flyer/TOUT communication.html",
       "image": "Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png",
@@ -82,6 +84,7 @@
     },
     {
       "id": "audiovisuel",
+      "parentCategory": "Création",
       "domaine": "Audiovisuel - Montage vidéo - Photographie",
       "icon": "🎬",
       "lien": "Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html",
@@ -126,6 +129,7 @@
     },
     {
       "id": "design-web",
+      "parentCategory": "Création",
       "domaine": "Design Web - Création de site internet",
       "icon": "💻",
       "lien": "Design Web - Création de Site internet/TOUT web.html",

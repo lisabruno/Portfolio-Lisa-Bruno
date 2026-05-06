@@ -75,6 +75,8 @@
     var escaped = escapeHtml(text);
     escaped = escaped.replace(/&lt;br\s*\/?&gt;/g, '<br>');
     escaped = escaped.replace(/&lt;\/br&gt;/g, '</br>');
+    escaped = escaped.replace(/&lt;strong&gt;/g, '<strong>');
+    escaped = escaped.replace(/&lt;\/strong&gt;/g, '</strong>');
     escaped = escaped.replace(/(^|<br>)(\s*-\s[^<]*)/g, function (_, prefix, line) {
       var cleanPrefix = prefix === '<br>' ? '' : prefix;
       return cleanPrefix + '<span class="desc-bullet-line">' + line.trim() + '</span>';
@@ -382,6 +384,96 @@
     }
   }
 
+  function getCreationCategoriesFromData(data) {
+    var creationDomains = (data.projects || []).filter(function (domain) {
+      return domain.parentCategory === 'Création';
+    });
+
+    return creationDomains.map(function (domain, index) {
+      var shortDescription = String(domain.descriptionCourte || '').trim();
+      var detailedDescription = String(domain.description || '').trim();
+      var mergedDescription = '';
+
+      if (shortDescription && detailedDescription) {
+        mergedDescription = shortDescription + '<br/>' + detailedDescription;
+      } else {
+        mergedDescription = shortDescription || detailedDescription;
+      }
+
+      return {
+        title: domain.domaine || 'Domaine',
+        description: mergedDescription,
+        dateText: formatProjectCount((domain.projets || []).length),
+        href: domain.lien || null,
+        image: domain.image || '',
+        hideDomainLabel: true,
+        index: index
+      };
+    });
+  }
+
+  function getCategoriesFromData(data) {
+    var categories = {};
+    var subdomains = {};
+
+    (data.projects || []).forEach(function (domain) {
+      var parentCat = domain.parentCategory || 'Autre';
+      if (!categories[parentCat]) {
+        categories[parentCat] = [];
+      }
+      categories[parentCat].push(domain);
+      if (!subdomains[parentCat]) {
+        subdomains[parentCat] = [];
+      }
+      subdomains[parentCat].push(domain.domaine);
+    });
+
+    var result = [];
+    var categoryOrder = ['Communication', 'Création'];
+
+    categoryOrder.forEach(function (catName, catIndex) {
+      if (categories[catName] && categories[catName].length) {
+        var domains = categories[catName];
+        var totalProjects = 0;
+        var descriptions = [];
+        var firstImage = '';
+        var firstLink = '';
+
+        domains.forEach(function (domain) {
+          totalProjects += (domain.projets || []).length;
+          var shortDesc = String(domain.descriptionCourte || '').trim();
+          if (shortDesc) {
+            descriptions.push('<strong>' + escapeHtml(domain.domaine) + ':</strong> ' + escapeHtmlWithBreaks(shortDesc));
+          }
+          if (!firstImage && domain.image) {
+            firstImage = domain.image;
+          }
+          if (!firstLink && domain.lien) {
+            firstLink = domain.lien;
+          }
+        });
+
+        // Override link for 'Création' category to point to creation.html
+        if (catName === 'Création') {
+          firstLink = 'creation.html';
+        }
+
+        result.push({
+          title: catName,
+          description: descriptions.join('<br/><br/>'),
+          dateText: formatProjectCount(totalProjects),
+          href: firstLink || null,
+          image: firstImage || '',
+          hideDomainLabel: true,
+          index: catIndex,
+          subdomains: subdomains[catName]
+        });
+      }
+    });
+
+    return result;
+  }
+
   function getDomainsFromData(data) {
     return (data.projects || []).map(function (domain, index) {
       var shortDescription = String(domain.descriptionCourte || '').trim();
@@ -409,6 +501,31 @@
   function getFallbackIndexProjects() {
     return [
       {
+        title: 'Communication',
+        description:
+          '<strong>Communication digitale - Création de supports:</strong> Création de contenus et supports print/digital pour les réseaux sociaux.<br/>- Visuels Instagram, Facebook, LinkedIn<br/>- Flyers, brochures et affiches<br/>- Campagnes publicitaires et analyse des performances<br/>',
+        dateText: '2 projets',
+        href: 'Communication digitale - flyer/TOUT communication.html',
+        image: 'Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png',
+        hideDomainLabel: true,
+        index: 0
+      },
+      {
+        title: 'Création',
+        description:
+          '<strong>Animation / Rigging 2D/Motion Design 2D et 3D:</strong> Création de motion design en 2D/3D et d\'animation 2D en image par image, ainsi qu\'en puppeting-rigging.<br/><br/><strong>Audiovisuel - Montage vidéo - Photographie:</strong> Production audiovisuelle complète: montage vidéo, réalisation, photographie et retouches.<br/><br/><strong>Design Web - Création de site internet:</strong> Design, conception et développement de sites web modernes.<br/>',
+        dateText: '9 projets',
+        href: 'creation.html',
+        image: '3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png',
+        hideDomainLabel: true,
+        index: 1
+      }
+    ];
+  }
+
+  function getFallbackCreationProjects() {
+    return [
+      {
         title: 'Animation / Rigging 2D/Motion Design 2D et 3D',
         description:
           'Création de motion design en 2D/3D et d\'animation 2D en image par image, ainsi qu\'en puppeting-rigging.<br/>- Création de modèles 2D avec Adobe Illustrator<br/>- Animation de personnages/assets en rigging 2D avec Adobe Animate, After Effects, Moho Animation 14 et en image par image avec Krita<br/>- Rigging 2D pour donner vie à des personnages avec fluidité et expressivité<br/>',
@@ -419,24 +536,14 @@
         index: 0
       },
       {
-        title: 'Communication digitale - Création de supports',
-        description:
-          'Création de contenus et supports print/digital pour les réseaux sociaux.<br/>- Visuels Instagram, Facebook, LinkedIn<br/>- Flyers, brochures et affiches<br/>- Campagnes publicitaires et analyse des performances<br/>',
-        dateText: '2 projets',
-        href: 'Communication digitale - flyer/TOUT communication.html',
-        image: 'Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png',
-        hideDomainLabel: true,
-        index: 1
-      },
-      {
         title: 'Audiovisuel - Montage vidéo - Photographie',
         description:
           'Production audiovisuelle complète: montage vidéo, réalisation, photographie et retouches.<br/>- Montage Premiere Pro / CapCut<br/>- Montage multicam et post-production After Effects<br/>- Captation photo et retouches Lightroom / Photoshop<br/>',
-        dateText: '2 projets',
+        dateText: '4 projets',
         href: 'Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html',
         image: 'Montage vidéo - réalisation/1 - montage avenir/montageavenir.png',
         hideDomainLabel: true,
-        index: 2
+        index: 1
       },
       {
         title: 'Design Web - Création de site internet',
@@ -446,12 +553,12 @@
         href: 'Design Web - Création de Site internet/TOUT web.html',
         image: 'Design Web - Création de Site internet/1- Mon premier site - MADD/madd.png',
         hideDomainLabel: true,
-        index: 3
+        index: 2
       }
     ];
   }
 
-  async function loadProjectsFromDataFile(flattenProjects) {
+  async function loadProjectsFromDataFile(flattenProjects, isCreationPage) {
     try {
       var rootScript = getRootFromScript();
       var jsonUrl = new URL('projects-data.json', rootScript);
@@ -470,10 +577,14 @@
         return flattenProjectsFromData(data, articleDescriptionsByPath);
       }
 
-      return getDomainsFromData(data);
+      if (isCreationPage) {
+        return getCreationCategoriesFromData(data);
+      }
+
+      return getCategoriesFromData(data);
     } catch (error) {
       console.warn('[timeline] Impossible de charger projects-data.json, fallback active:', error);
-      return getFallbackIndexProjects();
+      return isCreationPage ? getFallbackCreationProjects() : getFallbackIndexProjects();
     }
   }
 
@@ -674,15 +785,18 @@
 
   async function initTimeline() {
     var isProjectsPage = document.body.classList.contains('projets-page');
+    var isCreationPage = document.body.classList.contains('creation-page');
     var cards = Array.prototype.slice.call(document.querySelectorAll('.projects-list .project-item'));
     var projects;
 
     if (isProjectsPage) {
-      projects = normalizeProjects(await loadProjectsFromDataFile(true));
+      projects = normalizeProjects(await loadProjectsFromDataFile(true, false));
+    } else if (isCreationPage) {
+      projects = normalizeProjects(await loadProjectsFromDataFile(false, true));
     } else if (cards.length > 0) {
       projects = normalizeProjects(getProjectsFromCards(cards));
     } else {
-      projects = normalizeProjects(await loadProjectsFromDataFile(false));
+      projects = normalizeProjects(await loadProjectsFromDataFile(false, false));
     }
 
     renderTimeline(projects);
