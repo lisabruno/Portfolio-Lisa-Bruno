@@ -204,6 +204,20 @@
     ].join(' ');
   }
 
+  function resolveLogoImage(hint) {
+    var value = normalize(hint);
+    if (value.indexOf('communication') !== -1 || value.indexOf('flyer') !== -1 || value.indexOf('instagram') !== -1) {
+      return '/Logo et images/Communication.png';
+    }
+    if (value.indexOf('animation') !== -1 || value.indexOf('rigging') !== -1 || value.indexOf('audiovisuel') !== -1 || value.indexOf('montage') !== -1 || value.indexOf('photographie') !== -1) {
+      return '/Logo et images/Création.png';
+    }
+    if (value.indexOf('web') !== -1 || value.indexOf('design') !== -1 || value.indexOf('madd') !== -1 || value.indexOf('bordeaux') !== -1 || value.indexOf('site internet') !== -1) {
+      return '/Logo et images/Divers.png';
+    }
+    return '/Logo et images/Création.png';
+  }
+
   function normalizeProjects(projects) {
     var normalized = (projects || []).map(function (project, index) {
       var dateText = project.dateText || project.date || 'Date non renseignée';
@@ -341,7 +355,7 @@
             description: articleDescription || project.description || project.descriptionCourte || domain.descriptionCourte || domain.description || '',
             dateText: project.date || domain.date || 'Date non renseignée',
             href: projectPath || null,
-            image: project.image || domain.image || '',
+            image: resolveLogoImage(domainLabel || domain.id || project.titre || projectPath || ''),
             index: flattened.length,
             domain: domainLabel,
             projectIndex: index
@@ -353,7 +367,7 @@
           description: domain.descriptionCourte || domain.description || '',
           dateText: domain.date || 'Domaine principal',
           href: domain.lien || null,
-          image: domain.image || '',
+          image: resolveLogoImage(domainLabel || domain.id || domain.lien || ''),
           index: flattened.length,
           domain: domainLabel,
           projectIndex: 0
@@ -419,7 +433,7 @@
         description: mergedDescription,
         dateText: formatProjectCount((domain.projets || []).length),
         href: domain.lien || null,
-        image: domain.image || '',
+        image: resolveLogoImage(domain.domaine || domain.id || domain.lien || ''),
         hideDomainLabel: true,
         index: index
       };
@@ -444,6 +458,10 @@
 
     var result = [];
     var categoryOrder = ['Communication', 'Création'];
+    var categoryImages = {
+      Communication: 'Logo et images/Communication.png',
+      Création: 'Logo et images/Création.png'
+    };
 
     categoryOrder.forEach(function (catName, catIndex) {
       if (categories[catName] && categories[catName].length) {
@@ -477,7 +495,7 @@
           description: descriptions.join('<br/><br/>'),
           dateText: formatProjectCount(totalProjects),
           href: firstLink || null,
-          image: firstImage || '',
+          image: categoryImages[catName] || resolveLogoImage(catName),
           hideDomainLabel: true,
           index: catIndex,
           subdomains: subdomains[catName]
@@ -505,7 +523,7 @@
         description: mergedDescription,
         dateText: formatProjectCount((domain.projets || []).length),
         href: domain.lien || null,
-        image: domain.image || '',
+        image: resolveLogoImage(domain.domaine || domain.id || domain.lien || ''),
         hideDomainLabel: true,
         index: index
       };
@@ -520,7 +538,7 @@
           '<strong>Communication digitale - Création de supports:</strong> Création de contenus et supports print/digital pour les réseaux sociaux.<br/>- Visuels Instagram, Facebook, LinkedIn<br/>- Flyers, brochures et affiches<br/>- Campagnes publicitaires et analyse des performances<br/>',
         dateText: '2 projets',
         href: 'Communication digitale - flyer/TOUT communication.html',
-        image: 'Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png',
+        image: 'Logo et images/Communication.png',
         hideDomainLabel: true,
         index: 0
       },
@@ -530,7 +548,7 @@
           '<strong>Animation / Rigging 2D/Motion Design 2D et 3D:</strong> Création de motion design en 2D/3D et d\'animation 2D en image par image, ainsi qu\'en puppeting-rigging.<br/><br/><strong>Audiovisuel - Montage vidéo - Photographie:</strong> Production audiovisuelle complète: montage vidéo, réalisation, photographie et retouches.<br/><br/><strong>Design Web - Création de site internet:</strong> Design, conception et développement de sites web modernes.<br/>',
         dateText: '9 projets',
         href: 'creation.html',
-        image: '3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png',
+        image: 'Logo et images/Création.png',
         hideDomainLabel: true,
         index: 1
       }
@@ -545,7 +563,7 @@
           'Création de motion design en 2D/3D et d\'animation 2D en image par image, ainsi qu\'en puppeting-rigging.<br/>- Création de modèles 2D avec Adobe Illustrator<br/>- Animation de personnages/assets en rigging 2D avec Adobe Animate, After Effects, Moho Animation 14 et en image par image avec Krita<br/>- Rigging 2D pour donner vie à des personnages avec fluidité et expressivité<br/>',
         dateText: '5 projets',
         href: '3D - Animation 2D - Rigging 2D/TOUT animation.html',
-        image: '3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png',
+        image: 'Logo et images/Création.png',
         hideDomainLabel: true,
         index: 0
       },
@@ -555,7 +573,7 @@
           'Production audiovisuelle complète: montage vidéo, réalisation, photographie et retouches.<br/>- Montage Premiere Pro / CapCut<br/>- Montage multicam et post-production After Effects<br/>- Captation photo et retouches Lightroom / Photoshop<br/>',
         dateText: '4 projets',
         href: 'Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html',
-        image: 'Montage vidéo - réalisation/1 - montage avenir/montageavenir.png',
+        image: 'Logo et images/Création.png',
         hideDomainLabel: true,
         index: 1
       },
@@ -565,7 +583,7 @@
           'Design, conception et développement de sites web modernes.<br/>- Prototypage Figma<br/>- Développement HTML/CSS/JavaScript, SQL, PHP<br/>- Optimisation performance et SEO<br/>',
         dateText: '2 projets',
         href: 'Design Web - Création de Site internet/TOUT web.html',
-        image: 'Design Web - Création de Site internet/1- Mon premier site - MADD/madd.png',
+        image: 'Logo et images/Divers.png',
         hideDomainLabel: true,
         index: 2
       }
@@ -665,7 +683,8 @@
         var isLeft = point.x === leftX;
         var cardOffset = 236;
         var cardPos = isLeft ? 'left: ' + cardOffset + 'px;' : 'right: ' + cardOffset + 'px;';
-        var imagePos = isLeft ? 'left: -118px;' : 'right: -118px;';
+        var imageClass = isLeft ? 'card-image-left' : 'card-image-right';
+        var imageUrl = String(project.image || '').trim();
         var safeTitle = escapeHtml(getCompactTitle(project.title));
         var safeDescription = escapeHtmlWithBreaks(project.description);
         var safeDate = escapeHtml(project.dateText);
@@ -692,13 +711,11 @@
           safeDescription +
           '</p>' +
           '</div>' +
-          '<div class="card-image-vertical" style="top: ' +
-          (point.y - cardTopOffset) +
-          'px; ' +
-          imagePos +
-          '">' +
-          '<div class="placeholder-vertical"></div>' +
-          '</div>'
+            '<div class="card-image-vertical ' + imageClass + '" style="top: ' +
+            (point.y - cardTopOffset) +
+            'px;' +
+            (imageUrl ? ' background-image: url(\'' + imageUrl + '\'); background-size: contain; background-position: center; background-repeat: no-repeat;' : '') +
+            '"></div>'
         );
       })
       .join('');
@@ -743,7 +760,7 @@
           ?
             ' style="background-image: url(\'' +
             escapeHtml(project.image) +
-            '\'); background-size: cover; background-position: center;"'
+            '\'); background-size: contain; background-position: center;"'
           : '';
 
         var cardHtml =

@@ -6,7 +6,7 @@
       "parentCategory": "Création",
       "icon": "🎬",
       "lien": "3D - Animation 2D - Rigging 2D/TOUT animation.html",
-      "image": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png",
+      "image": "/Logo et images/Création.png",
       "descriptionCourte": "Création de motion design 2D/3D et animation 2D en image par image ou en rigging.",
       "description": "- Création de modèles 2D avec Adobe Illustrator<br/>- Animation de personnages/assets en rigging 2D avec Adobe Animate, After Effects, Moho Animation 14 et en image par image avec Krita ou Adobe Animate<br/>",
       "date": "Domaine principal",
@@ -59,7 +59,7 @@
       "parentCategory": "Communication",
       "icon": "📱",
       "lien": "Communication digitale - flyer/TOUT communication.html",
-      "image": "Communication digitale - flyer/1 - La.fee.du.tri/Stresse et rangement/2.png",
+      "image": "/Logo et images/Communication.png",
       "descriptionCourte": "Création de contenus et supports print/digital pour la communication et animation de réseaux sociaux.",
       "description": "- Création de visuels pour les réseaux sociaux (Instagram, Facebook, LinkedIn) avec Canva, Adobe Photoshop, Illustrator.<br/>- Conception de flyers, brochures et affiches avec Adobe InDesign et Illustrator<br/>- Gestion de campagnes publicitaires et analyse des performances<br/>- Illustrations avec Adobe Illustrator, Photoshop, Krita.<br/>",
       "date": "Domaine principal",
@@ -88,7 +88,7 @@
       "domaine": "Audiovisuel - Montage vidéo - Photographie",
       "icon": "🎬",
       "lien": "Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html",
-      "image": "Montage vidéo - réalisation/1 - montage avenir/montageavenir.png",
+      "image": "/Logo et images/Création.png",
       "descriptionCourte": "Productions audiovisuelles : montage et réalisation vidéo, captation photo, et retouches pour sublimer chaque image.",
       "description": "- Montage avec Adobe Premiere Pro et Cap Cut<br/>- Montage multicam et post-production After Effects<br/>- Prises de vues photo au reflex<br/>- Retouche photo avec Adobe Lightroom et Photoshop<br/>",
       "date": "Domaine principal",
@@ -133,7 +133,7 @@
       "domaine": "Design Web - Création de site internet",
       "icon": "💻",
       "lien": "Design Web - Création de Site internet/TOUT web.html",
-      "image": "Design Web - Création de Site internet/1- Mon premier site - MADD/madd.png",
+      "image": "/Logo et images/Divers.png",
       "descriptionCourte": "Design, conception et développement de sites web designs et fonctionnels.",
       "description": "- Maquettes et prototypes avec Figma<br/>- Développement HTML/CSS/JavaScript/ SQL/ PHP et bases de données<br/>- Utilisation de CMS comme WordPress<br/>- Optimisation performance et SEO<br/>",
       "date": "Domaine principal",
@@ -160,7 +160,7 @@
   "meta": {
     "totalDomaines": 4,
     "totalProjets": 13,
-    "lastUpdate": "2026-04-21",
+    "lastUpdate": "2026-05-12",
     "version": "1.3"
   }
 }

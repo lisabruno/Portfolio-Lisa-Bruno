@@ -64,6 +64,20 @@
     ].join(' ');
   }
 
+  function resolveLogoImage(hint) {
+    var value = normalize(hint);
+    if (value.indexOf('communication') !== -1 || value.indexOf('flyer') !== -1 || value.indexOf('instagram') !== -1) {
+      return '/Logo et images/Communication.png';
+    }
+    if (value.indexOf('animation') !== -1 || value.indexOf('rigging') !== -1 || value.indexOf('audiovisuel') !== -1 || value.indexOf('montage') !== -1 || value.indexOf('photographie') !== -1) {
+      return '/Logo et images/Création.png';
+    }
+    if (value.indexOf('web') !== -1 || value.indexOf('design') !== -1 || value.indexOf('madd') !== -1 || value.indexOf('bordeaux') !== -1 || value.indexOf('site internet') !== -1) {
+      return '/Logo et images/Divers.png';
+    }
+    return '/Logo et images/Création.png';
+  }
+
   function getDomainLabel(domain, domainId) {
     var explicit = String(domain && domain.domaine ? domain.domaine : '').trim();
     if (explicit) {
@@ -421,7 +435,8 @@
       var top = y - 128;
       var offset = 236;
       var cardPos = isLeft ? 'left: ' + offset + 'px;' : 'right: ' + offset + 'px;';
-      var imagePos = isLeft ? 'left: -118px;' : 'right: -118px;';
+      var imageClass = isLeft ? 'card-image-left' : 'card-image-right';
+      var imageUrl = resolveLogoImage(domain.domaine || domain.id || project.titre || project.lien || '');
       var lineClasses = ['wide', 'medium', 'medium', 'large', 'xlarge'];
       var lineClass = lineClasses[index] || 'medium';
       var safeTitle = escapeHtml(project.titre || 'Projet');
@@ -439,7 +454,7 @@
         '<div class="ornament small"><div class="line ' + lineClass + '"></div><svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70" style="--star-delay: -' + delay + 's;"><polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon></svg><div class="line ' + lineClass + '"></div></div>' +
         '<p class="card-description">' + descriptionText + '</p>' +
         '</article>' +
-        '<div class="card-image-vertical" style="top:' + (top - 60) + 'px; ' + imagePos + '"><div class="placeholder-vertical"></div></div>'
+        '<div class="card-image-vertical ' + imageClass + '" style="top:' + (top - 60) + 'px; ' + ' background-image: url(\'' + imageUrl + '\'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>'
       );
     }).join('');
 

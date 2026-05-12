@@ -17,6 +17,8 @@ body {
   color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .hero h1,
@@ -188,28 +190,41 @@ body {
 
 .project-image {
   width: 100%;
+  min-height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .placeholder-image {
   background-color: transparent;
   border-radius: 1rem;
-  border: 2px solid #94a3b8;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   height: 16rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  overflow: hidden;
 }
 
 .placeholder-image:hover {
-  transform: scale(1.02);
+  transform: none;
 }
 
 .placeholder-image p {
-  color: #64748b;
-  text-align: center;
-  padding: 0 1rem;
+  display: none;
 }
 
 .project-content {
@@ -335,16 +350,52 @@ body {
 }
 
 @media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
+  .timeline-mobile {
+    width: 100%;
+    overflow-x: hidden;
   }
-  
-  .about-section h2 {
-    font-size: 2rem;
+
+  .vertical-line {
+    left: 20px;
   }
-  
-  .about-image {
-    order: -1;
+
+  .mobile-item {
+    padding: 0 0.5rem;
+  }
+
+  .card-image-vertical {
+    width: 170px;
+    height: 250px;
+  }
+
+  .timeline-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  main {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-image-vertical {
+    width: 150px;
+    height: 220px;
+  }
+
+  .timeline-desktop {
+    min-height: auto;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .card-section {
+    width: calc(100% - 10px) !important;
   }
 }
 
@@ -363,6 +414,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   display: none;
+  overflow: visible;
 }
 
 .zigzag-svg {
@@ -658,34 +710,55 @@ body {
 
 .card-image-vertical {
   position: absolute;
-  width: 202px;
-  height: 300px;
-  padding: 0.5rem;
+  /* base size (desktop) - CSS variables make offsets responsive */
+  --card-image-width: 240px;
+  --card-image-half: 120px;
+  width: var(--card-image-width);
+  height: 320px;
+  padding: 0;
   box-sizing: border-box;
   z-index: 10;
-  opacity: 0.9;
+  opacity: 0.98;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* class-based positioning instead of inline styles */
+.card-image-vertical.card-image-left { left: calc(-1 * var(--card-image-half)); }
+.card-image-vertical.card-image-right { right: calc(-1 * var(--card-image-half)); }
+
+/* Page-specific override: ensure Design Web logo on creation.html is never cropped */
+.creation-page .card-image-vertical {
+  /* larger by default so logo stays whole on creation page */
+  --card-image-width: 220px;
+  --card-image-half: 110px;
+  width: var(--card-image-width);
+  height: 300px;
+  background-position: center;
+  background-size: contain;
+}
+.creation-page .card-image-vertical.card-image-left { left: calc(-1 * var(--card-image-half)); }
+.creation-page .card-image-vertical.card-image-right { right: calc(-1 * var(--card-image-half)); }
 
 .placeholder-vertical {
   width: 100%;
   height: 100%;
   background: transparent;
   border-radius: 0.5rem;
-  border: 2px solid #72a9ff;
-  box-shadow: 0 4px 15px rgba(162, 177, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #7c8ed9;
-  font-size: 3.35rem;
-  background-clip: content-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: none;
+  display: none;
 }
 
 .placeholder-vertical:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(162, 177, 255, 0.35);
+  transform: none;
+  box-shadow: none;
 }
 
 .timeline-mobile {
@@ -1505,20 +1578,31 @@ main {
     right: 150px !important;
   }
 
+  /* tablet: adjust variable so offsets adapt */
   .card-image-vertical {
-    width: 164px;
-    height: 246px;
-    padding: 0.32rem;
+    --card-image-width: 160px;
+    --card-image-half: 80px;
+    width: var(--card-image-width);
+    height: 240px;
+    padding: 0;
+  }
+
+  /* creation page tablet tweaks */
+  .creation-page .card-image-vertical {
+    --card-image-width: 170px;
+    --card-image-half: 85px;
+    width: var(--card-image-width);
+    height: 260px;
   }
 
   .card-image-vertical[style*="left: -118px"],
   .card-image-vertical[style*="left:-118px"] {
-    left: -92px !important;
+    left: -90px !important;
   }
 
   .card-image-vertical[style*="right: -118px"],
   .card-image-vertical[style*="right:-118px"] {
-    right: -92px !important;
+    right: -90px !important;
   }
 }
 
@@ -1538,18 +1622,28 @@ main {
   }
 
   .card-image-vertical {
-    width: 142px;
-    height: 214px;
+    --card-image-width: 150px;
+    --card-image-half: 75px;
+    width: var(--card-image-width);
+    height: 230px;
+  }
+
+  /* creation page smaller-tablet tweaks */
+  .creation-page .card-image-vertical {
+    --card-image-width: 140px;
+    --card-image-half: 70px;
+    width: var(--card-image-width);
+    height: 220px;
   }
 
   .card-image-vertical[style*="left: -118px"],
   .card-image-vertical[style*="left:-118px"] {
-    left: -82px !important;
+    left: -85px !important;
   }
 
   .card-image-vertical[style*="right: -118px"],
   .card-image-vertical[style*="right:-118px"] {
-    right: -82px !important;
+    right: -85px !important;
   }
 }
 
@@ -1867,6 +1961,11 @@ header.article-topbar {
 }
 
 @media (max-width: 680px) {
+  .card-image-vertical {
+    width: 170px;
+    height: 250px;
+  }
+
   .vertical-line {
     left: 50%;
     transform: translateX(-50%);
@@ -1927,6 +2026,23 @@ header.article-topbar {
   .projets-page .all-projects-header {
     padding-left: 0.6rem;
     padding-right: 0.6rem;
+  }
+
+  .card-image-vertical {
+    width: 150px;
+    height: 220px;
+  }
+
+  .timeline-desktop {
+    min-height: auto;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .card-section {
+    width: calc(100% - 10px) !important;
   }
 
   .card-description,

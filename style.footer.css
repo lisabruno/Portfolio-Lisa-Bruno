@@ -25,7 +25,7 @@
   top: 0.1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: min(100vw, 2000px);
   height: 10px;
   background:
     linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 9px) 3px no-repeat,
@@ -164,7 +164,7 @@ footer.article-footer::before {
   top: 0.1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: min(100vw, 2000px);
   height: 10px;
   background:
     linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 9px) 1px no-repeat,

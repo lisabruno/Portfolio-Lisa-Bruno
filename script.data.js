@@ -38,6 +38,31 @@
     );
   }
 
+  function normalize(text) {
+    return String(text || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function resolveLogoImage(hint) {
+    var value = normalize(hint);
+
+    if (value.indexOf('communication') !== -1 || value.indexOf('flyer') !== -1 || value.indexOf('instagram') !== -1) {
+      return '/Logo et images/Communication.png';
+    }
+
+    if (value.indexOf('animation') !== -1 || value.indexOf('rigging') !== -1 || value.indexOf('audiovisuel') !== -1 || value.indexOf('montage') !== -1 || value.indexOf('photographie') !== -1) {
+      return '/Logo et images/Création.png';
+    }
+
+    if (value.indexOf('web') !== -1 || value.indexOf('design') !== -1 || value.indexOf('madd') !== -1 || value.indexOf('bordeaux') !== -1 || value.indexOf('site internet') !== -1) {
+      return '/Logo et images/Divers.png';
+    }
+
+    return '/Logo et images/Création.png';
+  }
+
   function findFeaturedProject(data) {
     var best = null;
 
@@ -82,11 +107,14 @@
     var titleEl = document.querySelector('.latest-project .project-content h2');
     var descriptionEl = document.querySelector('.latest-project .project-description');
     var tagsEl = document.querySelector('.latest-project .project-tags');
+    var logoImage = resolveLogoImage(featured.domain || featured.href || featured.title);
 
-    if (imageEl && featured.image) {
-      imageEl.style.backgroundImage = "url('" + featured.image + "')";
-      imageEl.style.backgroundSize = 'cover';
+    if (imageEl) {
+      imageEl.textContent = '';
+      imageEl.style.backgroundImage = "url('" + logoImage + "')";
+      imageEl.style.backgroundSize = 'contain';
       imageEl.style.backgroundPosition = 'center';
+      imageEl.style.backgroundRepeat = 'no-repeat';
     }
 
     if (titleEl) {
@@ -136,36 +164,32 @@
           var description = escapeHtmlWithBreaks(project.description || project.descriptionCourte || '');
           var date = escapeHtml(project.date || 'Date non renseignee');
           var href = escapeHtml(project.lien || '#');
-          var image = escapeHtml(project.image || '');
+          var image = escapeHtml(resolveLogoImage(domain.domaine || domain.id || project.titre || project.lien || ''));
           var emoji = escapeHtml(domain.icon || '•');
 
           return (
             '<article class="project-item">' +
-            '<div class="project-emoji">' +
-            emoji +
-            '</div>' +
-            '<div class="project-image">' +
-            '<img src="' +
-            image +
-            '" alt="' +
-            title +
-            '" loading="lazy" decoding="async">' +
-            '</div>' +
-            '<div class="project-details">' +
-            '<h3>' +
-            title +
-            '</h3>' +
-            '<p>' +
-            description +
-            '</p>' +
-            '<div class="project-meta"><span class="project-meta-item">📅 ' +
-            date +
-            '</span></div>' +
-            '<a href="' +
-            href +
-            '" class="project-link-button">Voir le projet →</a>' +
-            '</div>' +
-            '</article>'
+              '<div class="project-emoji">' +
+              emoji +
+              '</div>' +
+              '<div class="project-image">' +
+              '<div class="placeholder-image" style="background-image: url(\'' + image + '\'); background-size: contain; background-position: center; background-repeat: no-repeat;" aria-hidden="true"></div>' +
+              '</div>' +
+              '<div class="project-details">' +
+              '<h3>' +
+              title +
+              '</h3>' +
+              '<p>' +
+              description +
+              '</p>' +
+              '<div class="project-meta"><span class="project-meta-item">📅 ' +
+              date +
+              '</span></div>' +
+              '<a href="' +
+              href +
+              '" class="project-link-button">Voir le projet →</a>' +
+              '</div>' +
+              '</article>'
           );
         })
         .join('');

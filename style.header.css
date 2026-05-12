@@ -67,9 +67,8 @@ html, body {
 }
 
 .site-announcement {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  max-width: 100%;
   border-bottom: 1px solid rgba(162, 177, 255, 0.45);
   background: #ffdb70;
   color: #35278e;
@@ -109,7 +108,7 @@ html, body {
   bottom: 0.25rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: min(100vw, 2000px);
   height: 22px;
   background:
     linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 18px) 3px no-repeat,
@@ -470,7 +469,7 @@ header.article-topbar::before {
   bottom: 0.25rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: min(100vw, 2000px);
   height: 22px;
   background:
     linear-gradient(#72a9ff, #72a9ff) left center / calc(50% - 18px) 1px no-repeat,
