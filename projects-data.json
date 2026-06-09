@@ -44,12 +44,20 @@
           "date": "décembre 2025 - maintenant"
         },
         {
-          "titre": "ShowTime",
+          "titre": "KeyFrame : votre émission d'animation 2D",
           "lien": "3D - Animation 2D - Rigging 2D/5 -ShowTime/article-showtime.html",
           "image": "3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/idfc - animation meme.png",
-          "descriptionCourte": "voici une émission completement faite par groupe de 13 traitant de l'animation 2D. J'ai pu y faire le motion design ainsi que la recherche d'idées tout en apprennant à filmer car j'y ai fait caméraman. L'émission n'est pas encore en ligne mais je vais pouvoir le mettre dans pas longtemps...",
-          "description": "voici une émission completement faite par groupe de 13 traitant de l'animation 2D. J'ai pu y faire le motion design ainsi que la recherche d'idées tout en apprennant à filmer car j'y ai fait caméraman. L'émission n'est pas encore en ligne mais je vais pouvoir le mettre dans pas longtemps...",
+          "descriptionCourte": "Voici une émission faite par groupe de 13 traitant de l'animation 2D. J'ai pu y faire le motion design, la recherche d'idées ainsi que tournage et monteuse vidéo.",
+          "description": "Voici une émission faite par groupe de 13 traitant de l'animation 2D. J'ai pu y faire le motion design, la recherche d'idées ainsi que tournage et monteuse vidéo.",
           "date": "Mars 2026"
+        },
+        {
+          "titre": "Toutes mes animation 2D",
+          "lien": "3D - Animation 2D - Rigging 2D/6- Mes animations 2D/article-toutes-mes-animations-2d.html",
+          "image": "3D - Animation 2D - Rigging 2D/6- Mes animations 2D/2- .gif",
+          "descriptionCourte": "Voici tous mes tests et exercices d'animation 2D.",
+          "description": "Compilation de mes tests et exercices d'animation 2D, rangés dans l'ordre du dossier 6- Mes animations 2D.",
+          "date": "Dossier 6"
         }
       ]
     },
@@ -159,8 +167,8 @@
   ],
   "meta": {
     "totalDomaines": 4,
-    "totalProjets": 13,
-    "lastUpdate": "2026-05-12",
-    "version": "1.3"
+    "totalProjets": 14,
+    "lastUpdate": "2026-06-03",
+    "version": "1.4"
   }
 }

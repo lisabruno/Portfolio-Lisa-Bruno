@@ -185,7 +185,7 @@
                      {
                          "id":  "article-showtime",
                          "path":  "3D - Animation 2D - Rigging 2D/5 -ShowTime/article-showtime.html",
-                         "title":  "KeyFrame : Premier épisode sur l’animation 2D",
+                         "title":  "KeyFrame : votre émission d'animation 2D",
                          "tag":  "Animation 2D/3D",
                          "date":  {
                                       "iso":  "2026-03",
@@ -195,12 +195,27 @@
                                      "prev":  "../4 - IDFC - animation meme/article-idfc.html",
                                      "next":  "../../Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html"
                                  },
-                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003evoici une émission completement faite par groupe de 13 traitant de l\u0027animation 2D. J\u0027ai pu y faire le motion design ainsi que la recherche d\u0027idées tout en apprennant à filmer car j\u0027y ai fait caméraman. L\u0027émission n\u0027est pas encore en ligne mais je vais pouvoir le mettre dans pas longtemps...\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique et du thème\u003c/li\u003e\u003cli\u003eBrainstorming et\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cstrong\u003eLien du site :\u003c/strong\u003e à venir\u003c/p\u003e"
+                         "contentHtml":  "\u003ch2\u003eDescription\u003c/h2\u003e\u003cp\u003eVoici une émission faite par groupe de 13 traitant de l\u0027animation 2D. J\u0027ai pu y faire le motion design, la recherche d\u0027idées ainsi que tournage et monteuse vidéo.\u003c/p\u003e\u003ch2\u003eProcessus\u003c/h2\u003e\u003cul\u003e\u003cli\u003eRecherche d\u0027une direction artistique et du thème\u003c/li\u003e\u003cli\u003eBrainstorming et\u003c/li\u003e\u003c/ul\u003e\u003cp\u003e\u003cstrong\u003eLien du site :\u003c/strong\u003e à venir\u003c/p\u003e"
+                     },
+                     {
+                         "id":  "article-toutes-mes-animations-2d",
+                         "path":  "3D - Animation 2D - Rigging 2D/6- Mes animations 2D/article-toutes-mes-animations-2d.html",
+                         "title":  "Toutes mes animation 2D",
+                         "tag":  "Animation 2D/3D",
+                         "date":  {
+                                      "iso":  "2026-06",
+                                      "label":  "📅 juin 2026"
+                                  },
+                         "nav":  {
+                                     "prev":  "../5 -ShowTime/article-showtime.html"
+                                 },
+                         "contentHtml":  "\u003cp\u003eVoici tous mes tests et exercices d\u0027animation 2D.\u003c/p\u003e\u003ch2\u003eAperçus\u003c/h2\u003e\u003ch3\u003eLes chemins rouges\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cvideo controls preload='metadata' playsinline\u003e\u003csource src='6- Les chemins rouges.mp4' type='video/mp4'\u003e\u003c/video\u003e\u003c/div\u003e\u003ch3\u003elove feelings\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cvideo controls preload='metadata' playsinline\u003e\u003csource src='5- love feelings.mp4' type='video/mp4'\u003e\u003c/video\u003e\u003c/div\u003e\u003ch3\u003elike you\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cvideo controls preload='metadata' playsinline\u003e\u003csource src='4- like you.mp4' type='video/mp4'\u003e\u003c/video\u003e\u003c/div\u003e\u003ch3\u003e2 cote a cote\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cvideo controls preload='metadata' playsinline\u003e\u003csource src='4- 2 cote a cote.mp4' type='video/mp4'\u003e\u003c/video\u003e\u003c/div\u003e\u003ch3\u003erencontre\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cvideo controls preload='metadata' playsinline\u003e\u003csource src='3- rencontre.mkv' type='video/x-matroska'\u003e\u003csource src='3- rencontre.mkv' type='video/mp4'\u003e\u003c/video\u003e\u003c/div\u003e\u003ch3\u003egif\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cimg src='2-une rencontre.gif' alt='aperçu gif' loading='lazy'\u003e\u003c/div\u003e\u003ch3\u003eyes blue or brown cant remember\u003c/h3\u003e\u003cdiv class='article-video article-video-media'\u003e\u003cvideo controls preload='metadata' playsinline\u003e\u003csource src='1-eyes blue or brown cant remember.mp4' type='video/mp4'\u003e\u003c/video\u003e\u003c/div\u003e\u003ch2\u003eCompétences acquises\u003c/h2\u003e\u003cp\u003eRecherche d\u0027idées, répétition des gestes en animation 2D, gestion du rythme et amélioration progressive de mes tests d\u0027animation.\u003c/p\u003e"
                      }
                  ],
     "meta":  {
-                 "totalArticles":  13,
-                 "generatedAt":  "2026-04-21",
-                 "version":  "1.2"
+                          "totalArticles":  14,
+                 "generatedAt":  "2026-06-03",
+                          "version":  "1.3"
              }
 }
+
