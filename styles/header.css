@@ -61,6 +61,7 @@ header::before, .topbar::before {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,7 +90,8 @@ header h1 {
 header nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: clamp(8px, 1.4vw, 20px);
+  flex-wrap: wrap;
 }
 
 header nav a {
@@ -213,8 +215,8 @@ header nav .nav-dropdown summary::-webkit-details-marker,
   gap: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-left: max(0px, calc((100vw - 1200px) / 2));
-  padding-right: max(0px, calc((100vw - 1200px) / 2));
+  padding-left: max(16px, calc((100vw - 1200px) / 2 + 20px));
+  padding-right: max(16px, calc((100vw - 1200px) / 2 + 20px));
 }
 
 .site-contact-button,
@@ -300,7 +302,9 @@ header nav .nav-dropdown summary::-webkit-details-marker,
 
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: clamp(8px, 1.4vw, 20px);
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-links a {
@@ -340,6 +344,8 @@ header nav .nav-dropdown summary::-webkit-details-marker,
   .topbar {
     flex-direction: column;
     text-align: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
 
   header nav,
@@ -348,6 +354,10 @@ header nav .nav-dropdown summary::-webkit-details-marker,
     justify-content: center;
     width: 100%;
     gap: 14px 18px;
+  }
+
+  .header-container {
+    padding: 0 16px;
   }
 
   .dropdown-menu {

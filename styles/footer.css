@@ -71,7 +71,7 @@ footer::after, .article-footer::after {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  gap: 15px;
+  gap: 28px;
   padding: 5px 0;
 }
 
@@ -109,7 +109,7 @@ footer::after, .article-footer::after {
   align-items: center;
   min-height: 44px;
   padding: 6px 4px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.3;
 }
