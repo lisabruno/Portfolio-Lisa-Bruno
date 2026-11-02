@@ -1,0 +1,205 @@
+/* --- PAGE PROJET (MAIN GRID) --- */
+.article-page {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 50px;
+  padding: 50px 0;
+}
+
+/* --- COLONNE PRINCIPALE --- */
+.article-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-tag {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #72a9ff;
+  background: rgba(114, 169, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.article-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Séparateur ornemental sous le titre */
+.article-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0 20px 0;
+}
+
+.article-ornament .line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, #72a9ff, #012095);
+}
+
+.article-ornament .star {
+  width: 16px;
+  height: 16px;
+  fill: #efbf04;
+  flex-shrink: 0;
+}
+
+.article-meta time {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.article-content p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.article-content h2 {
+  font-size: 1.6rem;
+  margin: 30px 0 15px 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgba(114, 169, 255, 0.3);
+}
+
+.article-content h3 {
+  font-size: 1.3rem;
+  margin: 30px 0 20px 0;
+}
+
+/* --- ÉTAPES DU PROCESSUS CRÉATIF (SÉPARATEURS ÉTOILÉS) --- */
+.process-step {
+  position: relative;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+}
+
+/* Ligne de séparation en dégradé sous chaque étape */
+.process-step::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #72a9ff, #012095, transparent);
+}
+
+/* Étoile au centre de la ligne de séparation */
+.process-step::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #fff681 0%, #efbf04 100%);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+  z-index: 2;
+}
+
+/* Supprime le séparateur sur la dernière étape */
+.process-step:last-of-type::after,
+.process-step:last-of-type::before {
+  display: none;
+}
+
+.process-content h4 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: #012095;
+}
+
+.process-content p {
+  margin-bottom: 0;
+  color: #444;
+}
+
+/* --- BARRE LATÉRALE (SIDEBAR) --- */
+.article-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidebar-section {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(26, 11, 91, 0.03);
+}
+
+.sidebar-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid #72a9ff;
+}
+
+.recent-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recent-post-item h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.recent-post-item a {
+  color: #1a0b5b;
+}
+
+.recent-post-item a:hover {
+  color: #012095;
+}
+
+.category-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-list li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+  display: block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.category-list li a:hover {
+  color: #012095;
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .article-page {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .article-title {
+    font-size: 1.8rem;
+  }
+}

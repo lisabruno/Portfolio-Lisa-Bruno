@@ -1,0 +1,366 @@
+/* --- PAGE LISTE PAR DOMAINE --- */
+.domain-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+}
+
+.domain-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.domain-hero h1 {
+  max-width: 1000px;
+  margin: 10px auto 0;
+  color: #012095;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.projects-domain-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px auto 0;
+  max-width: 1050px;
+}
+
+.projects-domain-links a {
+  display: grid;
+  min-height: 86px;
+  place-items: center;
+  padding: 18px;
+  border: 1px solid #72a9ff;
+  border-radius: 10px;
+  background: #fff;
+  color: #012095;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.projects-domain-links a:hover,
+.projects-domain-links a:focus-visible {
+  background: #eef4ff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* --- GRILLE & PROJETS --- */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(300px, 42%) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 30px;
+  min-width: 0;
+  min-height: 330px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 7% 18%, #ffefb4 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 31% 82%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 58% 12%, #ffdb70 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 74% 68%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 91% 42%, #ffefb4 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 46% 94%, #ffdb70 0 1px, transparent 2px),
+    linear-gradient(145deg, #012095 0%, #012cc9 100%);
+  box-shadow: 0 8px 20px rgba(1, 32, 149, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card::before,
+.project-card::after {
+  position: absolute;
+  z-index: 0;
+  color: #ffefb4;
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(255, 246, 129, 0.65);
+}
+
+.project-card::before {
+  content: "✦";
+  top: 18px;
+  right: 24px;
+  font-size: 1.3rem;
+}
+
+.project-card::after {
+  content: "✧";
+  right: 46%;
+  bottom: 20px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.project-card:nth-child(even)::before {
+  top: auto;
+  right: auto;
+  bottom: 18px;
+  left: 24px;
+}
+
+.project-card:nth-child(even)::after {
+  right: 24px;
+  bottom: auto;
+  left: auto;
+  top: 24px;
+}
+
+.project-card:nth-child(even) {
+  background:
+    radial-gradient(circle at 12% 70%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 26% 16%, #ffdb70 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 52% 88%, #ffefb4 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 68% 34%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 78%, #ffdb70 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 94% 22%, #ffffff 0 1px, transparent 2px),
+    linear-gradient(145deg, #012095 0%, #012cc9 100%);
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(1, 32, 149, 0.24);
+}
+
+.project-card:nth-child(even) {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 42%);
+}
+
+.project-card:nth-child(even) .project-image {
+  order: 2;
+}
+
+.project-card:nth-child(even) .project-info {
+  order: 1;
+}
+
+/* Aperçu temporaire des projets */
+.project-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  background-color: #012095;
+  background-image:
+    radial-gradient(circle at 12% 18%, #fff 0 2px, transparent 3px),
+    radial-gradient(circle at 86% 20%, #fff681 0 3px, transparent 4px),
+    radial-gradient(circle at 70% 76%, rgba(255, 255, 255, 0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 22% 82%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 52% 42%, #fff681 0 2px, transparent 3px),
+    linear-gradient(145deg, #012095 0%, #012cc9 100%);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(1, 18, 90, 0.65);
+  box-shadow: 0 8px 20px rgba(26, 11, 91, 0.12);
+}
+
+.project-placeholder::before,
+.project-placeholder::after {
+  content: "✦";
+  position: absolute;
+  color: #fff681;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(255, 246, 129, 0.9);
+}
+
+.project-placeholder::before {
+  transform: translate(-8rem, -4rem);
+}
+
+.project-placeholder::after {
+  transform: translate(8rem, 4rem) scale(0.7);
+}
+
+.project-image {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  align-self: start;
+  overflow: hidden;
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-image iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: #012095;
+}
+
+.project-image video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #012095;
+}
+
+.project-poster-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  background: #012095;
+}
+
+.project-poster-pair img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #f4f6ff;
+}
+
+/* Colonne de texte */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.project-kind {
+  margin: 0 0 8px;
+  color: #fff681;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.project-date {
+  font-size: 0.85rem;
+  color: #ffefb4;
+  font-style: italic;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Encadré de la consigne */
+.project-consigne {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #ffdb70;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.project-description {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 246, 129, 0.75);
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffefb4;
+  align-self: flex-start;
+  margin-top: auto;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  .projects-domain-links {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-card:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .project-card:nth-child(even) .project-image,
+  .project-card:nth-child(even) .project-info {
+    order: initial;
+  }
+
+  .project-image,
+  .project-image img,
+  .project-image iframe,
+  .project-image video,
+  .project-placeholder {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    height: 220px;
+  }
+}

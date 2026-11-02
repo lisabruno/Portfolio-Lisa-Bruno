@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Lisa Bruno - Motion Design</title>
+  
+  <!-- Polices Google Fonts (Space Grotesk & DM Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/cv.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <!-- HEADER DU SITE -->
+  <header class="topbar no-print">
+    <div class="brand">
+      <a href="index.html" class="brand-mark" aria-label="Accueil">
+      </a>
+    </div>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <details class="nav-dropdown">
+        <summary>Projets</summary>
+        <div class="dropdown-menu">
+          <a href="projets.html">Tous les projets</a>
+          <a href="domaines/motiondesign.html">Motion design</a>
+          <a href="domaines/communication.html">Communication, design et direction artistique</a>
+          <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
+        </div>
+      </details>
+      <a href="quisuisje.html">À propos</a>
+      <a href="cv.html" class="site-cv-button active">CV</a>
+      <a class="site-contact-button" href="contact.html">Me contacter</a>
+    </nav>
+  </header>
+
+  <!-- Barre d'impression / export PDF -->
+  <div class="no-print print-bar">
+    <button onclick="window.print()" class="btn-print">
+      🖨️ Imprimer / Télécharger en PDF
+    </button>
+  </div>
+
+  <main id="contenu-principal" class="cv-page">
+    
+    <!-- EN-TÊTE DU CV -->
+    <section class="cv-header">
+      <div class="header-content">
+        <div class="photo-wrapper">
+          <div class="profile-placeholder" aria-label="Lisa Bruno">LB</div>
+        </div>
+        <div class="header-text">
+          <h1 class="main-title">Recherche d'un stage et d'une alternance en Motion Design</h1>
+          <p class="sub-title">Lisa Bruno, étudiante en 2ème année de BUT MMI</p>
+          
+          <div class="contact-line">
+            <span>Portfolio:             <a href="https://lisa-bruno.com" target="_blank" rel="noopener noreferrer">lisa-bruno.com <span class="sr-only">(ouvre un nouvel onglet)</span></a></span>
+            <span class="sep">•</span>
+            <span>Téléphone: <a href="tel:0631019449">06.31.01.94.49</a></span>
+            <span class="sep">•</span>
+            <span>Mail: <a href="mailto:bordeaux.lisabruno@gmail.com">bordeaux.lisabruno@gmail.com</a></span>
+          </div>
+
+          <div class="modalites">
+            <p><strong>Modalités d'alternance :</strong> à partir de maintenant, 70% entreprise et 30% en cours</p>
+            <p><strong>Modalités de stage :</strong> minimum 11 semaines, rémunéré</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION FORMATION -->
+    <section class="cv-section">
+      <h2 class="section-heading">Formation</h2>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-date">2025 - Aujourd'hui</span>
+          <span class="entry-divider">|</span>
+          <span class="entry-title">IUT Bordeaux Montaigne - Bachelor Universitaire Technologique Métiers du Multimédia et de l'Internet (BUT MMI)</span>
+        </div>
+        <p class="entry-desc">Création, Communication, Développement. Un vrai couteau suisse !</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-date">2025</span>
+          <span class="entry-divider">|</span>
+          <span class="entry-title">Lycée Jean Monnet - Titulaire du Baccalauréat général spécialités Mathématiques et Langues Littératures Cultures Etrangères Anglaise (LLCE Anglais)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION EXPÉRIENCES PROFESSIONNELLES -->
+    <section class="cv-section">
+      <h2 class="section-heading">Expériences professionnelles</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-date">Juillet 2026</span>
+          <span class="entry-divider">|</span>
+          <span class="entry-title">CDD vendeuse polyvalente - PULL & BEAR Bègles</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Conseil, Service et relation client</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-date">Juin 2026</span>
+          <span class="entry-divider">|</span>
+          <span class="entry-title">Stage en communication - Print System</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Stratégie de communication et Analyse social media</li>
+          <li>Création de Direction Artistique (DA)</li>
+          <li>Tournage, montage vidéo et motion design</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION COMPÉTENCES & CONNAISSANCES -->
+    <section class="cv-section">
+      <h2 class="section-heading">Compétences & Connaissances</h2>
+
+      <div class="skill-category">
+        <h3 class="skill-cat-title">Motion Design :</h3>
+        <ul class="entry-bullets">
+          <li>Animation/rigging/pupetting d'éléments graphiques et textuels en 2D (Adobe Animate et After Effects)</li>
+          <li>design d'éléments graphiques (assets et écritures) en 2D</li>
+          <li>Animation sur différents plans, avec Caméra 3D (Adobe After effects et Blender)</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="skill-cat-title">Design :</h3>
+        <ul class="entry-bullets">
+          <li>Création et suivi de Direction Artistique (DA)</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="skill-cat-title">Communication :</h3>
+        <ul class="entry-bullets">
+          <li>Design d'Affiches, Flyers et print (Adobe Illustrator, Photoshop et Indesign)</li>
+          <li>Stratégie de communication (planning éditoriaux, analyse social media, création de posts/tiktok, direction artistique)</li>
+          <li>Site Web: Maquettage, Design (Figma) et Développement Web (HTML, CSS, JS, PHP, SQL)</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="skill-cat-title">Audiovisuel :</h3>
+        <ul class="entry-bullets">
+          <li>Storyboarding et storytelling</li>
+          <li>Prise de vues avec caméras professionnelles 4K</li>
+          <li>Photographie avec appareil photo, Retouches photos (Lightroom Classic et Lightroom)</li>
+          <li>Montage vidéo basique, multi-cam et sound design (Adobe Première Pro)</li>
+        </ul>
+      </div>
+
+      <div class="tools-line">
+        <strong>La suite Adobe, Figma, Canva</strong>
+      </div>
+    </section>
+
+    <!-- SECTION CENTRES D'INTÉRÊTS -->
+    <section class="cv-section">
+      <h2 class="section-heading">Centres d'intérêts</h2>
+      <p class="interests-paragraph">
+        J'adore les animation indépendantes, celles qui m'ont fait commencé l'animation 2D tout particulièrement, me menant vers mes seconds centres d'intérêts: le motion design ainsi que le design. Et j'aime aussi particulièrement la communication.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER DU SITE -->
+  <footer class="footer no-print">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Projets</h4>
+        <a href="projets.html">Tous les projets</a>
+        <a href="domaines/motiondesign.html">Motion Design</a>
+        <a href="domaines/communication.html">Communication, design et direction artistique</a>
+        <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="quisuisje.html">À propos</a>
+        <a href="cv.html">CV</a>
+      </div>
+      <div class="footer-col" id="contact">
+        <h4>Contact</h4>
+        <a href="https://www.instagram.com/lisopya.studio/" target="_blank" rel="noopener noreferrer">Instagram : lisopya.studio</a>
+        <a href="tel:0631019449">06.31.01.94.49</a>
+        <a href="mailto:bordeaux.lisabruno@gmail.com">bordeaux.lisabruno@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

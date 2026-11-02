@@ -1,0 +1,346 @@
+/* --- RESET & VARIABLES DU SITE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #012095;
+  --accent-color: #012095;
+  --bg-color: #fffcf9;
+  --card-blue: linear-gradient(145deg, #012095 0%, #012cc9 100%);
+  --gradient-brand: linear-gradient(90deg, #72a9ff, #012095);
+  --gold: #ffdb70;
+}
+
+html {
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  color: var(--primary-color);
+  line-height: 1.25;
+}
+
+.cv-page {
+  flex: 1 0 auto;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* --- BOUTON D'IMPRESSION --- */
+.print-bar {
+  text-align: center;
+  padding: 20px;
+}
+
+.btn-print {
+  background: linear-gradient(135deg, #ffdb70 0%, #ffefb4 100%);
+  color: #012095;
+  border: 1px solid #ffdb70;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-print:hover {
+  background: #ffdb70;
+  color: #012095;
+}
+
+/* --- CONTENEUR PAGE --- */
+.cv-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+/* --- HEADER EN-TÊTE --- */
+.cv-header {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  padding: 40px 0;
+  padding-left: 34px;
+  padding-right: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 8% 22%, #ffefb4 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 75%, #ffdb70 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 16%, #ffffff 0 2px, transparent 3px),
+    var(--card-blue);
+  box-shadow: 0 10px 24px rgba(1, 32, 149, 0.18);
+}
+
+.cv-header::after {
+  content: "✦";
+  position: absolute;
+  right: 28px;
+  bottom: 12px;
+  color: #ffefb4;
+  font-size: 2.2rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.photo-wrapper {
+  flex-shrink: 0;
+}
+
+.profile-placeholder {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffdb70 0%, #ffefb4 100%);
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  color: #012095;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-text {
+  flex-grow: 1;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cv-header h1,
+.cv-header h2,
+.cv-header h3,
+.cv-header a {
+  color: #ffffff;
+}
+
+.sub-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.contact-line .sep {
+  color: var(--gold);
+  opacity: 0.5;
+}
+
+.contact-line a {
+  font-weight: 600;
+}
+
+.modalites {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+/* --- SECTIONS --- */
+.cv-section {
+  margin: 0;
+  padding: 30px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #72a9ff, #012095) 1;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cv-section:last-child {
+  border-bottom: none;
+  border-image: none;
+}
+
+.section-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: none;
+  color: #012095;
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 3px solid #012cc9;
+}
+
+/* --- LIGNES DE CONTENU (FORMATIONS & EXPÉRIENCES) --- */
+.entry {
+  margin-bottom: 10px;
+}
+
+.entry-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.entry-date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #012cc9;
+}
+
+.entry-divider {
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.entry-title {
+  font-weight: 600;
+}
+
+.entry-desc {
+  font-size: 0.9rem;
+  margin-top: 2px;
+  padding-left: 15px;
+  opacity: 0.9;
+}
+
+.entry-bullets {
+  list-style-type: none;
+  padding-left: 15px;
+  margin-top: 3px;
+}
+
+.entry-bullets li {
+  position: relative;
+  padding-left: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+
+.entry-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffbf24;
+  font-weight: bold;
+}
+
+/* --- COMPÉTENCES --- */
+.skill-category {
+  margin-bottom: 8px;
+}
+
+.skill-cat-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.tools-line {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  background: linear-gradient(90deg, rgba(114, 169, 255, 0.18), rgba(255, 239, 180, 0.24));
+  border-left: 3px solid #ffdb70;
+  border-radius: 0 6px 6px 0;
+}
+
+/* --- CENTRES D'INTÉRÊTS --- */
+.interests-paragraph {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 650px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-line {
+    justify-content: center;
+  }
+
+  .entry-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .entry-divider {
+    display: none;
+  }
+}
+
+/* --- STYLES D'IMPRESSION (PDF PAGE UNIQUE) --- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-page {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .cv-section {
+    page-break-inside: avoid;
+  }
+}
+.btn-print {
+  min-height: 44px;
+}

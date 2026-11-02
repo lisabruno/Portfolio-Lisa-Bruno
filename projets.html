@@ -1,141 +1,256 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tous mes Projets - Portfolio de Lisa Bruno</title>
-    
-    <link rel="stylesheet" href="style.variables.css">
-    <link rel="stylesheet" href="style.header.css">
-    <link rel="stylesheet" href="style.navigation.css">
-    <link rel="stylesheet" href="style.footer.css">
-    <link rel="stylesheet" href="style.decorative.css">
-    <link rel="stylesheet" href="style.index-tout.css">
-    
-    <script src="script.nav.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les projets de Lisa Bruno en direction artistique, communication, motion design et audiovisuel.">
+  <title>Tous les projets - Lisa Bruno</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/domaines.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <script src="scripts/project-order.js" defer></script>
 </head>
-<body class="projets-page">
-    
-    <header class="topbar">
-        <div class="brand">
-            <span class="brand-mark" aria-hidden="true"><img src="logo.png" alt=""></span>
-            <span>Actuellement en recherche d'alternance</span>
+<body>
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+  <header class="topbar">
+    <div class="brand">
+      <a href="index.html" class="brand-mark" aria-label="Accueil - Lisa Bruno"></a>
+    </div>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <details class="nav-dropdown">
+        <summary>Projets</summary>
+        <div class="dropdown-menu">
+          <a href="projets.html">Tous les projets</a>
+          <a href="domaines/motiondesign.html">Motion design</a>
+          <a href="domaines/communication.html">Communication, design et direction artistique</a>
+          <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
         </div>
-        <nav class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="projets.html">Projets</a>
-            <a href="qui-suis-je.html">À Propos</a>
-            <a href="contact.html">Contact</a>
-            <a href="CV/cv.html">CV</a>
-        </nav>
-    </header>
+      </details>
+      <a href="quisuisje.html">À propos</a>
+      <a href="cv.html" class="site-cv-button">CV</a>
+      <a class="site-contact-button" href="contact.html">Me contacter</a>
+    </nav>
+  </header>
 
-    <main>
-        
-        <div class="all-projects-header">
-            <h1>Tous mes Projets</h1>
-            <div class="line-ornament" aria-hidden="true">
-                <span class="line"></span>
-                <svg class="star" viewBox="0 0 24 24">
-                    <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9"></polygon>
-                </svg>
-                <span class="line"></span>
-            </div>
-            <p class="lead">Découvrez l'ensemble de mes réalisations en animation, communication, montage vidéo, photographie et création artistique.</p>
+  <main id="contenu-principal" class="domain-container projects-index">
+    <section class="domain-hero">
+      <span class="article-tag">Portfolio</span>
+      <h1>Tous les projets</h1>
+      <p>Voici mes 13 projets, classés du plus récent au plus ancien. Chaque carte précise le type de réalisation, les logiciels utilisés et ce que j’ai concrètement réalisé.</p>
+      <nav class="projects-domain-links" aria-label="Parcourir les projets par domaine">
+        <a href="domaines/communication.html">Communication, design et direction artistique</a>
+        <a href="domaines/motiondesign.html">Motion Design</a>
+        <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
+      </nav>
+    </section>
+
+    <section class="projects-grid" aria-label="Liste des projets">
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/w15TtbTtNSk"
+            title="Motion design réalisé pour À la volée"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
         </div>
-
-        
-        <section class="timeline-container" id="timeline">
-            <div class="timeline-desktop"></div>
-            <div class="timeline-mobile"></div>
-        </section>
-
-        
-        <section class="category-section" id="cat-loading">
-            <h2 class="category-title">
-                <span class="category-icon">?</span>
-                Chargement des projets depuis la base JSON...
-            </h2>
-        </section>
-
-        
-        <section class="contact" id="contact">
-            <div class="contact-text">
-                <p class="section-kicker">Contact</p>
-                <h2>Je pense que je serai un bon élément pour vous</h2>
-                <p>Pour collaborer, me prendre en alternance, en stage ou en savoir plus, voici mes réseaux et mon mail.</p>
-                <div class="contact-buttons">
-                    <a class="btn primary" href="CV/cv.html">Mon CV</a>
-                    <a class="btn primary" href="qui-suis-je.html">Qui suis-je ?</a>
-                </div>
-            </div>
-            <div class="social-grid" aria-label="Réseaux sociaux">
-                <a class="social-card" href="https://www.tiktok.com/@lisauteur" target="_blank" rel="noopener noreferrer">
-                    <span class="social-title">Tiktok</span>
-                    <span class="social-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                        </svg>
-                    </span>
-                    <span class="social-handle">lisauteur</span>
-                </a>
-                <a class="social-card" href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">
-                    <span class="social-title">Instagram</span>
-                    <span class="social-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </span>
-                    <span class="social-handle">lisauteur</span>
-                </a>
-                <a class="social-card" href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">
-                    <span class="social-title">Youtube</span>
-                    <span class="social-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </span>
-                    <span class="social-handle">lisauteur</span>
-                </a>
-                <a class="social-card" href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">
-                    <span class="social-title">Mail</span>
-                    <span class="social-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                    </span>
-                    <span class="social-handle">bordeaux.lisabruno@gmail.com</span>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    
-    <footer class="footer">
-        <div class="footer-col">
-            <h4>Domaines</h4>
-            <a href="3D - Animation 2D - Rigging 2D/4 - IDFC - animation meme/article-idfc.html">Motion 2D/3D · Rigging 2D</a>
-            <a href="Communication digitale - flyer/1 - La.fee.du.tri/article-la.fee.du.tri.html">Communication</a>
-            <a href="Montage vidéo - réalisation/1 - montage avenir/article-montageavenir.html">Audiovisuel</a>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">2026</span><p class="project-kind">Motion design — After Effects</p><h2>À la volée</h2></div>
+          <p class="project-description">Motion design de fin pour un court métrage sur la poursuite, réalisé en équipe de six. J’ai conçu et animé cette partie du film.</p>
+          <a class="project-link" href="projets/a-la-volee.html">Voir le projet complet →</a>
         </div>
-        <div class="footer-col">
-            <h4>Pages</h4>
-            <a href="projets.html">Tous les projets</a>
-            <a href="qui-suis-je.html">Qui suis-je ?</a>
-            <a href="CV/cv.html">Mon CV</a>
-        </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="https://www.instagram.com/lisauteur/" target="_blank" rel="noopener noreferrer">Instagram : lisauteur</a>
-            <a href="https://www.youtube.com/@Lisauteur" target="_blank" rel="noopener noreferrer">YouTube : Lisauteur</a>
-            <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Contact depuis le portfolio">Mail : bordeaux.lisabruno@gmail.com</a>
-        </div>
-    </footer>
+      </article>
 
-    
-    <script src="script.data.js"></script>
-    <script src="script.js"></script>
-    <script src="script.timeline.js"></script>
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="projets/da-de-lisopya.html"
+            title="Rendu du projet DA de Lisopya"
+            loading="lazy"></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">En continu</span><p class="project-kind">Direction artistique — Illustrator, InDesign, After Effects, Canva</p><h2>DA de Lisopya</h2></div>
+          <p class="project-description">Direction artistique de mon portfolio : palette, typographies, identité visuelle et univers graphique du ciel étoilé.</p>
+          <a class="project-link" href="projets/da-de-lisopya.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="projets/communication-de-lisopya.html"
+            title="Rendu du projet Communication de Lisopya"
+            loading="lazy"></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">En continu</span><p class="project-kind">Communication visuelle — Illustrator, Photoshop, InDesign, After Effects, Canva</p><h2>Communication de Lisopya</h2></div>
+          <p class="project-description">Création de supports pour présenter mon travail, mes compétences et mon univers de façon cohérente sur le web et les réseaux.</p>
+          <a class="project-link" href="projets/communication-de-lisopya.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <div class="project-poster-pair" aria-label="Affiche et flyer du projet Bleu Nuit">
+            <img src="assets/projects/bleu-nuit/affiche.webp" alt="Affiche du projet Bleu Nuit" loading="lazy">
+            <img src="assets/projects/bleu-nuit/flyer.webp" alt="Flyer du projet Bleu Nuit" loading="lazy">
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Septembre 2026</span><p class="project-kind">Affiche et flyer — Illustrator</p><h2>Bleu Nuit</h2></div>
+          <p class="project-description">Création d’une affiche et d’un flyer pour un festival de cinéma fictif, avec une direction artistique inspirée de la nuit.</p>
+          <a class="project-link" href="projets/bleu-nuit.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ikd-Y6lT390"
+            title="Vidéo du projet IDFC"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Décembre 2025 — en cours</span><p class="project-kind">Rigging 2D et motion design 3D — Illustrator, Animate, After Effects, Blender</p><h2>IDFC</h2></div>
+          <p class="project-description">Projet personnel autour du rigging et du puppeting 2D, complété par des éléments de motion design 3D synchronisés sur une musique de Blackbear.</p>
+          <a class="project-link" href="projets/idfc.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="projets/print-system.html"
+            title="Rendu du projet Print system"
+            loading="lazy"></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Juin 2026</span><p class="project-kind">Motion design et identité visuelle — After Effects, Illustrator</p><h2>Print system</h2></div>
+          <p class="project-description">Création de plusieurs animations autour du logo et de l’univers visuel de Print System, en lien avec les contraintes de l’imprimerie.</p>
+          <a class="project-link" href="projets/print-system.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/da-de-jeu-video/0.jpg" alt="Planche de direction artistique du jeu vidéo" loading="lazy">
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Avril 2026</span><p class="project-kind">Direction artistique et concept art — Illustrator, Photoshop</p><h2>DA de jeu vidéo</h2></div>
+          <p class="project-description">Recherche d’univers, conception graphique et création d’assets pour construire la direction artistique d’un jeu vidéo.</p>
+          <a class="project-link" href="projets/da-de-jeu-video.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/7nneA-y_d0Y"
+            title="Motion design du projet KeyFrames"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Mars 2026</span><p class="project-kind">Motion design et montage vidéo — After Effects, Premiere Pro</p><h2>KeyFrames</h2></div>
+          <p class="project-description">Émission de 20 minutes réalisée en groupe, avec création d’habillages en motion design 2D et montage multicaméra.</p>
+          <a class="project-link" href="projets/keyframes.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/photographies/lecture/2.webp" alt="Photographie de la série Lecture : personne lisant devant un mur, avec des passants flous" loading="lazy">
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Mars 2026</span><p class="project-kind">Photographie et retouche — Photoshop</p><h2>Photographies</h2></div>
+          <p class="project-description">Séries photographiques autour de plusieurs thèmes, de la prise de vue à la retouche et à la composition des images.</p>
+          <a class="project-link" href="projets/photographies.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="projets/web.html"
+            title="Rendu du projet Web"
+            loading="lazy"></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Décembre 2025</span><p class="project-kind">Conception et développement web — Figma, HTML, CSS, JavaScript, SQL, PHP</p><h2>Web</h2></div>
+          <p class="project-description">Conception de maquettes et réalisation de sites en groupe, du design d’interface au développement front-end et back-end.</p>
+          <a class="project-link" href="projets/web.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/xwYXEGbrFuU"
+            title="Vidéo du projet Endogamie Numériquement Assistée"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Novembre 2025</span><p class="project-kind">Vidéo de vulgarisation et animation — After Effects, Premiere Pro</p><h2>Endogamie Numériquement Assistée</h2></div>
+          <p class="project-description">Vidéo de vulgarisation réalisée en duo sur les algorithmes de rencontre, du storyboard à la création des assets et à l’animation.</p>
+          <a class="project-link" href="projets/endogamie-numeriquement-assistee.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/communication/lafeedutri/black-friday/1.png" alt="Visuel du projet La fée du tri" loading="lazy">
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">Octobre 2025</span><p class="project-kind">Communication digitale — Illustrator, Photoshop, After Effects</p><h2>La fée du tri</h2></div>
+          <p class="project-description">Création de posts et de Reels pour une marque fictive spécialisée dans l’organisation et le rangement.</p>
+          <a class="project-link" href="projets/la-fee-du-tri.html">Voir le projet complet →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/projects/audiovisuel/animation2d/5-love-feelings.mp4" type="video/mp4">
+            Votre navigateur ne peut pas lire cette vidéo.
+          </video>
+        </div>
+        <div class="project-info">
+          <div class="project-header"><span class="project-date">2020 — 2024</span><p class="project-kind">Animation 2D et motion design — Moho, After Effects, Krita</p><h2>Animations 2D</h2></div>
+          <p class="project-description">Sélection d’animations réalisées sur plusieurs années : storyboard, narration, design, création d’assets et animation traditionnelle ou riggée.</p>
+          <a class="project-link" href="projets/animations-2d.html">Voir le projet complet →</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Projets</h4>
+        <a href="projets.html">Tous les projets</a>
+        <a href="domaines/motiondesign.html">Motion Design</a>
+        <a href="domaines/communication.html">Communication, design et direction artistique</a>
+        <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="quisuisje.html">À propos</a>
+        <a href="cv.html">CV</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://www.instagram.com/lisopya.studio/" target="_blank" rel="noopener noreferrer">Instagram : lisopya.studio</a>
+        <a href="tel:0631019449">06.31.01.94.49</a>
+        <a href="mailto:bordeaux.lisabruno@gmail.com">bordeaux.lisabruno@gmail.com</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
-

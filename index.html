@@ -1,100 +1,137 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Lisa Bruno</title>
-    <link rel="stylesheet" href="style.variables.css">
-    <link rel="stylesheet" href="style.header.css">
-    <link rel="stylesheet" href="style.navigation.css">
-    <link rel="stylesheet" href="style.footer.css">
-    <link rel="stylesheet" href="style.decorative.css">
-    <link rel="stylesheet" href="style.index-tout.css">
-  <script src="script.nav.js" defer></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/footer.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-mark" aria-hidden="true"><img src="logo.png" alt=""></span>
-      <span>portfolio de Lisa Bruno, étudiante en 1ère année de BUT MMI</span>
-    </div>
-    <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="projets.html">Projets</a>
-      <a href="qui-suis-je.html">À Propos</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="CV/cv.html">CV</a>
-    </nav>
-  </header>
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
 
-  <header class="hero" id="hero">
-    <div class="hero-content fade-in">
-      <h1>Lisa Bruno</h1>
-
-      <div class="ornament">
-        <div class="line"></div>
-        <svg class="star" width="24" height="24" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70">
-          <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" />
-        </svg>
-        <div class="line"></div>
-      </div>
+  <!-- 1. Header en ligne -->
+  <header>
+    <div class="header-container">
+      <div class="header-brand"><p>Lisa Bruno</p></div>
       
-      <p class="subtitle">votre future alternante en communication digitale et création</p>
+      <nav aria-label="Navigation principale">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <details class="nav-dropdown">
+          <summary>Projets</summary>
+          <div class="dropdown-menu">
+            <a href="projets.html">Tous les projets</a>
+            <a href="domaines/motiondesign.html">Motion design</a>
+            <a href="domaines/communication.html">Communication, design et direction artistique</a>
+            <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
+          </div>
+        </details>
+        <a href="quisuisje.html">À propos</a>
+        <a href="cv.html" class="site-cv-button">CV</a>
+        <a class="site-contact-button" href="contact.html">Me contacter</a>
+      </nav>
     </div>
   </header>
 
-  <section class="timeline-container" id="timeline">
-    <div class="timeline-desktop"></div>
-    <div class="timeline-mobile"></div>
+  <main id="contenu-principal">
+    <!-- 2. Section Nouveau Projet -->
+    <section id="nouveau-projet" aria-labelledby="titre-nouveau-projet">
+      <div class="nouveau-projet-video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/w15TtbTtNSk"
+          title="Motion design réalisé par Lisa pour le court métrage À la volée"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="nouveau-projet-content">
+        <span class="article-tag">Projet récent</span>
+        <h1 id="titre-nouveau-projet">Mon portfolio</h1>
+        <h2>À la volée</h2>
+        <p>Pour commencer, voici le motion design de fin que j’ai réalisé pour un court métrage sur le thème de la poursuite.</p>
+        <a class="btn primary" href="projets/a-la-volee.html">Découvrir le projet</a>
+      </div>
+    </section>
+
+  <!-- 3. Section À propos -->
+  <section id="a-propos" aria-labelledby="titre-a-propos">
+    <div class="a-propos-content">
+      <h2 id="titre-a-propos">À propos de moi</h2>
+      <p>Je suis Lisa Bruno, étudiante en MMI et créatrice visuelle. Je crée des identités visuelles, des animations et des vidéos pour des projets qui veulent être beaux, clairs et mémorables.</p>
+    </div>
+    <figure class="a-propos-photo">
+      <img src="assets/images/portrait-lisa-bruno.webp" alt="Lisa Bruno">
+    </figure>
   </section>
 
-  <div id="contact" aria-hidden="true"></div>
+  <!-- 4. Section Domaines de projets (Titre centré) -->
+  <section id="domaines" aria-labelledby="titre-domaines">
+    <h2 id="titre-domaines">Mes domaines</h2>
+    
+    <div class="domaines-grid">      
+      <article>
+        <div class="domain-project-preview domain-project-preview--pair" aria-label="Aperçu du projet Bleu Nuit">
+          <img src="assets/projects/bleu-nuit/affiche.webp" alt="Affiche du projet Bleu Nuit" loading="lazy">
+          <img src="assets/projects/bleu-nuit/flyer.webp" alt="Flyer du projet Bleu Nuit" loading="lazy">
+        </div>
+        <h3>Communication, design et direction artistique</h3>
+        <p>Identité visuelle, branding et visuels clairs pour des marques qui veulent se distinguer.</p>
+        <a href="domaines/communication.html">Voir les projets</a>
+      </article>
+      <article>
+        <div class="domain-project-preview">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/w15TtbTtNSk"
+            title="Aperçu du motion design À la volée"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h3>Motion Design</h3>
+        <p>Animation 2D/3D, storytelling visuel et éléments graphiques en mouvement.</p>
+        <a href="domaines/motiondesign.html">Voir les projets</a>
+      </article>
 
-  <footer class="footer">
-    <div class="ornament footer-ornament">
-      <div class="line full"></div>
-      <svg class="star" width="24" height="24" viewBox="0 0 24 24" fill="#ffdb70" stroke="#ffdb70">
-        <polygon points="12,2 15,9 22,12 15,15 12,22 9,15 2,12 9,9" />
-      </svg>
-      <div class="line full"></div>
+      <article>
+        <div class="domain-project-preview">
+          <img src="assets/projects/photographies/lecture/2.webp" alt="Aperçu du projet Photographies" loading="lazy">
+        </div>
+        <h3>Audiovisuel et Montage Vidéo</h3>
+        <p>Montage, réalisation et création de vidéos faciles à suivre et agréables à regarder.</p>
+        <a href="domaines/audiovisuel.html">Voir les projets</a>
+      </article>
+
     </div>
+    </section>
+  </main>
 
-    <div class="footer-nav">
-      <div class="footer-column">
-        <h4>Mes Compétences</h4>
-        <a href="3D - Animation 2D - Rigging 2D/TOUT animation.html">TOUT animation</a>
-        <a href="Communication digitale - flyer/TOUT communication.html">TOUT communication</a>
-        <a href="Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html">Audiovisuel</a>
-        <a href="Design Web - Création de Site internet/TOUT web.html">TOUT web</a>
+  <!-- 5. Footer en 3 colonnes -->
+  <footer id="contact">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Projets</h4>
+        <a href="projets.html">Tous les projets</a>
+        <a href="domaines/motiondesign.html">Motion Design</a>
+        <a href="domaines/communication.html">Communication, design et direction artistique</a>
+        <a href="domaines/audiovisuel.html">Audiovisuel et Montage Vidéo</a>
       </div>
 
-      <div class="footer-column">
-        <h4>Mes Services</h4>
-        <a href="Communication digitale - flyer/TOUT communication.html">Identité visuelle</a>
-        <a href="3D - Animation 2D - Rigging 2D/TOUT animation.html">Motion Graphics</a>
-        <a href="projets.html">Direction artistique</a>
-        <a href="Montage vidéo - réalisation/TOUT Montage vidéo - réalisation.html">Post-production</a>
-        <a href="CV/cv.html">Conseils créatifs</a>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="quisuisje.html">À propos</a>
+        <a href="cv.html">CV</a>
       </div>
 
-      <div class="footer-column">
-        <h4>Contact & Infos</h4>
-        <a href="qui-suis-je.html">À propos</a>
-        <a href="contact.html">Contact</a>
-        <a href="CV/cv.html">CV / Parcours</a>
-        <a href="mailto:bordeaux.lisabruno@gmail.com?subject=Mentions%20l%C3%A9gales">Mentions légales</a>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://www.instagram.com/lisopya.studio/" target="_blank" rel="noopener noreferrer">Instagram : lisopya.studio</a>
+        <a href="tel:0631019449">06.31.01.94.49</a>
+        <a href="mailto:bordeaux.lisabruno@gmail.com">bordeaux.lisabruno@gmail.com</a>
       </div>
-    </div>
-
-    <div class="copyright">
-      <p>© 2024 Mon Portfolio - Tous droits réservés</p>
     </div>
   </footer>
 
-  <script src="script.data.js"></script>
-  <script src="script.timeline.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
-
-

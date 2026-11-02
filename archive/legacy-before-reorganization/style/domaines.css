@@ -1,0 +1,136 @@
+/* --- PAGE LISTE PAR DOMAINE --- */
+.domain-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+}
+
+.domain-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.domain-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* --- GRILLE & PROJETS --- */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Projet individuel : pas de case, juste une ligne dégradée en haut */
+.project-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  background: transparent;
+  padding: 40px 0;
+  
+  /* Ligne de séparation supérieure avec dégradé */
+  border-top: 1.5px solid;
+  border-image: linear-gradient(90deg, #72a9ff, #012095) 1;
+}
+
+/* Ligne de séparation sous le tout dernier projet pour fermer la liste */
+.project-card:last-child {
+  border-bottom: 1.5px solid;
+  border-image: linear-gradient(90deg, #72a9ff, #012095) 1;
+}
+
+/* Alternance image / texte (une fois sur deux) */
+.project-card:nth-child(even) {
+  grid-template-columns: 1fr 320px;
+}
+
+.project-card:nth-child(even) .project-image {
+  order: 2;
+}
+
+.project-card:nth-child(even) .project-info {
+  order: 1;
+}
+
+/* Image miniature */
+.project-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Colonne de texte */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.project-date {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Encadré de la consigne */
+.project-consigne {
+  background-color: rgba(114, 169, 255, 0.08);
+  border-left: 3px solid #72a9ff;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  color: #1a0b5b;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.project-description {
+  font-size: 0.98rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #012095;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #72a9ff;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  .project-card,
+  .project-card:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .project-card:nth-child(even) .project-image {
+    order: 1;
+  }
+
+  .project-card:nth-child(even) .project-info {
+    order: 2;
+  }
+
+  .project-image img {
+    height: 200px;
+  }
+}
