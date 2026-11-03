@@ -214,6 +214,7 @@ section:last-of-type {
 
 /* --- SECTION DOMAINES DE PROJETS --- */
 #domaines {
+  max-width: 1500px;
   text-align: center;
 }
 
@@ -225,24 +226,23 @@ section:last-of-type {
 .domaines-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 16px;
   align-items: stretch;
 }
 
 .domaines-grid article {
   position: relative;
   overflow: hidden;
-  min-height: 260px;
-  aspect-ratio: 1 / 1;
-  padding: 28px;
+  min-height: 300px;
+  aspect-ratio: auto;
+  padding: 20px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   color: #ffffff;
   text-align: left;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 145px 1fr auto;
   height: 100%;
-  justify-content: space-between;
   box-shadow: 0 8px 20px rgba(26, 11, 91, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -251,7 +251,7 @@ section:last-of-type {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 118px;
+  height: 145px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 8px;
@@ -286,12 +286,20 @@ section:last-of-type {
 .domaines-grid article a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
   min-height: 44px;
-  padding: 10px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 999px;
+  background: linear-gradient(135deg, #ffdb70 0%, #ffefb4 100%);
+  color: #012095;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
   text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .domaines-grid article::before {
@@ -352,7 +360,8 @@ section:last-of-type {
 
 .domaines-grid article h3 {
   color: #ffffff;
-  font-size: 1.35rem;
+  margin: 0;
+  font-size: clamp(1.7rem, 2.5vw, 2.25rem);
   line-height: 1.25;
 }
 
@@ -364,7 +373,7 @@ section:last-of-type {
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.98rem;
   line-height: 1.5;
-  margin: auto 0;
+  margin: 12px 0;
 }
 
 .domaines-grid article:nth-child(2) p {
@@ -372,20 +381,26 @@ section:last-of-type {
 }
 
 .domaines-grid article a {
-  color: #ffffff;
-  font-weight: 500;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .domaines-grid article a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.14);
+  color: #012095;
+  background: #ffdb70;
   text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.domaines-grid article a:focus-visible {
+  color: #012095;
+  background: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .domaines-grid article:nth-child(2) a,
 .domaines-grid article:nth-child(2) a:hover {
-  color: #ffffff;
+  color: #012095;
 }
 
 @media (max-width: 800px) {
@@ -401,6 +416,10 @@ section:last-of-type {
 
   .domaines-grid {
     grid-template-columns: 1fr;
+  }
+
+  .domaines-grid article {
+    min-height: 300px;
   }
 
 }
@@ -429,7 +448,12 @@ section:last-of-type {
   }
 
   .domaines-grid article {
-    min-height: 220px;
-    padding: 22px;
+    min-height: 290px;
+    padding: 18px;
+    grid-template-rows: auto 135px 1fr auto;
+  }
+
+  .domain-project-preview {
+    height: 135px;
   }
 }

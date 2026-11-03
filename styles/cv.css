@@ -127,18 +127,13 @@ img {
   flex-shrink: 0;
 }
 
-.profile-placeholder {
+.profile-photo {
+  display: block;
   width: 120px;
   height: 120px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffdb70 0%, #ffefb4 100%);
+  object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.85);
-  color: #012095;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  border-radius: 50%;
 }
 
 .header-text {
