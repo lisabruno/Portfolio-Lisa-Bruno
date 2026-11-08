@@ -143,6 +143,15 @@
   box-shadow: 0 14px 28px rgba(1, 32, 149, 0.24);
 }
 
+.project-card--featured {
+  border: 2px solid #ffdb70;
+  box-shadow: 0 12px 30px rgba(255, 219, 112, 0.28);
+}
+
+.project-card--featured .project-header h2 {
+  color: #fff681;
+}
+
 .project-card:nth-child(even) {
   grid-template-columns: minmax(0, 1fr) minmax(300px, 42%);
 }
