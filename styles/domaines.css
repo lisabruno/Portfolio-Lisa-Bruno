@@ -56,7 +56,7 @@
 .projects-grid {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 0;
 }
 
 .project-card {
@@ -66,90 +66,27 @@
   align-items: stretch;
   gap: 30px;
   min-width: 0;
-  min-height: 330px;
-  padding: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at 7% 18%, #ffefb4 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 31% 82%, #ffffff 0 1px, transparent 2px),
-    radial-gradient(circle at 58% 12%, #ffdb70 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 74% 68%, #ffffff 0 1px, transparent 2px),
-    radial-gradient(circle at 91% 42%, #ffefb4 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 46% 94%, #ffdb70 0 1px, transparent 2px),
-    linear-gradient(145deg, #012095 0%, #012cc9 100%);
-  box-shadow: 0 8px 20px rgba(1, 32, 149, 0.16);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 300px;
+  padding: 34px 0;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #72a9ff, #012095) 1;
 }
 
-.project-card::before,
-.project-card::after {
-  position: absolute;
-  z-index: 0;
-  color: #ffefb4;
-  line-height: 1;
-  pointer-events: none;
-  text-shadow: 0 0 10px rgba(255, 246, 129, 0.65);
-}
-
-.project-card::before {
-  content: "✦";
-  top: 18px;
-  right: 24px;
-  font-size: 1.3rem;
-}
-
-.project-card::after {
-  content: "✧";
-  right: 46%;
-  bottom: 20px;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.project-card:nth-child(even)::before {
-  top: auto;
-  right: auto;
-  bottom: 18px;
-  left: 24px;
-}
-
-.project-card:nth-child(even)::after {
-  right: 24px;
-  bottom: auto;
-  left: auto;
-  top: 24px;
-}
-
-.project-card:nth-child(even) {
-  background:
-    radial-gradient(circle at 12% 70%, #ffffff 0 1px, transparent 2px),
-    radial-gradient(circle at 26% 16%, #ffdb70 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 52% 88%, #ffefb4 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 68% 34%, #ffffff 0 1px, transparent 2px),
-    radial-gradient(circle at 84% 78%, #ffdb70 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 94% 22%, #ffffff 0 1px, transparent 2px),
-    linear-gradient(145deg, #012095 0%, #012cc9 100%);
+.project-card:last-child {
+  border-bottom: 0;
 }
 
 .project-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(1, 32, 149, 0.24);
+  min-width: 0;
 }
 
 .project-card--featured {
-  border: 2px solid #ffdb70;
-  box-shadow: 0 12px 30px rgba(255, 219, 112, 0.28);
+  border-bottom-width: 2px;
+  border-image: linear-gradient(90deg, #72a9ff, #012095) 1;
 }
 
 .project-card--featured .project-header h2 {
-  color: #fff681;
+  color: #012095;
 }
 
 .project-card:nth-child(even) {
@@ -278,12 +215,12 @@
 .project-header h2 {
   font-size: 1.5rem;
   margin-bottom: 5px;
-  color: #fff;
+  color: #012095;
 }
 
 .project-kind {
   margin: 0 0 8px;
-  color: #fff681;
+  color: #3159c8;
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 0.98rem;
   font-weight: 700;
@@ -293,7 +230,7 @@
 
 .project-date {
   font-size: 0.85rem;
-  color: #ffefb4;
+  color: #3159c8;
   font-style: italic;
   display: block;
   margin-bottom: 6px;
@@ -301,18 +238,18 @@
 
 /* Encadré de la consigne */
 .project-consigne {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid #ffdb70;
+  background-color: #eef4ff;
+  border-left: 3px solid #72a9ff;
   padding: 10px 14px;
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: #26345d;
   margin: 12px 0;
   border-radius: 0 6px 6px 0;
 }
 
 .project-description {
   font-size: 0.98rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #26345d;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -323,12 +260,12 @@
   min-height: 44px;
   width: fit-content;
   padding: 8px 12px;
-  border: 1px solid rgba(255, 246, 129, 0.75);
+  border: 1px solid #012095;
   border-radius: 999px;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
-  color: #ffefb4;
+  color: #012095;
   align-self: flex-start;
   margin-top: auto;
   transition: color 0.2s ease;
@@ -336,7 +273,7 @@
 
 .project-link:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.14);
+  background: #012095;
   text-decoration: none;
 }
 
@@ -355,7 +292,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 18px;
+    padding: 28px 0;
   }
 
   .project-card:nth-child(even) .project-image,
